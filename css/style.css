@@ -1,0 +1,830 @@
+@import url("https://fonts.googleapis.com/css2?family=Lily+Script+One&family=DM+Sans:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  height: 100vh;
+}
+body header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 5;
+}
+body header::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+body header .inner {
+  width: 1180px;
+  height: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+body header .inner h1 {
+  color: #fff;
+  font-size: max(20px, 1.5vw);
+  font-family: "Lily Script One";
+  font-weight: normal;
+  white-space: nowrap;
+  transition: 0.5s;
+}
+body header .inner h1 i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+}
+body header .inner > ul {
+  display: flex;
+}
+body header .inner > ul li {
+  flex: 1;
+}
+body header .inner > ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: max(16px, 1.5vh);
+  white-space: nowrap;
+}
+body header .inner > ul#gnb li {
+  margin-right: 20px;
+}
+body header .inner > ul#gnb li:last-of-type {
+  margin-right: 0;
+}
+body header .inner .btnCall {
+  display: none;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 20;
+  transition: 0.5s;
+  transform: translateY(-50%);
+}
+body header .inner .btnCall span {
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -1px;
+  background-color: #fff;
+  text-indent: -999999px;
+}
+body header .inner .btnCall::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  transition: 0.5s;
+}
+body header .inner .btnCall::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.5s;
+}
+body header .mobileNav {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  transition: all 1s;
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 20px 30px;
+}
+body header .mobileNav ul:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+body header .mobileNav ul:nth-of-type(1) li a {
+  display: block;
+  padding: 10px;
+  font-size: max(16px, 1.5vh);
+  font-weight: 500;
+}
+body header .mobileNav ul:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+body header .mobileNav ul:nth-of-type(2) li a {
+  display: block;
+  font-size: 12px;
+  padding: 0 10px;
+  line-height: 1;
+  color: #666;
+}
+body header .mobileNav ul:nth-of-type(2) li:last-of-type a {
+  border-left: 1px solid #666;
+}
+body .visual {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+body .visual .inner {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+body .visual .inner .video {
+  width: 100%;
+  height: 100%;
+}
+body .visual .inner .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body .visual .inner .txt {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+body .visual .inner .txt h1 {
+  font-weight: normal;
+  font-size: max(20px, 1.5vw);
+}
+body .visual .inner .txt h1 span {
+  display: block;
+  font-family: "Lily Script One";
+  font-size: max(50px, 5vw);
+  margin: 30px 0;
+}
+body .visual .inner .txt p {
+  max-width: 600px;
+  font-size: max(16px, 1.5vh);
+}
+body .visual .inner .scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: max(16px, 1.5vh);
+  color: #fff;
+}
+body .visual .inner .scroll span {
+  margin-bottom: 20px;
+}
+body .visual .inner .scroll i {
+  animation: scrollArrow 0.5s linear infinite alternate;
+}
+body .banner {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+body .banner .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 100px 30px;
+}
+body .banner .inner h1 {
+  font-size: max(28px, 3vw);
+  font-family: "Lily Script One";
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+body .banner .inner h1 i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+  text-shadow: 20px 0 0 lightblue;
+  margin-right: 20px;
+}
+body .banner .inner p {
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #666;
+}
+body .interior {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #000;
+}
+body .interior::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/interior.jpg) no-repeat center/cover;
+  opacity: 0.5;
+}
+body .interior .inner {
+  width: 1180px;
+  height: 100%;
+  padding: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .interior .inner h1 {
+  font-size: max(28px, 3vw);
+  color: #fff;
+  margin-bottom: 30px;
+}
+body .interior .inner .viewDetail {
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100px;
+  transition: 0.3s;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+body .interior .inner .viewDetail:hover {
+  background-color: #666;
+}
+body .interior .inner .viewDetail:hover {
+  background-color: #fff;
+  color: #000;
+}
+body .system {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #fff;
+}
+body .system .inner {
+  width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .system .inner h1 {
+  font-size: max(28px, 3vw);
+  text-align: center;
+  margin-bottom: 50px;
+}
+body .system .inner h1 span {
+  display: block;
+  font-size: max(16px, 1.5vh);
+}
+body .system .inner .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+body .system .inner .wrap div p i {
+  display: block;
+  width: 15vw;
+  height: 15vw;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 7vw;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}
+body .system .inner .wrap div p span {
+  display: block;
+  text-align: center;
+  font-size: max(16px, 1.5vh);
+  font-weight: bold;
+  padding: 2vh 0;
+}
+body .system .inner .wrap div.owner p i {
+  background-color: #666;
+}
+body .system .inner .wrap div.shop p i {
+  background-color: lightpink;
+}
+body .system .inner .wrap div.arrowRight {
+  text-align: center;
+  padding: 0 30px 10px 10px;
+  margin: 0 30px 50px 20px;
+  position: relative;
+}
+body .system .inner .wrap div.arrowRight::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
+}
+body .system .inner .wrap div.arrowRight::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 1px;
+  background-color: #666;
+  transform-origin: right bottom;
+  transform: rotate(45deg);
+}
+body .system .inner .wrap div.arrowLeft {
+  text-align: center;
+  padding: 0 15px 10px 35px;
+  margin: 0 20px 50px 30px;
+  position: relative;
+}
+body .system .inner .wrap div.arrowLeft::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
+}
+body .system .inner .wrap div.arrowLeft::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 25px;
+  height: 1px;
+  background-color: #666;
+  transform-origin: left bottom;
+  transform: rotate(-45deg);
+}
+body .system .inner .viewDetail {
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+body .system .inner .viewDetail:hover {
+  background-color: #666;
+}
+body .app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #eee;
+}
+body .app .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 150px 30px 150px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+body .app .inner .txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .app .inner .txt h1 {
+  font-size: max(28px, 3vw);
+  margin-bottom: 50px;
+}
+body .app .inner .txt .viewDetail {
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+body .app .inner .txt .viewDetail:hover {
+  background-color: #666;
+}
+body .app .inner .slide {
+  width: 728px;
+  overflow: hidden;
+}
+body .app .inner .slide .wrap {
+  width: 100%;
+}
+body .app .inner .slide .wrap ul {
+  width: 100%;
+  max-height: 60vh;
+  transition: 0.3s;
+  transform: translateX(0);
+  display: flex;
+}
+body .app .inner .slide .wrap ul li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .app .inner .slide .wrap ul li img {
+  width: 728px;
+  height: 100%;
+  object-fit: contain;
+}
+body .app .inner .slide .wrap ul.on {
+  transform: translateX(-100%);
+}
+body .app .inner .slide .btn {
+  display: flex;
+  justify-content: center;
+}
+body .app .inner .slide .btn .slideBtn {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  background-color: #999;
+  border-radius: 50%;
+  text-indent: -999999px;
+}
+body .app .inner .slide .btn .slideBtn.on {
+  background-color: #000;
+}
+body .contact {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+body .contact .inner {
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 50px;
+}
+body .contact .inner h1 {
+  font-size: max(28px, 3vw);
+  margin-bottom: 30px;
+}
+body .contact .inner .viewDetail {
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100px;
+  transition: 0.3s;
+  margin-bottom: 50px;
+}
+body .contact .inner .viewDetail:hover {
+  background-color: #666;
+}
+body .contact .inner .tabMenu {
+  width: 100%;
+  margin-bottom: 50px;
+}
+body .contact .inner .tabMenu ul {
+  display: flex;
+}
+body .contact .inner .tabMenu ul li {
+  flex: 1;
+}
+body .contact .inner .tabMenu ul li a {
+  display: block;
+  padding: 20px 0;
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #999;
+  font-weight: 500;
+  border-top: 2px solid #999;
+}
+body .contact .inner .tabMenu ul li a.on {
+  border-top: 2px solid #000;
+  color: #000;
+}
+body .contact .inner .tabBody {
+  width: 100%;
+}
+body .contact .inner .tabBody > div {
+  display: none;
+}
+body .contact .inner .tabBody > div h2 {
+  font-size: max(20px, 1.5vw);
+  margin-bottom: 10px;
+}
+body .contact .inner .tabBody > div p {
+  font-size: max(16px, 1.5vh);
+  margin-bottom: 30px;
+  color: #666;
+}
+body .contact .inner .tabBody > div.on {
+  display: block;
+}
+body footer {
+  width: 100%;
+  position: relative;
+  background-color: #eee;
+}
+body footer .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 80px 50px;
+}
+body footer .inner h1 {
+  color: #666;
+  margin-bottom: 20px;
+  font-family: "Lily Script One";
+  font-weight: normal;
+}
+body footer .inner h1 i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+}
+body footer .inner ul {
+  display: flex;
+}
+body footer .inner ul li {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #666;
+  line-height: 1;
+}
+body footer .inner ul li a {
+  font-size: max(12px, 0.8vw);
+  color: #666;
+}
+body footer .inner ul li:last-of-type {
+  border-right: 0;
+}
+body footer .inner ul li:last-of-type a {
+  font-weight: bold;
+}
+body footer .inner ul.terms {
+  margin-bottom: 20px;
+}
+body footer .inner address {
+  font-style: normal;
+}
+body footer .inner address ul li {
+  font-size: max(12px, 0.8vw);
+  line-height: 1.5;
+  color: #666;
+}
+body footer .inner address p {
+  font-size: max(12px, 0.8vw);
+  line-height: 1.5;
+  color: #666;
+}
+
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 1180px) {
+  body header .inner {
+    width: 100%;
+  }
+  body .banner .inner {
+    width: 100%;
+  }
+  body .interior .inner {
+    width: 100%;
+  }
+  body .system .inner {
+    width: 100%;
+  }
+  body .app .inner {
+    width: 100%;
+  }
+  body .app .inner .slide {
+    width: 560px;
+  }
+  body .app .inner .slide .wrap ul li img {
+    width: 560px;
+  }
+  body .contact .inner {
+    width: 100%;
+  }
+  body footer .inner {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 960px) {
+  body header {
+    height: 60px;
+  }
+  body header .inner {
+    padding: 0 20px;
+  }
+  body header .inner h1 {
+    position: absolute;
+    z-index: 20;
+  }
+  body header .inner h1.on {
+    color: #000;
+  }
+  body header .inner #gnb {
+    display: none;
+  }
+  body header .inner .util {
+    display: none;
+  }
+  body header .inner .btnCall {
+    display: block;
+  }
+  body header .inner .btnCall.on::before {
+    background-color: #000;
+    margin-top: 1px;
+    transform-origin: right center;
+    transform: rotate(-45deg);
+  }
+  body header .inner .btnCall.on::after {
+    background-color: #000;
+    margin-bottom: 1px;
+    transform-origin: right center;
+    transform: rotate(45deg);
+  }
+  body header .inner .btnCall.on span {
+    opacity: 0;
+  }
+  body header .mobileNav.on {
+    transform: translateY(0);
+  }
+  body .banner .inner {
+    padding: 80px 20px;
+  }
+  body .interior {
+    height: 80vh;
+  }
+  body .interior .inner {
+    padding: 80px 20px;
+  }
+  body .system {
+    height: auto;
+  }
+  body .system .inner {
+    padding: 80px 0;
+  }
+  body .system .inner .wrap {
+    flex-wrap: wrap;
+  }
+  body .system .inner .wrap div {
+    order: 2;
+  }
+  body .system .inner .wrap div.owner {
+    margin-right: 100px;
+  }
+  body .system .inner .wrap div.shop {
+    order: 1;
+    width: 100%;
+  }
+  body .system .inner .wrap div.arrowRight {
+    position: absolute;
+    transform: translateX(-80%);
+    font-size: max(12px, 0.8vw);
+    padding-left: 0;
+  }
+  body .system .inner .wrap div.arrowRight::before {
+    width: 30%;
+    left: unset;
+    bottom: 80%;
+    right: 0;
+    transform-origin: right center;
+    transform: rotate(-45deg);
+  }
+  body .system .inner .wrap div.arrowRight::after {
+    width: 10%;
+    left: unset;
+    bottom: 80%;
+    right: 0;
+    transform-origin: right center;
+    transform: rotate(0);
+  }
+  body .system .inner .wrap div.arrowLeft {
+    position: absolute;
+    transform: translateX(80%);
+    font-size: max(12px, 0.8vw);
+    padding-right: 0;
+  }
+  body .system .inner .wrap div.arrowLeft::before {
+    width: 30%;
+    right: unset;
+    bottom: 80%;
+    left: 0;
+    transform-origin: left center;
+    transform: rotate(45deg);
+  }
+  body .system .inner .wrap div.arrowLeft::after {
+    width: 10%;
+    right: unset;
+    bottom: 80%;
+    left: 0;
+    transform-origin: left center;
+    transform: rotate(0);
+  }
+  body .app .inner {
+    padding: 80px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .app .inner .txt {
+    text-align: center;
+    align-items: center;
+  }
+  body .app .inner .txt h1 {
+    margin-bottom: 30px;
+  }
+  body .app .inner .txt a {
+    margin-bottom: 30px;
+  }
+  body .app .inner .slide {
+    width: 280px;
+  }
+  body .app .inner .slide .wrap ul {
+    height: 50vh;
+  }
+  body .app .inner .slide .wrap ul li img {
+    width: 280px;
+  }
+  body .contact .inner {
+    padding: 80px 20px;
+  }
+  body footer .inner {
+    padding: 50px 20px;
+  }
+  body footer .inner address ul {
+    display: block;
+    margin-bottom: 5px;
+  }
+  body footer .inner address ul li {
+    border: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,88 +1,201 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이유주닷컴</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            list-style-type: '\279c';
-            padding: 0.3rem 1rem;
-        }
-        a {
-            color: #000;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        div {
-            width: 100%;
-            height: 100vh;
-            display: inline-flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-        }
-        h1 {
-            background-color: lightblue;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-        }
-        .github, .github a{
-            color: rgb(47, 130, 157);
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice cream | Yujoo</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/08c501c945.js" crossorigin="anonymous"></script>
+  <script defer src="./js/main.js"></script>
 </head>
 <body>
-    <div>
-        <h1>이유주닷컴</h1>
-        <ul>
-            <li class="github">
-                <a href="https://github.com/YUJOO-LEE/study" target="_blank">깃허브</a>
-            </li>
-            <li>
-                <a href="/whack_a_mole/">두더지 잡기</a> <em>- 2022.09.12</em>
-            </li>
-            <li>
-                <a href="/2048/">2048</a> <em>- 2022.09.11</em>
-            </li>
-            <li>
-                <a href="/minesweeper/">지뢰찾기</a> <em>- 2022.09.08</em>
-            </li>
-            <li>
-                <a href="/pairing_cards/">카드 짝 맞추기</a> <em>- 2022.09.07</em>
-            </li>
-            <li>
-                <a href="/text_rpg/">텍스트 RPG</a> <em>- 2022.09.06</em>
-            </li>
-            <li>
-                <a href="/tictactoe/">틱택토 (삼목)</a> <em>- 2022.09.05</em>
-            </li>
-            <li>
-                <a href="/reaction_time/">반응 속도 테스트</a> <em>- 2022.09.04</em>
-            </li>
-            <li>
-                <a href="/rock_paper_scissors/">가위바위보</a> <em>- 2022.09.03</em>
-            </li>
-            <li>
-                <a href="/lotto/">로또추첨기</a> <em>- 2022.09.02</em>
-            </li>
-            <li>
-                <a href="/number_baseball/">숫자야구</a> <em>- 2022.09.01</em>
-            </li>
-            <li>
-                <a href="/calculator/">계산기</a> <em>- 2022.08.30</em>
-            </li>
-            <li>
-                <a href="/word_relay/">끝말잇기</a> <em>- 2022.08.29</em>
-            </li>
-        </ul>
+  <!-- header 시작 -->
+  <header>
+    <div class="inner">
+      <h1 id="logo"><i class="fa-solid fa-ice-cream"></i>Yujoo</h1>
+      <ul id="gnb">
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="#">MEMBERSHIP</a></li>
+      </ul>
+      <ul class="util">
+        <li><a href="#">STORE</a></li>
+        <li><a href="#">SNS</a></li>
+      </ul>
+
+      <a href="#" class="btnCall"><span>메뉴호출</span></a>
     </div>
+
+    <!-- 모바일 메뉴 -->
+    <div class="mobileNav">
+      <ul>
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="#">MEMBERSHIP</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">STORE</a></li>
+        <li><a href="#">SNS</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- header 종료 -->
+
+  <!-- visual 시작 -->
+  <figure class="visual">
+    <div class="inner">
+      <div class="video">
+        <video src="./img/Icecream0.mp4" autoplay loop muted></video>
+      </div>
+      <div class="txt">
+        <h1>TASTE OUR BRAND'S<span>Difference</span></h1>
+        <p>OUR COMBINATION OF OUR ICE CREAM AND FAMILY HERITAGE HELP PRODUCE ICE CREAM THAT JUST TASTES BETTER.</p>
+      </div>
+      <div class="scroll"><span>SCROLL</span><i class="fa-solid fa-angles-down"></i></div>
+    </div>
+  </figure>
+  <!-- visual 종료 -->
+
+  <!-- banner 시작 -->
+  <section class="banner">
+    <div class="inner">
+      <h1><i class="fa-solid fa-ice-cream"></i>Yujoo</h1>
+      <p>
+        In our unique French Pot freezers, high butterfat is frozen<br>with very little trapped air, yielding irresistably indulgent ice cream.
+      </p>
+    </div>
+  </section>
+  <!-- banner 종료 -->
+
+  <!-- interior 시작 -->
+  <section class="interior">
+    <div class="inner">
+      <h1>Stylish interior<br>Comfortable facilities</h1>
+      <a href="" class="viewDetail">VIEW DETAIL</a>
+    </div>
+  </section>
+  <!-- interior 종료 -->
+
+  <!-- system 시작 -->
+  <section class="system">
+    <div class="inner">
+      <h1>
+        <span>for an shop owner</span>
+        Operating System
+      </h1>
+      <div class="wrap">
+        <div class="owner">
+          <p>
+            <i class="fa-regular fa-user"></i>
+            <span>OWNER</span>
+          </p>
+        </div>
+        <div class="arrowRight">Management</div>
+        <div class="shop">
+          <p>
+            <i class="fa-solid fa-store"></i>
+            <span>SHOP</span>
+          </p>
+        </div>
+        <div class="arrowLeft">HQ Support</div>
+        <div class="company">
+          <p>
+            <i class="fa-regular fa-building"></i>
+            <span>COMPANY</span>
+          </p>
+        </div>
+      </div>
+      <a href="#" class="viewDetail">VIEW DETAIL</a>
+    </div>
+  </section>
+  <!-- system 종료 -->
+
+  <!-- app 시작 -->
+  <section class="app">
+    <div class="inner">
+      <div class="txt">
+        <h1>Experience<br>a different<br>driving range</h1>
+        <a href="#" class="viewDetail">VIEW DETAIL</a>
+      </div>
+      <div class="slide">
+        <div class="wrap">
+          <ul>
+            <li><img src="./img/app.png" alt="자사 APP UI"></li>
+            <li><img src="./img/client.png" alt="스크린 골프 UI"></li>
+          </ul>
+        </div>
+        <div class="btn">
+          <a href="#" class="slideBtn on">1</a>
+          <a href="#" class="slideBtn">2</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- app 종료 -->
+
+  <!-- contact 시작 -->
+  <section class="contact">
+    <div class="inner">
+      <h1>Contact US</h1>
+      <a href="#" class="viewDetail">VIEW DETAIL</a>
+      <div class="tabMenu">
+        <ul>
+          <li><a href="#" class="on">Membership counseling</a></li>
+          <li><a href="#">Briefing session</a></li>
+        </ul>
+      </div>
+      <div class="tabBody">
+        <div class="counseling on">
+          <div class="formHeader">
+            <h2>TEL : 02-1234-4321</h2>
+            <p>Weekdays from 09:00 to 18:00</p>
+          </div>
+          <form action="index.html">
+            <h2>Application for membership counseling</h2>
+            <p>We will contact you as soon as possible when you receive the consultation.</p>
+            <!-- form 자리 -->
+          </form>
+        </div>
+        <div class="briefing">
+          <div class="formHeader">
+            <h2>Start-up briefing information</h2>
+            <ul>
+              <li><span>ADDRESS</span>90, Yeorumul-ro, Bupyeong-gu, Incheon, Republic of Korea</li>
+              <li><span>TEL</span>02-1234-4321</li>
+              <li class="map"></li>
+            </ul>
+          </div>
+          <form action="index.html">
+            <h2>Application for start-up briefing</h2>
+            <!-- form 자리 -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- contact 종료 -->
+
+  <!-- footer 시작 -->
+  <footer>
+    <div class="inner">
+      <h1><i class="fa-solid fa-ice-cream"></i>Yujoo</h1>
+      <ul class="terms">
+        <li><a href="#">terms and conditions</a></li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <address>
+        <ul>
+          <li>90, Yeorumul-ro, Bupyeong-gu, Incheon, Republic of Korea</li>
+          <li>Yu-joo Lee</li>
+          <li>Tel 02-1234-4321</li>
+        </ul>
+        <p>Copyright &copy; Yujoo. All rights reserved.</p>
+      </address>
+    </div>
+  </footer>
+  <!-- footer 종료 -->
 </body>
 </html>
