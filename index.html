@@ -7,6 +7,7 @@
   <title>Ice cream | Yujoo</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/08c501c945.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=845c93ba84530b1f2a6aa856083e9033"></script>
   <script defer src="./js/main.js"></script>
   <script defer src="./js/anime.js"></script>
 </head>
@@ -112,7 +113,7 @@
       <div>
         <div class="slider">
           <article>
-            <h1>Rich chocolate syrup in<br>sweet chocolate cream!</h1>
+            <h1>Rich chocolate syrup<br>in sweet cream!</h1>
             <a href="#" class="viewDetail">VIEW DETAIL</a>
           </article>
           <article>
@@ -120,7 +121,7 @@
             <a href="#" class="viewDetail">VIEW DETAIL</a>
           </article>
           <article>
-            <h1>Enjoy the combination of<br>fun texture and<br>flavor-filled chocolate!</h1>
+            <h1>Enjoy flavor-filled<br>chocolate!</h1>
             <a href="#" class="viewDetail">VIEW DETAIL</a>
           </article>
         </div>
@@ -226,7 +227,7 @@
       <div class="tabMenu">
         <ul>
           <li class="on"><a href="#">Membership counseling</a></li>
-          <li><a href="#">Briefing session</a></li>
+          <li><a href="#">Find a store</a></li>
         </ul>
       </div>
       <div class="tabBody">
@@ -266,7 +267,7 @@
           </div>
           <div class="formHeader">
             <h2>A map around our store</h2>
-            <!-- map 자리 -->
+            <div id="map"></div>
           </div>
         </div>
       </div>

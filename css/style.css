@@ -592,10 +592,11 @@ body .contact .inner .tabMenu ul li a {
   text-align: center;
   color: #999;
   font-weight: 500;
-  border-top: 2px solid #999;
+  border-bottom: 2px solid #000;
 }
 body .contact .inner .tabMenu ul li.on a {
-  border-top: 2px solid #000;
+  border: 2px solid #000;
+  border-bottom: 0;
   color: #000;
 }
 body .contact .inner .tabBody {
@@ -603,7 +604,8 @@ body .contact .inner .tabBody {
 }
 body .contact .inner .tabBody > div {
   width: 100%;
-  display: none;
+  height: 0px;
+  overflow: hidden;
 }
 body .contact .inner .tabBody > div div {
   margin-bottom: 30px;
@@ -620,7 +622,7 @@ body .contact .inner .tabBody > div div p span {
   margin-right: 10px;
 }
 body .contact .inner .tabBody > div.on {
-  display: block;
+  height: auto;
 }
 body .contact .inner .tabBody > div form {
   width: 100%;
@@ -683,6 +685,26 @@ body .contact .inner .tabBody > div form ul li button[type=reset] {
 }
 body .contact .inner .tabBody > div form ul li:last-of-type {
   text-align: right;
+}
+body .contact .inner .tabBody > div #map {
+  width: 100%;
+  height: 30vh;
+}
+body .contact .inner .tabBody > div #map * {
+  box-sizing: content-box;
+  margin: 0;
+}
+body .contact .inner .tabBody > div #map .mapInfo {
+  padding: 10px;
+}
+body .contact .inner .tabBody > div #map .mapInfo ul li:first-of-type {
+  margin-bottom: 10px;
+  font-size: max(16px, 1.5vh);
+  font-weight: bold;
+}
+body .contact .inner .tabBody > div #map .mapInfo ul li a {
+  font-size: max(12px, 1.2vh);
+  color: #666;
 }
 body footer {
   width: 100%;
