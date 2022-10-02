@@ -544,10 +544,17 @@ body .board .inner ul li {
   transition: 0.5s;
 }
 body .board .inner ul li a {
+  display: block;
+  width: 80%;
   font-size: max(16px, 1.5vh);
   line-height: 1.5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 body .board .inner ul li span {
+  display: inline-block;
+  padding: 10px;
   position: absolute;
   top: 50%;
   right: 20px;
@@ -569,7 +576,7 @@ body .contact .inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 50px;
+  padding: 100px 50px;
 }
 body .contact .inner h1 {
   font-size: max(28px, 3vw);
@@ -773,6 +780,7 @@ body footer .inner address p {
 }
 @media screen and (max-width: 1179px) {
   body header {
+    width: 100%;
     height: 60px;
   }
   body header .inner {
@@ -810,8 +818,14 @@ body footer .inner address p {
   body header .inner .btnCall.on span {
     opacity: 0;
   }
+  body header .mobileNav {
+    width: 100%;
+  }
   body header .mobileNav.on {
     transform: translateY(0);
+  }
+  body header .mobileNav ul {
+    width: 100%;
   }
   body .banner .inner {
     width: 100%;
@@ -833,6 +847,9 @@ body footer .inner address p {
   body .system .inner {
     width: 100%;
   }
+  body .board .inner {
+    width: 100%;
+  }
   body .contact .inner {
     width: 100%;
   }
@@ -843,6 +860,9 @@ body footer .inner address p {
 @media screen and (max-width: 539px) {
   body .banner .inner {
     padding: 80px 20px;
+  }
+  body .gallery .inner {
+    padding: 50px 20px;
   }
   body .gallery .inner article {
     width: 90%;
@@ -914,32 +934,22 @@ body footer .inner address p {
     transform-origin: left center;
     transform: rotate(0);
   }
-  body .app .inner {
-    padding: 80px 20px;
-    flex-direction: column;
-    align-items: center;
+  body .board .inner {
+    padding: 50px 20px;
   }
-  body .app .inner .txt {
-    text-align: center;
-    align-items: center;
-  }
-  body .app .inner .txt h1 {
+  body .board .inner h1 {
     margin-bottom: 30px;
-  }
-  body .app .inner .txt a {
-    margin-bottom: 30px;
-  }
-  body .app .inner .slide {
-    width: 280px;
-  }
-  body .app .inner .slide .wrap ul {
-    height: 50vh;
-  }
-  body .app .inner .slide .wrap ul li img {
-    width: 280px;
   }
   body .contact .inner {
-    padding: 80px 20px;
+    padding: 50px 20px;
+  }
+  body .contact .inner .tabBody div form ul li label {
+    float: none;
+    display: block;
+  }
+  body .contact .inner .tabBody div form ul li input, body .contact .inner .tabBody div form ul li textarea {
+    float: none;
+    width: 100%;
   }
   body footer .inner {
     padding: 50px 20px;
