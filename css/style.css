@@ -174,18 +174,19 @@ body .visual .inner {
   left: 0;
   top: 0;
 }
-body .visual .inner .video {
+body .visual .inner .wrap {
   width: 100%;
   height: 100%;
+  filter: brightness(90%);
 }
-body .visual .inner .video video {
+body .visual .inner .wrap video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 body .visual .inner .txt {
-  position: absolute;
   width: 100%;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   padding: 0 30px;
@@ -195,6 +196,7 @@ body .visual .inner .txt {
   justify-content: center;
   align-items: center;
   color: #fff;
+  text-shadow: 0 0 10px rgba(143, 0, 55, 0.3);
 }
 body .visual .inner .txt h1 {
   font-weight: normal;
@@ -256,13 +258,63 @@ body .banner .inner p {
   text-align: center;
   color: #666;
 }
-body .interior {
+body .gallery {
   width: 100%;
-  height: 100vh;
+  position: relative;
+  background-color: lightpink;
+}
+body .gallery .inner {
+  width: 1180px;
+  padding: 100px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .gallery .inner article {
+  width: 280px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+body .gallery .inner article .wrap {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+body .gallery .inner article .wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body .gallery .inner article h2 {
+  font-size: max(16px, 1.5vh);
+  color: #000;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+body .gallery .inner article p {
+  font-size: max(12px, 1.2vh);
+  color: #999;
+  line-height: 1.3;
+}
+body .gallery .inner article:hover {
+  transform: translateY(-3%);
+  box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
+}
+body .gallery .inner article.off {
+  filter: blur(2px);
+}
+body .about {
+  width: 100%;
+  height: 50vh;
   position: relative;
   background-color: #000;
 }
-body .interior::before {
+body .about::before {
   content: "";
   display: block;
   width: 100%;
@@ -270,27 +322,44 @@ body .interior::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../img/interior.jpg) no-repeat center/cover;
-  opacity: 0.5;
+  background: url(../img/section_slide_bg2.jpg) no-repeat center/cover;
+  opacity: 1;
 }
-body .interior .inner {
+body .about .inner {
   width: 1180px;
   height: 100%;
-  padding: 50px;
+  margin: 0 auto;
+  padding: 100px;
+  position: relative;
+}
+body .about .inner div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+body .about .inner div .slider {
+  width: 300%;
+  height: 100%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  display: flex;
+}
+body .about .inner div .slider article {
+  width: 33.3333333333%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-body .interior .inner h1 {
+body .about .inner div .slider article h1 {
   font-size: max(28px, 3vw);
   color: #fff;
   margin-bottom: 30px;
 }
-body .interior .inner .viewDetail {
+body .about .inner div .slider article .viewDetail {
   padding: max(10px, 0.8vw) max(25px, 3vw);
   font-size: max(16px, 1.5vh);
   text-align: center;
@@ -301,16 +370,31 @@ body .interior .inner .viewDetail {
   background-color: transparent;
   border: 1px solid #fff;
 }
-body .interior .inner .viewDetail:hover {
+body .about .inner div .slider article .viewDetail:hover {
   background-color: #666;
 }
-body .interior .inner .viewDetail:hover {
+body .about .inner div .slider article .viewDetail:hover {
   background-color: #fff;
   color: #000;
 }
+body .about .inner > a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .about .inner > a i {
+  font-size: max(28px, 3vw);
+  color: #fff;
+}
+body .about .inner > a.btnPrev {
+  left: 0;
+}
+body .about .inner > a.btnNext {
+  right: 0;
+}
 body .system {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   position: relative;
   background-color: #fff;
 }
@@ -433,82 +517,46 @@ body .system .inner .viewDetail {
 body .system .inner .viewDetail:hover {
   background-color: #666;
 }
-body .app {
+body .board {
   width: 100%;
-  min-height: 100vh;
   position: relative;
-  background-color: #eee;
+  background-color: lightblue;
 }
-body .app .inner {
+body .board .inner {
   width: 1180px;
   margin: 0 auto;
-  padding: 150px 30px 150px 50px;
-  display: flex;
-  justify-content: space-between;
+  padding: 100px 50px;
 }
-body .app .inner .txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-body .app .inner .txt h1 {
+body .board .inner h1 {
   font-size: max(28px, 3vw);
+  text-align: center;
   margin-bottom: 50px;
 }
-body .app .inner .txt .viewDetail {
-  padding: max(10px, 0.8vw) max(25px, 3vw);
+body .board .inner ul {
+  width: 100%;
+}
+body .board .inner ul li {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  transition: 0.5s;
+}
+body .board .inner ul li a {
   font-size: max(16px, 1.5vh);
-  text-align: center;
-  color: #fff;
-  background-color: #000;
-  border-radius: 100px;
-  transition: 0.3s;
+  line-height: 1.5;
 }
-body .app .inner .txt .viewDetail:hover {
-  background-color: #666;
+body .board .inner ul li span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: max(12px, 1.2vh);
+  color: #666;
 }
-body .app .inner .slide {
-  width: 728px;
-  overflow: hidden;
-}
-body .app .inner .slide .wrap {
-  width: 100%;
-}
-body .app .inner .slide .wrap ul {
-  width: 100%;
-  max-height: 60vh;
-  transition: 0.3s;
-  transform: translateX(0);
-  display: flex;
-}
-body .app .inner .slide .wrap ul li {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-body .app .inner .slide .wrap ul li img {
-  width: 728px;
-  height: 100%;
-  object-fit: contain;
-}
-body .app .inner .slide .wrap ul.on {
-  transform: translateX(-100%);
-}
-body .app .inner .slide .btn {
-  display: flex;
-  justify-content: center;
-}
-body .app .inner .slide .btn .slideBtn {
-  width: 15px;
-  height: 15px;
-  margin: 5px;
-  background-color: #999;
-  border-radius: 50%;
-  text-indent: -999999px;
-}
-body .app .inner .slide .btn .slideBtn.on {
-  background-color: #000;
+body .board .inner ul li:hover {
+  transform: translateX(1%);
 }
 body .contact {
   width: 100%;
@@ -526,19 +574,6 @@ body .contact .inner {
 body .contact .inner h1 {
   font-size: max(28px, 3vw);
   margin-bottom: 30px;
-}
-body .contact .inner .viewDetail {
-  padding: max(10px, 0.8vw) max(25px, 3vw);
-  font-size: max(16px, 1.5vh);
-  text-align: center;
-  color: #fff;
-  background-color: #000;
-  border-radius: 100px;
-  transition: 0.3s;
-  margin-bottom: 50px;
-}
-body .contact .inner .viewDetail:hover {
-  background-color: #666;
 }
 body .contact .inner .tabMenu {
   width: 100%;
@@ -559,7 +594,7 @@ body .contact .inner .tabMenu ul li a {
   font-weight: 500;
   border-top: 2px solid #999;
 }
-body .contact .inner .tabMenu ul li a.on {
+body .contact .inner .tabMenu ul li.on a {
   border-top: 2px solid #000;
   color: #000;
 }
@@ -567,19 +602,87 @@ body .contact .inner .tabBody {
   width: 100%;
 }
 body .contact .inner .tabBody > div {
+  width: 100%;
   display: none;
 }
-body .contact .inner .tabBody > div h2 {
+body .contact .inner .tabBody > div div {
+  margin-bottom: 30px;
+}
+body .contact .inner .tabBody > div div h2 {
+  font-size: max(20px, 1.5vw);
+  margin-bottom: 30px;
+}
+body .contact .inner .tabBody > div div p {
+  font-size: max(16px, 1.5vh);
+  color: #666;
+}
+body .contact .inner .tabBody > div div p span {
+  margin-right: 10px;
+}
+body .contact .inner .tabBody > div.on {
+  display: block;
+}
+body .contact .inner .tabBody > div form {
+  width: 100%;
+}
+body .contact .inner .tabBody > div form h2 {
   font-size: max(20px, 1.5vw);
   margin-bottom: 10px;
 }
-body .contact .inner .tabBody > div p {
+body .contact .inner .tabBody > div form p {
   font-size: max(16px, 1.5vh);
   margin-bottom: 30px;
   color: #666;
 }
-body .contact .inner .tabBody > div.on {
+body .contact .inner .tabBody > div form ul {
+  width: 100%;
+}
+body .contact .inner .tabBody > div form ul li {
+  width: 100%;
+  margin: 10px 0;
+}
+body .contact .inner .tabBody > div form ul li::after {
+  content: "";
   display: block;
+  clear: both;
+}
+body .contact .inner .tabBody > div form ul li label {
+  float: left;
+  width: 19%;
+  padding: 10px 0;
+  font-size: max(16px, 1.5vh);
+  font-weight: bold;
+  line-height: 1.5;
+  color: #000;
+}
+body .contact .inner .tabBody > div form ul li input, body .contact .inner .tabBody > div form ul li textarea {
+  float: right;
+  width: 80%;
+  padding: 10px;
+  font-size: max(16px, 1.5vh);
+  line-height: 1.5;
+  color: #000;
+  resize: none;
+}
+body .contact .inner .tabBody > div form ul li button {
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+body .contact .inner .tabBody > div form ul li button:hover {
+  background-color: #666;
+}
+body .contact .inner .tabBody > div form ul li button[type=reset] {
+  opacity: 0.6;
+}
+body .contact .inner .tabBody > div form ul li:last-of-type {
+  text-align: right;
 }
 body footer {
   width: 100%;
@@ -612,7 +715,7 @@ body footer .inner ul li {
   line-height: 1;
 }
 body footer .inner ul li a {
-  font-size: max(12px, 0.8vw);
+  font-size: max(12px, 1.2vh);
   color: #666;
 }
 body footer .inner ul li:last-of-type {
@@ -628,12 +731,12 @@ body footer .inner address {
   font-style: normal;
 }
 body footer .inner address ul li {
-  font-size: max(12px, 0.8vw);
+  font-size: max(12px, 1.2vh);
   line-height: 1.5;
   color: #666;
 }
 body footer .inner address p {
-  font-size: max(12px, 0.8vw);
+  font-size: max(12px, 1.2vh);
   line-height: 1.5;
   color: #666;
 }
@@ -646,40 +749,12 @@ body footer .inner address p {
     transform: translateY(-50%);
   }
 }
-@media screen and (max-width: 1180px) {
-  body header .inner {
-    width: 100%;
-  }
-  body .banner .inner {
-    width: 100%;
-  }
-  body .interior .inner {
-    width: 100%;
-  }
-  body .system .inner {
-    width: 100%;
-  }
-  body .app .inner {
-    width: 100%;
-  }
-  body .app .inner .slide {
-    width: 560px;
-  }
-  body .app .inner .slide .wrap ul li img {
-    width: 560px;
-  }
-  body .contact .inner {
-    width: 100%;
-  }
-  body footer .inner {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1179px) {
   body header {
     height: 60px;
   }
   body header .inner {
+    width: 100%;
     padding: 0 20px;
   }
   body header .inner h1 {
@@ -717,13 +792,42 @@ body footer .inner address p {
     transform: translateY(0);
   }
   body .banner .inner {
+    width: 100%;
+  }
+  body .gallery .inner {
+    width: 100%;
+  }
+  body .gallery .inner article {
+    width: 46%;
+    margin: 2%;
+  }
+  body .about .inner {
+    width: 100%;
+    padding: 10%;
+  }
+  body .about .inner a {
+    margin: 0 3%;
+  }
+  body .system .inner {
+    width: 100%;
+  }
+  body .contact .inner {
+    width: 100%;
+  }
+  body footer .inner {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 539px) {
+  body .banner .inner {
     padding: 80px 20px;
   }
-  body .interior {
-    height: 80vh;
+  body .gallery .inner article {
+    width: 90%;
+    margin: 5%;
   }
-  body .interior .inner {
-    padding: 80px 20px;
+  body .about .inner a {
+    margin: 0 3%;
   }
   body .system {
     height: auto;
@@ -747,7 +851,7 @@ body footer .inner address p {
   body .system .inner .wrap div.arrowRight {
     position: absolute;
     transform: translateX(-80%);
-    font-size: max(12px, 0.8vw);
+    font-size: max(12px, 1.2vh);
     padding-left: 0;
   }
   body .system .inner .wrap div.arrowRight::before {
@@ -769,7 +873,7 @@ body footer .inner address p {
   body .system .inner .wrap div.arrowLeft {
     position: absolute;
     transform: translateX(80%);
-    font-size: max(12px, 0.8vw);
+    font-size: max(12px, 1.2vh);
     padding-right: 0;
   }
   body .system .inner .wrap div.arrowLeft::before {

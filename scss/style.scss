@@ -7,7 +7,7 @@ $fontSizeBig: max(28px, 3vw);
 $fontSizeBiggest: max(50px, 5vw);
 $fontSizeMedium: max(20px, 1.5vw);
 $fontSizeRegular: max(16px, 1.5vh);
-$fontSizeSmall: max(12px, 0.8vw);
+$fontSizeSmall: max(12px, 1.2vh);
 $iSize: 7vw;
 $pointFont: 'Lily Script One';
 
@@ -216,40 +216,24 @@ body{
 
   // 비주얼 영역
   .visual{
-    width: 100%;
-    height: 100vh;
+    width: 100%; height: 100vh;
     position: relative;
-
     .inner{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      left: 0;
-      top: 0;
-
-      .video{
-        width: 100%;
-        height: 100%;
-
-        video{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+      width: 100%; height: 100%;
+      position: fixed; left: 0; top: 0;
+      .wrap{
+        width: 100%; height: 100%; filter: brightness(90%);
+        video{ width: 100%; height: 100%; object-fit: cover; }
       }
 
       .txt{
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0 30px;
+        width: 100%; position: absolute; top: 50%;
+        transform: translateY(-50%); padding: 0 30px;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: flex; flex-direction: column; 
+        justify-content: center; align-items: center;
         color: $colorWhite;
+        text-shadow: 0 0 10px rgba(143, 0, 55, 0.3);
 
         h1{
           font-weight: normal;
@@ -323,52 +307,110 @@ body{
     }
   }
 
-  // 인테리어 영역
-  .interior{
+  // 갤러리 영역
+  .gallery{
     width: 100%;
-    height: 100vh;
+    position: relative;
+    background-color: $colorPink;
+
+    .inner{
+      width: 1180px; padding:100px 0; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap;
+
+      article{
+        width: 280px; padding: 20px;
+        background-color: $colorWhite;
+        display: flex; flex-direction: column;
+        transition: 0.5s;
+
+        .wrap{
+          width: 100%; height: 240px; margin-bottom: 30px; overflow: hidden;
+
+          video{ width: 100%; height: 100%; object-fit: cover; }
+        }
+
+        h2{
+          font-size: $fontSizeRegular; color: $colorBlack;
+          line-height: 1;
+          margin-bottom: 20px;
+        }
+
+        p{
+          font-size: $fontSizeSmall; color: $colorLightGray;
+          line-height: 1.3;
+        }
+
+        &:hover{
+          transform: translateY(-3%);
+          box-shadow: 10px 10px 20px rgba(100,100,100,0.3);
+        }
+
+        &.off{ filter: blur(2px); }
+      }
+    }
+  }
+
+  // 어바웃 영역
+  .about{
+    width: 100%; height: 50vh;
     position: relative;
     background-color: $colorBlack;
     
     &::before{
       content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: url(../img/interior.jpg) no-repeat center/cover;
-      opacity: 0.5;
+      display: block; width: 100%; height: 100%;
+      position: absolute; top: 0; left: 0;
+      background: url(../img/section_slide_bg2.jpg) no-repeat center/cover;
+      opacity: 1;
     }
 
     .inner{
-      width: 1180px;
-      height: 100%;
-      padding: 50px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      width: 1180px; height: 100%;
+      margin: 0 auto; padding: 100px;
+      position: relative;
 
-      h1{
-        font-size: $fontSizeBig;
-        color: $colorWhite;
-        margin-bottom: 30px;
+      div{
+        width: 100%; height: 100%;
+        position: relative; overflow: hidden;
+
+        .slider{
+          width: calc(100% * 3); height: 100%;
+          position: absolute; top: 0; left: 0;
+          display: flex;
+  
+          article{
+            width: calc(100% / 3); height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: flex-start;
+    
+            h1{
+              font-size: $fontSizeBig;
+              color: $colorWhite;
+              margin-bottom: 30px;
+            }
+      
+            .viewDetail{
+              @include viewDetail;
+              background-color: transparent;
+              border: 1px solid $colorWhite;
+      
+              &:hover{
+                background-color: $colorWhite;
+                color: $colorBlack;
+              }
+            }
+          }
+        }
       }
 
-      .viewDetail{
-        @include viewDetail;
-        background-color: transparent;
-        border: 1px solid $colorWhite;
+      >a{
+        position: absolute; top: 50%;
+        transform: translateY(-50%);
 
-        &:hover{
-          background-color: $colorWhite;
-          color: $colorBlack;
-        }
+        i{ font-size: $fontSizeBig; color: $colorWhite; }
+        &.btnPrev{ left: 0; }
+        &.btnNext{ right: 0; }
       }
     }
   }
@@ -376,7 +418,7 @@ body{
   // 시스템 영역
   .system{
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     position: relative;
     background-color: $colorWhite;
 
@@ -505,90 +547,49 @@ body{
     }
   }
 
-  // 어플 스크린샷 영역
-  .app{
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    background-color: #eee;
+  // 게시판 영역
+  .board{
+    width: 100%; position: relative;
+    background-color: $colorBlue;
 
     .inner{
-      width: 1180px;
-      margin: 0 auto;
-      padding: 150px 30px 150px 50px;
-      display: flex;
-      justify-content: space-between;
+      width: 1180px; margin: 0 auto; padding: 100px 50px;
 
-      .txt{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-        h1{
-          font-size: $fontSizeBig;
-          margin-bottom: 50px;
-        }
-
-        .viewDetail{
-          @include viewDetail;
-        }
+      h1{
+        font-size: $fontSizeBig;
+        text-align: center;
+        margin-bottom: 50px;
       }
 
-      .slide{
-        width: 728px;
-        overflow: hidden;
+      ul{
+        width: 100%;
 
-        .wrap{
-          width: 100%;
+        li{
+          width: 100%; padding: 10px 20px;
+          background-color: $colorWhite;
+          margin-bottom: 10px; position: relative;
+          transition: 0.5s;
 
-          ul{
-            width: 100%;
-            max-height: 60vh;
-            transition: 0.3s;
-            transform: translateX(0);
-            display: flex;
-
-            li{
-              width: 100%;
-              display: flex;
-              justify-content: center;
-
-              img{
-                width: 728px;
-                height: 100%;
-                object-fit: contain;
-              }
-            }
-
-            &.on{
-              transform: translateX(-100%);
-            }
+          a{
+            font-size: $fontSizeRegular;
+            line-height: 1.5;
           }
-        }
 
-        .btn{
-          display: flex;
-          justify-content: center;
+          span{
+            position: absolute; top: 50%; right: 20px;
+            transform: translateY(-50%);
+            font-size: $fontSizeSmall; color: $colorGray;
+          }
 
-          .slideBtn{
-            width: 15px;
-            height: 15px;
-            margin: 5px;
-            background-color: $colorLightGray;
-            border-radius: 50%;
-            text-indent: -999999px;
-
-            &.on{
-              background-color: $colorBlack;
-            }
+          &:hover{
+            transform: translateX(1%);
           }
         }
       }
     }
   }
 
-  // 가맹 상담 영역
+  // 컨텍트 영역
   .contact{
     width: 100%;
     position: relative;
@@ -605,11 +606,6 @@ body{
       h1{
         font-size: $fontSizeBig;
         margin-bottom: 30px;
-      }
-
-      .viewDetail{
-        @include viewDetail;
-        margin-bottom: 50px;
       }
 
       .tabMenu{
@@ -630,10 +626,11 @@ body{
               font-weight: 500;
               border-top: 2px solid $colorLightGray;
 
-              &.on{
-                border-top: 2px solid $colorBlack;
-                color: $colorBlack;
-              }
+            }
+
+            &.on a{
+              border-top: 2px solid $colorBlack;
+              color: $colorBlack;
             }
           }
         }
@@ -643,20 +640,75 @@ body{
         width: 100%;
 
         >div{
-          display: none;
+          width: 100%; display: none;
 
-          h2{
-            font-size: $fontSizeMedium;
-            margin-bottom: 10px;
-          }
-          p{
-            font-size: $fontSizeRegular;
+          div{
             margin-bottom: 30px;
-            color: $colorGray;
+
+            h2{
+              font-size: $fontSizeMedium;
+              margin-bottom: 30px;
+            }
+  
+            p{
+              font-size: $fontSizeRegular;
+              color: $colorGray;
+  
+              span{ margin-right: 10px; }
+            }
           }
 
           &.on{
             display: block;
+          }
+
+          form{
+            width: 100%;
+
+            h2{
+              font-size: $fontSizeMedium;
+              margin-bottom: 10px;
+            }
+
+            p{
+              font-size: $fontSizeRegular;
+              margin-bottom: 30px;
+              color: $colorGray;
+            }
+
+            ul{
+              width: 100%;
+
+              li{
+                width: 100%; margin: 10px 0;
+
+                &::after{ content: ''; display: block; clear: both; }
+
+                label{
+                  float: left; width: 19%; padding: 10px 0;
+                  font-size: $fontSizeRegular; font-weight: bold;
+                  line-height: 1.5; color: $colorBlack;
+                }
+    
+                input,textarea{
+                  float: right; width: 80%; padding: 10px;
+                  font-size: $fontSizeRegular;
+                  line-height: 1.5; color: $colorBlack;
+                  resize: none;
+                }
+
+                button{
+                  @include viewDetail();
+                  border: none; cursor: pointer;
+
+                  &[type="reset"]{ opacity: 0.6; }
+                }
+
+                &:last-of-type{
+                  text-align: right;
+                }
+              }
+            }
           }
         }
       }
@@ -742,49 +794,15 @@ body{
 }
 
 // 태블릿
-@media screen and (max-width: 1180px){
+@media screen and (max-width: 1179px){
   body{
-    header{
-      .inner{ width: 100%; }
-    }
-    .banner{
-      .inner{ width: 100%; }
-    }
-    .interior{
-      .inner{ width: 100%; }
-    }
-    .system{
-      .inner{ width: 100%; }
-    }
-    .app{
-      .inner{
-        width: 100%;
-        .slide{
-          width: 560px;
-          .wrap ul li img{
-            width: 560px;
-          }
-        }
-      }
-    }
-    .contact{
-      .inner{ width: 100%; }
-    }
-    footer{
-      .inner{ width: 100%; }
-    }
-  }
-}
 
-// 모바일
-@media screen and (max-width: 960px) {
-  body{
     // [header]
     header{
       height: 60px;
 
       .inner{
-        padding: 0 20px;
+        width:100%; padding: 0 20px;
         // 로고
         h1{
           position: absolute;
@@ -825,6 +843,35 @@ body{
       }
     }
 
+    .banner{
+      .inner{ width: 100%; }
+    }
+    .gallery{
+      .inner{ width: 100%;
+        article{ width: 46%; margin: 2%; }
+      }
+    }
+    .about{
+      .inner{ width: 100%; padding: 10%;
+        a{ margin: 0 3%; }
+      }
+    }
+    .system{
+      .inner{ width: 100%; }
+    }
+    .contact{
+      .inner{ width: 100%; }
+    }
+    footer{
+      .inner{ width: 100%; }
+    }
+  }
+}
+
+// 모바일
+@media screen and (max-width: 539px) {
+  body{
+
     // 배너 영역
     .banner{
       .inner{
@@ -832,12 +879,15 @@ body{
       }
     }
 
-    // 인테리어 영역
-    .interior{
-      height: 80vh;
-
+    .gallery{
       .inner{
-        padding: 80px 20px;
+        article{ width: 90%; margin: 5%; }
+      }
+    }
+
+    .about{
+      .inner{
+        a{ margin: 0 3%; }
       }
     }
 
@@ -934,7 +984,7 @@ body{
       }
     }
 
-    // 가맹 상담 영역
+    // 컨텍트 영역
     .contact{
       .inner{
         padding: 80px 20px;
