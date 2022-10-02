@@ -12,3 +12,39 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+$fontSizeBig: max(28px, 3vw);
+// 여러개중에 큰 값 선택 (최소값 이하로 안떨어지게)
+$fontSizeBiggest: max(50px, 5vw);
+$fontSizeMedium: max(20px, 1.5vw);
+$fontSizeRegular: max(16px, 1.5vh);
+$fontSizeSmall: max(12px, 1.2vh);
+$iSize: 7vw;
+$pointFont: 'Lily Script One';
+
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorGray: #666;
+$colorLightGray: #999;
+$colorBlue: lightblue;
+$colorPink: lightpink;
+
+@mixin viewDetail { // viewDetail 버튼
+  padding: max(10px, 0.8vw) max(25px, 3vw);
+  font-size: $fontSizeRegular;
+  text-align: center;
+  color: $colorWhite;
+  background-color: $colorBlack;
+  border-radius: 100px;
+  transition: 0.3s;
+
+  &:hover{
+    background-color: $colorGray;
+  }
+}
+
+@mixin logoIce { // logo i 부분
+  color: $colorPink;
+  text-shadow: 5px 0 0 $colorBlue;
+  margin-right: 10px;
+}

@@ -18,24 +18,14 @@ body {
   font-family: "DM Sans", sans-serif;
   height: 100vh;
 }
-body header {
+body #headerSub {
   width: 100%;
   height: 100px;
   position: fixed;
   z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-body header::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: #000;
-  opacity: 0.5;
-}
-body header .inner {
+body #headerSub .inner {
   width: 1180px;
   height: 100%;
   padding: 0 50px;
@@ -46,7 +36,8 @@ body header .inner {
   position: relative;
   overflow: hidden;
 }
-body header .inner h1 {
+body #headerSub .inner h1 a {
+  display: block;
   color: #fff;
   font-size: max(20px, 1.5vw);
   font-family: "Lily Script One";
@@ -54,18 +45,18 @@ body header .inner h1 {
   white-space: nowrap;
   transition: 0.5s;
 }
-body header .inner h1 i {
+body #headerSub .inner h1 a i {
   color: lightpink;
   text-shadow: 5px 0 0 lightblue;
   margin-right: 10px;
 }
-body header .inner > ul {
+body #headerSub .inner > ul {
   display: flex;
 }
-body header .inner > ul li {
+body #headerSub .inner > ul li {
   flex: 1;
 }
-body header .inner > ul li a {
+body #headerSub .inner > ul li a {
   display: block;
   padding: 10px;
   color: #fff;
@@ -73,13 +64,13 @@ body header .inner > ul li a {
   font-size: max(16px, 1.5vh);
   white-space: nowrap;
 }
-body header .inner > ul#gnb li {
+body #headerSub .inner > ul#gnb li {
   margin-right: 20px;
 }
-body header .inner > ul#gnb li:last-of-type {
+body #headerSub .inner > ul#gnb li:last-of-type {
   margin-right: 0;
 }
-body header .inner .btnCall {
+body #headerSub .inner .btnCall {
   display: none;
   width: 20px;
   height: 18px;
@@ -90,7 +81,7 @@ body header .inner .btnCall {
   transition: 0.5s;
   transform: translateY(-50%);
 }
-body header .inner .btnCall span {
+body #headerSub .inner .btnCall span {
   width: 15px;
   height: 2px;
   position: absolute;
@@ -100,7 +91,7 @@ body header .inner .btnCall span {
   background-color: #fff;
   text-indent: -999999px;
 }
-body header .inner .btnCall::before {
+body #headerSub .inner .btnCall::before {
   content: "";
   display: block;
   width: 20px;
@@ -111,7 +102,7 @@ body header .inner .btnCall::before {
   background-color: #fff;
   transition: 0.5s;
 }
-body header .inner .btnCall::after {
+body #headerSub .inner .btnCall::after {
   content: "";
   display: block;
   width: 20px;
@@ -122,7 +113,7 @@ body header .inner .btnCall::after {
   background-color: #fff;
   transition: 0.5s;
 }
-body header .mobileNav {
+body #headerSub .mobileNav {
   width: 100%;
   position: absolute;
   left: 0;
@@ -136,55 +127,376 @@ body header .mobileNav {
   justify-content: space-between;
   padding: 80px 20px 30px;
 }
-body header .mobileNav ul:nth-of-type(1) {
+body #headerSub .mobileNav ul:nth-of-type(1) {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
 }
-body header .mobileNav ul:nth-of-type(1) li a {
+body #headerSub .mobileNav ul:nth-of-type(1) li a {
   display: block;
   padding: 10px;
   font-size: max(16px, 1.5vh);
   font-weight: 500;
 }
-body header .mobileNav ul:nth-of-type(2) {
+body #headerSub .mobileNav ul:nth-of-type(2) {
   display: flex;
   justify-content: center;
 }
-body header .mobileNav ul:nth-of-type(2) li a {
+body #headerSub .mobileNav ul:nth-of-type(2) li a {
   display: block;
   font-size: 12px;
   padding: 0 10px;
   line-height: 1;
   color: #666;
 }
-body header .mobileNav ul:nth-of-type(2) li:last-of-type a {
+body #headerSub .mobileNav ul:nth-of-type(2) li:last-of-type a {
   border-left: 1px solid #666;
 }
-body .visual {
+body .content {
+  width: 100%;
+  height: 90vh;
+}
+body .content .subVisual {
+  width: 100%;
+  height: 300px;
+  padding-top: 100px;
+  background-color: #666;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body .content .subVisual .inner {
+  width: 1180px;
+  margin: 50px auto 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+body .content .subVisual .inner h1 {
+  font-size: max(28px, 3vw);
+  text-align: center;
+  color: #fff;
+}
+body .content .subVisual .inner p {
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  color: #fff;
+}
+body .content.about .subVisual {
+  background-image: url(../img/sub_visual_about.jpg);
+}
+body .content.gallery .subVisual {
+  background-image: url(../img/sub_visual_gallery.jpg);
+}
+body .content.membership .subVisual {
+  background-image: url(../img/sub_visual_membership.jpg);
+}
+body .content.notice .subVisual {
+  background-image: url(../img/sub_visual_notice.jpg);
+}
+body .content.store .subVisual {
+  background-image: url(../img/sub_visual_store.jpg);
+}
+body .content > .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+body #footerSub {
+  width: 100%;
+  position: relative;
+  background-color: #eee;
+}
+body #footerSub .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 80px 50px;
+}
+body #footerSub .inner h1 {
+  color: #666;
+  margin-bottom: 20px;
+  font-family: "Lily Script One";
+  font-weight: normal;
+}
+body #footerSub .inner h1 i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+}
+body #footerSub .inner ul {
+  display: flex;
+}
+body #footerSub .inner ul li {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #666;
+  line-height: 1;
+}
+body #footerSub .inner ul li a {
+  font-size: max(12px, 1.2vh);
+  color: #666;
+}
+body #footerSub .inner ul li:last-of-type {
+  border-right: 0;
+}
+body #footerSub .inner ul li:last-of-type a {
+  font-weight: bold;
+}
+body #footerSub .inner ul.terms {
+  margin-bottom: 20px;
+}
+body #footerSub .inner address {
+  font-style: normal;
+}
+body #footerSub .inner address ul li {
+  font-size: max(12px, 1.2vh);
+  line-height: 1.5;
+  color: #666;
+}
+body #footerSub .inner address p {
+  font-size: max(12px, 1.2vh);
+  line-height: 1.5;
+  color: #666;
+}
+
+@media screen and (max-width: 1179px) {
+  body #headerSub {
+    width: 100%;
+    height: 60px;
+  }
+  body #headerSub .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+  body #headerSub .inner h1 {
+    position: absolute;
+    z-index: 20;
+  }
+  body #headerSub .inner h1.on a {
+    color: #000;
+  }
+  body #headerSub .inner #gnb {
+    display: none;
+  }
+  body #headerSub .inner .util {
+    display: none;
+  }
+  body #headerSub .inner .btnCall {
+    display: block;
+  }
+  body #headerSub .inner .btnCall.on::before {
+    background-color: #000;
+    margin-top: 1px;
+    transform-origin: right center;
+    transform: rotate(-45deg);
+  }
+  body #headerSub .inner .btnCall.on::after {
+    background-color: #000;
+    margin-bottom: 1px;
+    transform-origin: right center;
+    transform: rotate(45deg);
+  }
+  body #headerSub .inner .btnCall.on span {
+    opacity: 0;
+  }
+  body #headerSub .mobileNav {
+    width: 100%;
+  }
+  body #headerSub .mobileNav.on {
+    transform: translateY(0);
+  }
+  body #headerSub .mobileNav ul {
+    width: 100%;
+  }
+  body .content .subVisual {
+    width: 100%;
+    height: 200px;
+    padding-top: 80px;
+    background-color: #666;
+  }
+  body .content .subVisual .inner {
+    width: 100%;
+    margin: 20px auto 0;
+  }
+  body .content > .inner {
+    width: 100%;
+  }
+  body #footerSub .inner {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 539px) {
+  body #footerSub .inner {
+    padding: 50px 20px;
+  }
+  body #footerSub .inner address ul {
+    display: block;
+    margin-bottom: 5px;
+  }
+  body #footerSub .inner address ul li {
+    border: 0;
+  }
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  height: 100vh;
+}
+body #header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body #header .inner {
+  width: 1180px;
+  height: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+body #header .inner h1 a {
+  display: block;
+  color: #fff;
+  font-size: max(20px, 1.5vw);
+  font-family: "Lily Script One";
+  font-weight: normal;
+  white-space: nowrap;
+  transition: 0.5s;
+}
+body #header .inner h1 a i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+}
+body #header .inner > ul {
+  display: flex;
+}
+body #header .inner > ul li {
+  flex: 1;
+}
+body #header .inner > ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: max(16px, 1.5vh);
+  white-space: nowrap;
+}
+body #header .inner > ul#gnb li {
+  margin-right: 20px;
+}
+body #header .inner > ul#gnb li:last-of-type {
+  margin-right: 0;
+}
+body #header .inner .btnCall {
+  display: none;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 20;
+  transition: 0.5s;
+  transform: translateY(-50%);
+}
+body #header .inner .btnCall span {
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -1px;
+  background-color: #fff;
+  text-indent: -999999px;
+}
+body #header .inner .btnCall::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  transition: 0.5s;
+}
+body #header .inner .btnCall::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.5s;
+}
+body #header .mobileNav {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  transition: all 1s;
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 20px 30px;
+}
+body #header .mobileNav ul:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+body #header .mobileNav ul:nth-of-type(1) li a {
+  display: block;
+  padding: 10px;
+  font-size: max(16px, 1.5vh);
+  font-weight: 500;
+}
+body #header .mobileNav ul:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+body #header .mobileNav ul:nth-of-type(2) li a {
+  display: block;
+  font-size: 12px;
+  padding: 0 10px;
+  line-height: 1;
+  color: #666;
+}
+body #header .mobileNav ul:nth-of-type(2) li:last-of-type a {
+  border-left: 1px solid #666;
+}
+body figure.visual {
   width: 100%;
   height: 100vh;
   position: relative;
 }
-body .visual .inner {
+body figure.visual .inner {
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
 }
-body .visual .inner .wrap {
+body figure.visual .inner .wrap {
   width: 100%;
   height: 100%;
   filter: brightness(90%);
 }
-body .visual .inner .wrap video {
+body figure.visual .inner .wrap video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body .visual .inner .txt {
+body figure.visual .inner .txt {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -198,21 +510,21 @@ body .visual .inner .txt {
   color: #fff;
   text-shadow: 0 0 10px rgba(143, 0, 55, 0.3);
 }
-body .visual .inner .txt h1 {
+body figure.visual .inner .txt h1 {
   font-weight: normal;
   font-size: max(20px, 1.5vw);
 }
-body .visual .inner .txt h1 span {
+body figure.visual .inner .txt h1 span {
   display: block;
   font-family: "Lily Script One";
   font-size: max(50px, 5vw);
   margin: 30px 0;
 }
-body .visual .inner .txt p {
+body figure.visual .inner .txt p {
   max-width: 600px;
   font-size: max(16px, 1.5vh);
 }
-body .visual .inner .scroll {
+body figure.visual .inner .scroll {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -223,47 +535,47 @@ body .visual .inner .scroll {
   font-size: max(16px, 1.5vh);
   color: #fff;
 }
-body .visual .inner .scroll span {
+body figure.visual .inner .scroll span {
   margin-bottom: 20px;
 }
-body .visual .inner .scroll i {
+body figure.visual .inner .scroll i {
   animation: scrollArrow 0.5s linear infinite alternate;
 }
-body .banner {
+body section.banner {
   width: 100%;
   position: relative;
   background-color: #fff;
 }
-body .banner .inner {
+body section.banner .inner {
   width: 1180px;
   margin: 0 auto;
   padding: 100px 30px;
 }
-body .banner .inner h1 {
+body section.banner .inner h1 {
   font-size: max(28px, 3vw);
   font-family: "Lily Script One";
   font-weight: normal;
   text-align: center;
   margin-bottom: 20px;
 }
-body .banner .inner h1 i {
+body section.banner .inner h1 i {
   color: lightpink;
   text-shadow: 5px 0 0 lightblue;
   margin-right: 10px;
   text-shadow: 20px 0 0 lightblue;
   margin-right: 20px;
 }
-body .banner .inner p {
+body section.banner .inner p {
   font-size: max(16px, 1.5vh);
   text-align: center;
   color: #666;
 }
-body .gallery {
+body section.gallery {
   width: 100%;
   position: relative;
   background-color: lightpink;
 }
-body .gallery .inner {
+body section.gallery .inner {
   width: 1180px;
   padding: 100px 0;
   margin: 0 auto;
@@ -271,7 +583,7 @@ body .gallery .inner {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-body .gallery .inner article {
+body section.gallery .inner article {
   width: 280px;
   padding: 20px;
   background-color: #fff;
@@ -279,42 +591,42 @@ body .gallery .inner article {
   flex-direction: column;
   transition: 0.5s;
 }
-body .gallery .inner article .wrap {
+body section.gallery .inner article .wrap {
   width: 100%;
   height: 240px;
   margin-bottom: 30px;
   overflow: hidden;
 }
-body .gallery .inner article .wrap video {
+body section.gallery .inner article .wrap video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body .gallery .inner article h2 {
+body section.gallery .inner article h2 {
   font-size: max(16px, 1.5vh);
   color: #000;
   line-height: 1;
   margin-bottom: 20px;
 }
-body .gallery .inner article p {
+body section.gallery .inner article p {
   font-size: max(12px, 1.2vh);
   color: #999;
   line-height: 1.3;
 }
-body .gallery .inner article:hover {
+body section.gallery .inner article:hover {
   transform: translateY(-3%);
   box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
 }
-body .gallery .inner article.off {
+body section.gallery .inner article.off {
   filter: blur(2px);
 }
-body .about {
+body section.about {
   width: 100%;
   height: 50vh;
   position: relative;
   background-color: #000;
 }
-body .about::before {
+body section.about::before {
   content: "";
   display: block;
   width: 100%;
@@ -322,23 +634,23 @@ body .about::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../img/section_slide_bg2.jpg) no-repeat center/cover;
+  background: url(../img/section_slide_bg.jpg) no-repeat center/cover;
   opacity: 1;
 }
-body .about .inner {
+body section.about .inner {
   width: 1180px;
   height: 100%;
   margin: 0 auto;
   padding: 100px;
   position: relative;
 }
-body .about .inner div {
+body section.about .inner div {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-body .about .inner div .slider {
+body section.about .inner div .slider {
   width: 300%;
   height: 100%;
   position: absolute;
@@ -346,7 +658,7 @@ body .about .inner div .slider {
   left: 0;
   display: flex;
 }
-body .about .inner div .slider article {
+body section.about .inner div .slider article {
   width: 33.3333333333%;
   height: 100%;
   display: flex;
@@ -354,12 +666,12 @@ body .about .inner div .slider article {
   justify-content: center;
   align-items: flex-start;
 }
-body .about .inner div .slider article h1 {
+body section.about .inner div .slider article h1 {
   font-size: max(28px, 3vw);
   color: #fff;
   margin-bottom: 30px;
 }
-body .about .inner div .slider article .viewDetail {
+body section.about .inner div .slider article .viewDetail {
   padding: max(10px, 0.8vw) max(25px, 3vw);
   font-size: max(16px, 1.5vh);
   text-align: center;
@@ -370,35 +682,35 @@ body .about .inner div .slider article .viewDetail {
   background-color: transparent;
   border: 1px solid #fff;
 }
-body .about .inner div .slider article .viewDetail:hover {
+body section.about .inner div .slider article .viewDetail:hover {
   background-color: #666;
 }
-body .about .inner div .slider article .viewDetail:hover {
+body section.about .inner div .slider article .viewDetail:hover {
   background-color: #fff;
   color: #000;
 }
-body .about .inner > a {
+body section.about .inner > a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-body .about .inner > a i {
+body section.about .inner > a i {
   font-size: max(28px, 3vw);
   color: #fff;
 }
-body .about .inner > a.btnPrev {
+body section.about .inner > a.btnPrev {
   left: 0;
 }
-body .about .inner > a.btnNext {
+body section.about .inner > a.btnNext {
   right: 0;
 }
-body .system {
+body section.system {
   width: 100%;
   height: 70vh;
   position: relative;
   background-color: #fff;
 }
-body .system .inner {
+body section.system .inner {
   width: 1180px;
   height: 100%;
   margin: 0 auto;
@@ -407,23 +719,23 @@ body .system .inner {
   align-items: center;
   justify-content: center;
 }
-body .system .inner h1 {
+body section.system .inner h1 {
   font-size: max(28px, 3vw);
   text-align: center;
   margin-bottom: 50px;
 }
-body .system .inner h1 span {
+body section.system .inner h1 span {
   display: block;
   font-size: max(16px, 1.5vh);
 }
-body .system .inner .wrap {
+body section.system .inner .wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   position: relative;
 }
-body .system .inner .wrap div p i {
+body section.system .inner .wrap div p i {
   display: block;
   width: 15vw;
   height: 15vw;
@@ -436,26 +748,26 @@ body .system .inner .wrap div p i {
   align-items: center;
   background-color: lightblue;
 }
-body .system .inner .wrap div p span {
+body section.system .inner .wrap div p span {
   display: block;
   text-align: center;
   font-size: max(16px, 1.5vh);
   font-weight: bold;
   padding: 2vh 0;
 }
-body .system .inner .wrap div.owner p i {
+body section.system .inner .wrap div.owner p i {
   background-color: #666;
 }
-body .system .inner .wrap div.shop p i {
+body section.system .inner .wrap div.shop p i {
   background-color: lightpink;
 }
-body .system .inner .wrap div.arrowRight {
+body section.system .inner .wrap div.arrowRight {
   text-align: center;
   padding: 0 30px 10px 10px;
   margin: 0 30px 50px 20px;
   position: relative;
 }
-body .system .inner .wrap div.arrowRight::before {
+body section.system .inner .wrap div.arrowRight::before {
   content: "";
   display: block;
   position: absolute;
@@ -465,7 +777,7 @@ body .system .inner .wrap div.arrowRight::before {
   height: 1px;
   background-color: #666;
 }
-body .system .inner .wrap div.arrowRight::after {
+body section.system .inner .wrap div.arrowRight::after {
   content: "";
   display: block;
   position: absolute;
@@ -477,13 +789,13 @@ body .system .inner .wrap div.arrowRight::after {
   transform-origin: right bottom;
   transform: rotate(45deg);
 }
-body .system .inner .wrap div.arrowLeft {
+body section.system .inner .wrap div.arrowLeft {
   text-align: center;
   padding: 0 15px 10px 35px;
   margin: 0 20px 50px 30px;
   position: relative;
 }
-body .system .inner .wrap div.arrowLeft::before {
+body section.system .inner .wrap div.arrowLeft::before {
   content: "";
   display: block;
   position: absolute;
@@ -493,7 +805,7 @@ body .system .inner .wrap div.arrowLeft::before {
   height: 1px;
   background-color: #666;
 }
-body .system .inner .wrap div.arrowLeft::after {
+body section.system .inner .wrap div.arrowLeft::after {
   content: "";
   display: block;
   position: absolute;
@@ -505,7 +817,7 @@ body .system .inner .wrap div.arrowLeft::after {
   transform-origin: left bottom;
   transform: rotate(-45deg);
 }
-body .system .inner .viewDetail {
+body section.system .inner .viewDetail {
   padding: max(10px, 0.8vw) max(25px, 3vw);
   font-size: max(16px, 1.5vh);
   text-align: center;
@@ -514,28 +826,28 @@ body .system .inner .viewDetail {
   border-radius: 100px;
   transition: 0.3s;
 }
-body .system .inner .viewDetail:hover {
+body section.system .inner .viewDetail:hover {
   background-color: #666;
 }
-body .board {
+body section.board {
   width: 100%;
   position: relative;
   background-color: lightblue;
 }
-body .board .inner {
+body section.board .inner {
   width: 1180px;
   margin: 0 auto;
   padding: 100px 50px;
 }
-body .board .inner h1 {
+body section.board .inner h1 {
   font-size: max(28px, 3vw);
   text-align: center;
   margin-bottom: 50px;
 }
-body .board .inner ul {
+body section.board .inner ul {
   width: 100%;
 }
-body .board .inner ul li {
+body section.board .inner ul li {
   width: 100%;
   padding: 10px 20px;
   background-color: #fff;
@@ -543,7 +855,7 @@ body .board .inner ul li {
   position: relative;
   transition: 0.5s;
 }
-body .board .inner ul li a {
+body section.board .inner ul li a {
   display: block;
   width: 80%;
   font-size: max(16px, 1.5vh);
@@ -552,7 +864,7 @@ body .board .inner ul li a {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-body .board .inner ul li span {
+body section.board .inner ul li span {
   display: inline-block;
   padding: 10px;
   position: absolute;
@@ -562,15 +874,15 @@ body .board .inner ul li span {
   font-size: max(12px, 1.2vh);
   color: #666;
 }
-body .board .inner ul li:hover {
+body section.board .inner ul li:hover {
   transform: translateX(1%);
 }
-body .contact {
+body section.contact {
   width: 100%;
   position: relative;
   background-color: #fff;
 }
-body .contact .inner {
+body section.contact .inner {
   width: 1180px;
   margin: 0 auto;
   display: flex;
@@ -578,21 +890,21 @@ body .contact .inner {
   align-items: center;
   padding: 100px 50px;
 }
-body .contact .inner h1 {
+body section.contact .inner h1 {
   font-size: max(28px, 3vw);
   margin-bottom: 30px;
 }
-body .contact .inner .tabMenu {
+body section.contact .inner .tabMenu {
   width: 100%;
   margin-bottom: 50px;
 }
-body .contact .inner .tabMenu ul {
+body section.contact .inner .tabMenu ul {
   display: flex;
 }
-body .contact .inner .tabMenu ul li {
+body section.contact .inner .tabMenu ul li {
   flex: 1;
 }
-body .contact .inner .tabMenu ul li a {
+body section.contact .inner .tabMenu ul li a {
   display: block;
   padding: 20px 0;
   font-size: max(16px, 1.5vh);
@@ -601,61 +913,61 @@ body .contact .inner .tabMenu ul li a {
   font-weight: 500;
   border-bottom: 2px solid #000;
 }
-body .contact .inner .tabMenu ul li.on a {
+body section.contact .inner .tabMenu ul li.on a {
   border: 2px solid #000;
   border-bottom: 0;
   color: #000;
 }
-body .contact .inner .tabBody {
+body section.contact .inner .tabBody {
   width: 100%;
 }
-body .contact .inner .tabBody > div {
+body section.contact .inner .tabBody > div {
   width: 100%;
   height: 0px;
   overflow: hidden;
 }
-body .contact .inner .tabBody > div div {
+body section.contact .inner .tabBody > div div {
   margin-bottom: 30px;
 }
-body .contact .inner .tabBody > div div h2 {
+body section.contact .inner .tabBody > div div h2 {
   font-size: max(20px, 1.5vw);
   margin-bottom: 30px;
 }
-body .contact .inner .tabBody > div div p {
+body section.contact .inner .tabBody > div div p {
   font-size: max(16px, 1.5vh);
   color: #666;
 }
-body .contact .inner .tabBody > div div p span {
+body section.contact .inner .tabBody > div div p span {
   margin-right: 10px;
 }
-body .contact .inner .tabBody > div.on {
+body section.contact .inner .tabBody > div.on {
   height: auto;
 }
-body .contact .inner .tabBody > div form {
+body section.contact .inner .tabBody > div form {
   width: 100%;
 }
-body .contact .inner .tabBody > div form h2 {
+body section.contact .inner .tabBody > div form h2 {
   font-size: max(20px, 1.5vw);
   margin-bottom: 10px;
 }
-body .contact .inner .tabBody > div form p {
+body section.contact .inner .tabBody > div form p {
   font-size: max(16px, 1.5vh);
   margin-bottom: 30px;
   color: #666;
 }
-body .contact .inner .tabBody > div form ul {
+body section.contact .inner .tabBody > div form ul {
   width: 100%;
 }
-body .contact .inner .tabBody > div form ul li {
+body section.contact .inner .tabBody > div form ul li {
   width: 100%;
   margin: 10px 0;
 }
-body .contact .inner .tabBody > div form ul li::after {
+body section.contact .inner .tabBody > div form ul li::after {
   content: "";
   display: block;
   clear: both;
 }
-body .contact .inner .tabBody > div form ul li label {
+body section.contact .inner .tabBody > div form ul li label {
   float: left;
   width: 19%;
   padding: 10px 0;
@@ -664,7 +976,7 @@ body .contact .inner .tabBody > div form ul li label {
   line-height: 1.5;
   color: #000;
 }
-body .contact .inner .tabBody > div form ul li input, body .contact .inner .tabBody > div form ul li textarea {
+body section.contact .inner .tabBody > div form ul li input, body section.contact .inner .tabBody > div form ul li textarea {
   float: right;
   width: 80%;
   padding: 10px;
@@ -673,7 +985,7 @@ body .contact .inner .tabBody > div form ul li input, body .contact .inner .tabB
   color: #000;
   resize: none;
 }
-body .contact .inner .tabBody > div form ul li button {
+body section.contact .inner .tabBody > div form ul li button {
   padding: max(10px, 0.8vw) max(25px, 3vw);
   font-size: max(16px, 1.5vh);
   text-align: center;
@@ -684,87 +996,87 @@ body .contact .inner .tabBody > div form ul li button {
   border: none;
   cursor: pointer;
 }
-body .contact .inner .tabBody > div form ul li button:hover {
+body section.contact .inner .tabBody > div form ul li button:hover {
   background-color: #666;
 }
-body .contact .inner .tabBody > div form ul li button[type=reset] {
+body section.contact .inner .tabBody > div form ul li button[type=reset] {
   opacity: 0.6;
 }
-body .contact .inner .tabBody > div form ul li:last-of-type {
+body section.contact .inner .tabBody > div form ul li:last-of-type {
   text-align: right;
 }
-body .contact .inner .tabBody > div #map {
+body section.contact .inner .tabBody > div #map {
   width: 100%;
   height: 30vh;
 }
-body .contact .inner .tabBody > div #map * {
+body section.contact .inner .tabBody > div #map * {
   box-sizing: content-box;
   margin: 0;
 }
-body .contact .inner .tabBody > div #map .mapInfo {
+body section.contact .inner .tabBody > div #map .mapInfo {
   padding: 10px;
 }
-body .contact .inner .tabBody > div #map .mapInfo ul li:first-of-type {
+body section.contact .inner .tabBody > div #map .mapInfo ul li:first-of-type {
   margin-bottom: 10px;
   font-size: max(16px, 1.5vh);
   font-weight: bold;
 }
-body .contact .inner .tabBody > div #map .mapInfo ul li a {
+body section.contact .inner .tabBody > div #map .mapInfo ul li a {
   font-size: max(12px, 1.2vh);
   color: #666;
 }
-body footer {
+body #footer {
   width: 100%;
   position: relative;
   background-color: #eee;
 }
-body footer .inner {
+body #footer .inner {
   width: 1180px;
   margin: 0 auto;
   padding: 80px 50px;
 }
-body footer .inner h1 {
+body #footer .inner h1 {
   color: #666;
   margin-bottom: 20px;
   font-family: "Lily Script One";
   font-weight: normal;
 }
-body footer .inner h1 i {
+body #footer .inner h1 i {
   color: lightpink;
   text-shadow: 5px 0 0 lightblue;
   margin-right: 10px;
 }
-body footer .inner ul {
+body #footer .inner ul {
   display: flex;
 }
-body footer .inner ul li {
+body #footer .inner ul li {
   padding-right: 10px;
   margin-right: 10px;
   border-right: 1px solid #666;
   line-height: 1;
 }
-body footer .inner ul li a {
+body #footer .inner ul li a {
   font-size: max(12px, 1.2vh);
   color: #666;
 }
-body footer .inner ul li:last-of-type {
+body #footer .inner ul li:last-of-type {
   border-right: 0;
 }
-body footer .inner ul li:last-of-type a {
+body #footer .inner ul li:last-of-type a {
   font-weight: bold;
 }
-body footer .inner ul.terms {
+body #footer .inner ul.terms {
   margin-bottom: 20px;
 }
-body footer .inner address {
+body #footer .inner address {
   font-style: normal;
 }
-body footer .inner address ul li {
+body #footer .inner address ul li {
   font-size: max(12px, 1.2vh);
   line-height: 1.5;
   color: #666;
 }
-body footer .inner address p {
+body #footer .inner address p {
   font-size: max(12px, 1.2vh);
   line-height: 1.5;
   color: #666;
@@ -779,124 +1091,124 @@ body footer .inner address p {
   }
 }
 @media screen and (max-width: 1179px) {
-  body header {
+  body #header {
     width: 100%;
     height: 60px;
   }
-  body header .inner {
+  body #header .inner {
     width: 100%;
     padding: 0 20px;
   }
-  body header .inner h1 {
+  body #header .inner h1 {
     position: absolute;
     z-index: 20;
   }
-  body header .inner h1.on {
+  body #header .inner h1.on a {
     color: #000;
   }
-  body header .inner #gnb {
+  body #header .inner #gnb {
     display: none;
   }
-  body header .inner .util {
+  body #header .inner .util {
     display: none;
   }
-  body header .inner .btnCall {
+  body #header .inner .btnCall {
     display: block;
   }
-  body header .inner .btnCall.on::before {
+  body #header .inner .btnCall.on::before {
     background-color: #000;
     margin-top: 1px;
     transform-origin: right center;
     transform: rotate(-45deg);
   }
-  body header .inner .btnCall.on::after {
+  body #header .inner .btnCall.on::after {
     background-color: #000;
     margin-bottom: 1px;
     transform-origin: right center;
     transform: rotate(45deg);
   }
-  body header .inner .btnCall.on span {
+  body #header .inner .btnCall.on span {
     opacity: 0;
   }
-  body header .mobileNav {
+  body #header .mobileNav {
     width: 100%;
   }
-  body header .mobileNav.on {
+  body #header .mobileNav.on {
     transform: translateY(0);
   }
-  body header .mobileNav ul {
+  body #header .mobileNav ul {
     width: 100%;
   }
-  body .banner .inner {
+  body section.banner .inner {
     width: 100%;
   }
-  body .gallery .inner {
+  body section.gallery .inner {
     width: 100%;
   }
-  body .gallery .inner article {
+  body section.gallery .inner article {
     width: 46%;
     margin: 2%;
   }
-  body .about .inner {
+  body section.about .inner {
     width: 100%;
     padding: 10%;
   }
-  body .about .inner a {
+  body section.about .inner a {
     margin: 0 3%;
   }
-  body .system .inner {
+  body section.system .inner {
     width: 100%;
   }
-  body .board .inner {
+  body section.board .inner {
     width: 100%;
   }
-  body .contact .inner {
+  body section.contact .inner {
     width: 100%;
   }
-  body footer .inner {
+  body #footer .inner {
     width: 100%;
   }
 }
 @media screen and (max-width: 539px) {
-  body .banner .inner {
+  body section.banner .inner {
     padding: 80px 20px;
   }
-  body .gallery .inner {
+  body section.gallery .inner {
     padding: 50px 20px;
   }
-  body .gallery .inner article {
+  body section.gallery .inner article {
     width: 90%;
     margin: 5%;
   }
-  body .about .inner a {
+  body section.about .inner a {
     margin: 0 3%;
   }
-  body .system {
+  body section.system {
     height: auto;
   }
-  body .system .inner {
+  body section.system .inner {
     padding: 80px 0;
   }
-  body .system .inner .wrap {
+  body section.system .inner .wrap {
     flex-wrap: wrap;
   }
-  body .system .inner .wrap div {
+  body section.system .inner .wrap div {
     order: 2;
   }
-  body .system .inner .wrap div.owner {
+  body section.system .inner .wrap div.owner {
     margin-right: 100px;
   }
-  body .system .inner .wrap div.shop {
+  body section.system .inner .wrap div.shop {
     order: 1;
     width: 100%;
   }
-  body .system .inner .wrap div.arrowRight {
+  body section.system .inner .wrap div.arrowRight {
     position: absolute;
     transform: translateX(-80%);
     font-size: max(12px, 1.2vh);
     padding-left: 0;
   }
-  body .system .inner .wrap div.arrowRight::before {
+  body section.system .inner .wrap div.arrowRight::before {
     width: 30%;
     left: unset;
     bottom: 80%;
@@ -904,7 +1216,7 @@ body footer .inner address p {
     transform-origin: right center;
     transform: rotate(-45deg);
   }
-  body .system .inner .wrap div.arrowRight::after {
+  body section.system .inner .wrap div.arrowRight::after {
     width: 10%;
     left: unset;
     bottom: 80%;
@@ -912,13 +1224,13 @@ body footer .inner address p {
     transform-origin: right center;
     transform: rotate(0);
   }
-  body .system .inner .wrap div.arrowLeft {
+  body section.system .inner .wrap div.arrowLeft {
     position: absolute;
     transform: translateX(80%);
     font-size: max(12px, 1.2vh);
     padding-right: 0;
   }
-  body .system .inner .wrap div.arrowLeft::before {
+  body section.system .inner .wrap div.arrowLeft::before {
     width: 30%;
     right: unset;
     bottom: 80%;
@@ -926,7 +1238,7 @@ body footer .inner address p {
     transform-origin: left center;
     transform: rotate(45deg);
   }
-  body .system .inner .wrap div.arrowLeft::after {
+  body section.system .inner .wrap div.arrowLeft::after {
     width: 10%;
     right: unset;
     bottom: 80%;
@@ -934,31 +1246,31 @@ body footer .inner address p {
     transform-origin: left center;
     transform: rotate(0);
   }
-  body .board .inner {
+  body section.board .inner {
     padding: 50px 20px;
   }
-  body .board .inner h1 {
+  body section.board .inner h1 {
     margin-bottom: 30px;
   }
-  body .contact .inner {
+  body section.contact .inner {
     padding: 50px 20px;
   }
-  body .contact .inner .tabBody div form ul li label {
+  body section.contact .inner .tabBody div form ul li label {
     float: none;
     display: block;
   }
-  body .contact .inner .tabBody div form ul li input, body .contact .inner .tabBody div form ul li textarea {
+  body section.contact .inner .tabBody div form ul li input, body section.contact .inner .tabBody div form ul li textarea {
     float: none;
     width: 100%;
   }
-  body footer .inner {
+  body #footer .inner {
     padding: 50px 20px;
   }
-  body footer .inner address ul {
+  body #footer .inner address ul {
     display: block;
     margin-bottom: 5px;
   }
-  body footer .inner address ul li {
+  body #footer .inner address ul li {
     border: 0;
   }
 }
