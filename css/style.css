@@ -155,7 +155,7 @@ body #headerSub .mobileNav ul:nth-of-type(2) li:last-of-type a {
 }
 body .content {
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
 }
 body .content .subVisual {
   width: 100%;
@@ -183,6 +183,116 @@ body .content .subVisual .inner p {
 }
 body .content.about .subVisual {
   background-image: url(../img/sub_visual_about.jpg);
+}
+body .content.about > .inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
+body .content.about > .inner .ceo {
+  width: 100%;
+  height: 600px;
+  background: url(../img/ceo.jpg) no-repeat center/cover;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+body .content.about > .inner .ceo .txt {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+body .content.about > .inner .ceo .txt h1 {
+  font-size: max(20px, 1.5vw);
+  line-height: 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+body .content.about > .inner .ceo .txt h1::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: 0.5s;
+}
+body .content.about > .inner .ceo .txt .msg {
+  width: 40%;
+  font-size: max(16px, 1.5vh);
+}
+body .content.about > .inner .ceo .txt .name {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: max(16px, 1.5vh);
+  color: #fff;
+}
+body .content.about > .inner .ceo:hover .txt h1::after {
+  width: 100%;
+}
+body .content.about > .inner .member {
+  width: 580px;
+  height: 250px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  filter: contrast(0.7);
+  transition: 0.5s;
+}
+body .content.about > .inner .member h2 {
+  width: auto;
+  position: relative;
+  line-height: 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: max(20px, 1.5vw);
+}
+body .content.about > .inner .member h2::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: 0.5s;
+}
+body .content.about > .inner .member p {
+  font-size: max(16px, 1.5vh);
+}
+body .content.about > .inner .member:hover {
+  filter: contrast(1);
+}
+body .content.about > .inner .member:hover h2::after {
+  width: 100%;
+}
+body .content.about > .inner .member:nth-of-type(2) {
+  background: url(../img/member1.jpg) no-repeat center/cover;
+}
+body .content.about > .inner .member:nth-of-type(3) {
+  background: url(../img/member2.jpg) no-repeat center/cover;
+  margin-right: 0;
+}
+body .content.about > .inner .member:nth-of-type(4) {
+  background: url(../img/member3.jpg) no-repeat center/cover;
+}
+body .content.about > .inner .member:nth-of-type(5) {
+  background: url(../img/member4.jpg) no-repeat top/cover;
+  margin-right: 0;
 }
 body .content.gallery .subVisual {
   background-image: url(../img/sub_visual_gallery.jpg);
