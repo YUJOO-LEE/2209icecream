@@ -905,8 +905,11 @@ body section.contact .inner .tabMenu ul li {
   flex: 1;
 }
 body section.contact .inner .tabMenu ul li a {
-  display: block;
+  height: 100%;
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: max(16px, 1.5vh);
   text-align: center;
   color: #999;

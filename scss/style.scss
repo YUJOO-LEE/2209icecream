@@ -577,12 +577,10 @@ body{
             flex: 1;
 
             a{
-              display: block;
-              padding: 20px 0;
-              font-size: $fontSizeRegular;
-              text-align: center;
-              color: $colorLightGray;
-              font-weight: 500;
+              height: 100%; padding: 20px 0;
+              display: flex; justify-content: center; align-items: center;
+              font-size: $fontSizeRegular; text-align: center;
+              color: $colorLightGray; font-weight: 500;
               border-bottom: 2px solid $colorBlack;
             }
 
@@ -699,20 +697,15 @@ body{
 
   // [ footer ]
   #footer{
-    width: 100%;
-    position: relative;
+    width: 100%; position: relative;
     background-color: #eee;
 
     .inner{
-      width: 1180px;
-      margin: 0 auto;
-      padding: 80px 50px;
+      width: 1180px; margin: 0 auto; padding: 80px 50px;
 
       h1{
-        color: $colorGray;
-        margin-bottom: 20px;
-        font-family: $pointFont;
-        font-weight: normal;
+        color: $colorGray; margin-bottom: 20px;
+        font-family: $pointFont; font-weight: normal;
         i{
           @include logoIce;
         }
@@ -722,28 +715,19 @@ body{
         display: flex;
 
         li{
-          padding-right: 10px;
-          margin-right: 10px;
+          padding-right: 10px; margin-right: 10px;
           border-right: 1px solid $colorGray;
           line-height: 1;
 
-          a{
-            font-size: $fontSizeSmall;
-            color: $colorGray;
-          }
+          a{ font-size: $fontSizeSmall; color: $colorGray; }
 
           &:last-of-type{
-            border-right: 0;
-
-            a{
-              font-weight: bold;
-            }
+            border-right: 0; 
+            a{ font-weight: bold; }
           }
         }
 
-        &.terms{
-          margin-bottom: 20px;
-        }
+        &.terms{ margin-bottom: 20px; }
       }
 
       address{
@@ -752,14 +736,12 @@ body{
         ul{
           li{
             font-size: $fontSizeSmall;
-            line-height: 1.5;
-            color: $colorGray;
+            line-height: 1.5; color: $colorGray;
           }
         }
         p{
           font-size: $fontSizeSmall;
-          line-height: 1.5;
-          color: $colorGray;
+          line-height: 1.5; color: $colorGray;
         }
       }
     }
