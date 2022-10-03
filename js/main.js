@@ -47,6 +47,7 @@ gallery.articles.forEach((el, i)=>{
       el.className = 'off';
     }
     el.className = 'on';
+    el.querySelector('video').style.height = '100%';
     el.querySelector('video').play();
     const randomNum = Math.floor(Math.random() * 10 - 5);
     el.style.transform = `scale(1.1) rotate(${randomNum}deg)`;
@@ -54,6 +55,7 @@ gallery.articles.forEach((el, i)=>{
 
   el.addEventListener('mouseleave', ()=>{ // 마우스 OUT 시
     el.style.transform = `rotate(0)`;
+    el.querySelector('video').style.height = '100%';
     el.querySelector('video').pause();
     for (let el of gallery.articles) {
       el.className = '';
