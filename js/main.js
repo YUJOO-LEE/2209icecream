@@ -41,7 +41,9 @@ header.btnCall.addEventListener('click', (e)=>{ // 햄버거 버튼 클릭
 })
 
 // 갤러리
+
 gallery.articles.forEach((el, i)=>{
+  el.querySelector('video').pause();
   el.addEventListener('mouseenter', ()=>{ // 마우스 IN 시
     for (let el of gallery.articles) {
       el.className = 'off';
