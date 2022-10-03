@@ -481,7 +481,177 @@ body #footerSub .inner address p {
 .membership .subVisual {
   background-image: url(../img/sub_visual_membership.jpg);
 }
+.membership > .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.membership > .inner h1 {
+  font-size: max(28px, 3vw);
+  text-align: center;
+  margin-bottom: 50px;
+}
+.membership > .inner h1 span {
+  display: block;
+  font-size: max(16px, 1.5vh);
+}
+.membership > .inner .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.membership > .inner .wrap div p i {
+  display: block;
+  width: 15vw;
+  height: 15vw;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 7vw;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}
+.membership > .inner .wrap div p span {
+  display: block;
+  text-align: center;
+  font-size: max(16px, 1.5vh);
+  font-weight: bold;
+  padding: 2vh 0;
+}
+.membership > .inner .wrap div.owner p i {
+  background-color: #666;
+}
+.membership > .inner .wrap div.shop p i {
+  background-color: lightpink;
+}
+.membership > .inner .wrap div.arrowRight {
+  text-align: center;
+  padding: 0 30px 10px 10px;
+  margin: 0 30px 50px 20px;
+  position: relative;
+}
+.membership > .inner .wrap div.arrowRight::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
+}
+.membership > .inner .wrap div.arrowRight::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 1px;
+  background-color: #666;
+  transform-origin: right bottom;
+  transform: rotate(45deg);
+}
+.membership > .inner .wrap div.arrowLeft {
+  text-align: center;
+  padding: 0 15px 10px 35px;
+  margin: 0 20px 50px 30px;
+  position: relative;
+}
+.membership > .inner .wrap div.arrowLeft::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
+}
+.membership > .inner .wrap div.arrowLeft::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 25px;
+  height: 1px;
+  background-color: #666;
+  transform-origin: left bottom;
+  transform: rotate(-45deg);
+}
 
+@media screen and (max-width: 1179px) {
+  .membership > .inner {
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 539px) {
+  .membership > .inner .wrap {
+    flex-wrap: wrap;
+  }
+  .membership > .inner .wrap div {
+    order: 2;
+  }
+  .membership > .inner .wrap div.owner {
+    margin-right: 100px;
+  }
+  .membership > .inner .wrap div.shop {
+    order: 1;
+    width: 100%;
+  }
+  .membership > .inner .wrap div.arrowRight {
+    position: absolute;
+    transform: translateX(-80%);
+    font-size: max(12px, 1.2vh);
+    padding-left: 0;
+  }
+  .membership > .inner .wrap div.arrowRight::before {
+    width: 30%;
+    left: unset;
+    bottom: 80%;
+    right: 0;
+    transform-origin: right center;
+    transform: rotate(-45deg);
+  }
+  .membership > .inner .wrap div.arrowRight::after {
+    width: 10%;
+    left: unset;
+    bottom: 80%;
+    right: 0;
+    transform-origin: right center;
+    transform: rotate(0);
+  }
+  .membership > .inner .wrap div.arrowLeft {
+    position: absolute;
+    transform: translateX(80%);
+    font-size: max(12px, 1.2vh);
+    padding-right: 0;
+  }
+  .membership > .inner .wrap div.arrowLeft::before {
+    width: 30%;
+    right: unset;
+    bottom: 80%;
+    left: 0;
+    transform-origin: left center;
+    transform: rotate(45deg);
+  }
+  .membership > .inner .wrap div.arrowLeft::after {
+    width: 10%;
+    right: unset;
+    bottom: 80%;
+    left: 0;
+    transform-origin: left center;
+    transform: rotate(0);
+  }
+}
 .notice .subVisual {
   background-image: url(../img/sub_visual_notice.jpg);
 }
@@ -1000,131 +1170,6 @@ body section.about .inner > a.btnPrev {
 body section.about .inner > a.btnNext {
   right: 0;
 }
-body section.system {
-  width: 100%;
-  height: 70vh;
-  position: relative;
-  background-color: #fff;
-}
-body section.system .inner {
-  width: 1180px;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-body section.system .inner h1 {
-  font-size: max(28px, 3vw);
-  text-align: center;
-  margin-bottom: 50px;
-}
-body section.system .inner h1 span {
-  display: block;
-  font-size: max(16px, 1.5vh);
-}
-body section.system .inner .wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  position: relative;
-}
-body section.system .inner .wrap div p i {
-  display: block;
-  width: 15vw;
-  height: 15vw;
-  margin: 0 auto;
-  border-radius: 50%;
-  font-size: 7vw;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightblue;
-}
-body section.system .inner .wrap div p span {
-  display: block;
-  text-align: center;
-  font-size: max(16px, 1.5vh);
-  font-weight: bold;
-  padding: 2vh 0;
-}
-body section.system .inner .wrap div.owner p i {
-  background-color: #666;
-}
-body section.system .inner .wrap div.shop p i {
-  background-color: lightpink;
-}
-body section.system .inner .wrap div.arrowRight {
-  text-align: center;
-  padding: 0 30px 10px 10px;
-  margin: 0 30px 50px 20px;
-  position: relative;
-}
-body section.system .inner .wrap div.arrowRight::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #666;
-}
-body section.system .inner .wrap div.arrowRight::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 25px;
-  height: 1px;
-  background-color: #666;
-  transform-origin: right bottom;
-  transform: rotate(45deg);
-}
-body section.system .inner .wrap div.arrowLeft {
-  text-align: center;
-  padding: 0 15px 10px 35px;
-  margin: 0 20px 50px 30px;
-  position: relative;
-}
-body section.system .inner .wrap div.arrowLeft::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #666;
-}
-body section.system .inner .wrap div.arrowLeft::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 25px;
-  height: 1px;
-  background-color: #666;
-  transform-origin: left bottom;
-  transform: rotate(-45deg);
-}
-body section.system .inner .viewDetail {
-  padding: max(10px, 0.8vw) max(25px, 3vw);
-  font-size: max(16px, 1.5vh);
-  text-align: center;
-  color: #fff;
-  background-color: #000;
-  border-radius: 100px;
-  transition: 0.3s;
-}
-body section.system .inner .viewDetail:hover {
-  background-color: #666;
-}
 body section.board {
   width: 100%;
   position: relative;
@@ -1455,9 +1500,6 @@ body #footer .inner address p {
   body section.about .inner a {
     margin: 0 3%;
   }
-  body section.system .inner {
-    width: 100%;
-  }
   body section.board .inner {
     width: 100%;
   }
@@ -1481,69 +1523,6 @@ body #footer .inner address p {
   }
   body section.about .inner a {
     margin: 0 3%;
-  }
-  body section.system {
-    height: auto;
-  }
-  body section.system .inner {
-    padding: 80px 0;
-  }
-  body section.system .inner .wrap {
-    flex-wrap: wrap;
-  }
-  body section.system .inner .wrap div {
-    order: 2;
-  }
-  body section.system .inner .wrap div.owner {
-    margin-right: 100px;
-  }
-  body section.system .inner .wrap div.shop {
-    order: 1;
-    width: 100%;
-  }
-  body section.system .inner .wrap div.arrowRight {
-    position: absolute;
-    transform: translateX(-80%);
-    font-size: max(12px, 1.2vh);
-    padding-left: 0;
-  }
-  body section.system .inner .wrap div.arrowRight::before {
-    width: 30%;
-    left: unset;
-    bottom: 80%;
-    right: 0;
-    transform-origin: right center;
-    transform: rotate(-45deg);
-  }
-  body section.system .inner .wrap div.arrowRight::after {
-    width: 10%;
-    left: unset;
-    bottom: 80%;
-    right: 0;
-    transform-origin: right center;
-    transform: rotate(0);
-  }
-  body section.system .inner .wrap div.arrowLeft {
-    position: absolute;
-    transform: translateX(80%);
-    font-size: max(12px, 1.2vh);
-    padding-right: 0;
-  }
-  body section.system .inner .wrap div.arrowLeft::before {
-    width: 30%;
-    right: unset;
-    bottom: 80%;
-    left: 0;
-    transform-origin: left center;
-    transform: rotate(45deg);
-  }
-  body section.system .inner .wrap div.arrowLeft::after {
-    width: 10%;
-    right: unset;
-    bottom: 80%;
-    left: 0;
-    transform-origin: left center;
-    transform: rotate(0);
   }
   body section.board .inner {
     padding: 50px 20px;
