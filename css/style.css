@@ -1036,12 +1036,12 @@ body section.banner .inner p {
   text-align: center;
   color: #666;
 }
-body section.gallery {
+body section.movies {
   width: 100%;
   position: relative;
   background-color: lightpink;
 }
-body section.gallery .inner {
+body section.movies .inner {
   width: 1180px;
   padding: 100px 0;
   margin: 0 auto;
@@ -1049,7 +1049,7 @@ body section.gallery .inner {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-body section.gallery .inner article {
+body section.movies .inner article {
   width: 280px;
   padding: 20px;
   background-color: #fff;
@@ -1057,42 +1057,42 @@ body section.gallery .inner article {
   flex-direction: column;
   transition: 0.5s;
 }
-body section.gallery .inner article .wrap {
+body section.movies .inner article .wrap {
   width: 100%;
   height: 240px;
   margin-bottom: 30px;
   overflow: hidden;
 }
-body section.gallery .inner article .wrap video {
+body section.movies .inner article .wrap video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body section.gallery .inner article h2 {
+body section.movies .inner article h2 {
   font-size: max(16px, 1.5vh);
   color: #000;
   line-height: 1;
   margin-bottom: 20px;
 }
-body section.gallery .inner article p {
+body section.movies .inner article p {
   font-size: max(12px, 1.2vh);
   color: #999;
   line-height: 1.3;
 }
-body section.gallery .inner article:hover {
+body section.movies .inner article:hover {
   transform: translateY(-3%);
   box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
 }
-body section.gallery .inner article.off {
+body section.movies .inner article.off {
   filter: blur(2px);
 }
-body section.about {
+body section.slides {
   width: 100%;
   height: 50vh;
   position: relative;
   background-color: #000;
 }
-body section.about::before {
+body section.slides::before {
   content: "";
   display: block;
   width: 100%;
@@ -1103,20 +1103,20 @@ body section.about::before {
   background: url(../img/section_slide_bg.jpg) no-repeat center/cover;
   opacity: 1;
 }
-body section.about .inner {
+body section.slides .inner {
   width: 1180px;
   height: 100%;
   margin: 0 auto;
   padding: 100px;
   position: relative;
 }
-body section.about .inner div {
+body section.slides .inner div {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-body section.about .inner div .slider {
+body section.slides .inner div .slider {
   width: 300%;
   height: 100%;
   position: absolute;
@@ -1124,7 +1124,7 @@ body section.about .inner div .slider {
   left: 0;
   display: flex;
 }
-body section.about .inner div .slider article {
+body section.slides .inner div .slider article {
   width: 33.3333333333%;
   height: 100%;
   display: flex;
@@ -1132,12 +1132,12 @@ body section.about .inner div .slider article {
   justify-content: center;
   align-items: flex-start;
 }
-body section.about .inner div .slider article h1 {
+body section.slides .inner div .slider article h1 {
   font-size: max(28px, 3vw);
   color: #fff;
   margin-bottom: 30px;
 }
-body section.about .inner div .slider article .viewDetail {
+body section.slides .inner div .slider article .viewDetail {
   padding: max(10px, 0.8vw) max(25px, 3vw);
   font-size: max(16px, 1.5vh);
   text-align: center;
@@ -1148,26 +1148,26 @@ body section.about .inner div .slider article .viewDetail {
   background-color: transparent;
   border: 1px solid #fff;
 }
-body section.about .inner div .slider article .viewDetail:hover {
+body section.slides .inner div .slider article .viewDetail:hover {
   background-color: #666;
 }
-body section.about .inner div .slider article .viewDetail:hover {
+body section.slides .inner div .slider article .viewDetail:hover {
   background-color: #fff;
   color: #000;
 }
-body section.about .inner > a {
+body section.slides .inner > a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-body section.about .inner > a i {
+body section.slides .inner > a i {
   font-size: max(28px, 3vw);
   color: #fff;
 }
-body section.about .inner > a.btnPrev {
+body section.slides .inner > a.btnPrev {
   left: 0;
 }
-body section.about .inner > a.btnNext {
+body section.slides .inner > a.btnNext {
   right: 0;
 }
 body section.board {
@@ -1486,18 +1486,18 @@ body #footer .inner address p {
   body section.banner .inner {
     width: 100%;
   }
-  body section.gallery .inner {
+  body section.movies .inner {
     width: 100%;
   }
-  body section.gallery .inner article {
+  body section.movies .inner article {
     width: 46%;
     margin: 2%;
   }
-  body section.about .inner {
+  body section.slides .inner {
     width: 100%;
     padding: 10%;
   }
-  body section.about .inner a {
+  body section.slides .inner a {
     margin: 0 3%;
   }
   body section.board .inner {
@@ -1514,14 +1514,14 @@ body #footer .inner address p {
   body section.banner .inner {
     padding: 80px 20px;
   }
-  body section.gallery .inner {
+  body section.movies .inner {
     padding: 50px 20px;
   }
-  body section.gallery .inner article {
+  body section.movies .inner article {
     width: 90%;
     margin: 5%;
   }
-  body section.about .inner a {
+  body section.slides .inner a {
     margin: 0 3%;
   }
   body section.board .inner {

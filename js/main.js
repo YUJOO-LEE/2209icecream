@@ -6,19 +6,19 @@ const header = {
   logo: $header.querySelector('#logo')
 };
 
-// 갤러리 DOM
-const $gallery = document.querySelector('.gallery');
-const gallery = {
-  articles: $gallery.querySelectorAll('article')
+// 무비갤러리 DOM
+const $movies = document.querySelector('.movies');
+const movies = {
+  articles: $movies.querySelectorAll('article')
 };
 
-// 어바웃 DOM
-const $about = document.querySelector('.about');
-const about = {
-  slider: $about.querySelector('.slider'),
-  articles: $about.querySelectorAll('article'),
-  btnPrev: $about.querySelector('.btnPrev'),
-  btnNext: $about.querySelector('.btnNext'),
+// 슬라이드 DOM
+const $slides = document.querySelector('.slides');
+const slides = {
+  slider: $slides.querySelector('.slider'),
+  articles: $slides.querySelectorAll('article'),
+  btnPrev: $slides.querySelector('.btnPrev'),
+  btnNext: $slides.querySelector('.btnNext'),
   clickable: true
 }
 
@@ -42,10 +42,10 @@ header.btnCall.addEventListener('click', (e)=>{ // 햄버거 버튼 클릭
 
 // 갤러리
 
-gallery.articles.forEach((el, i)=>{
+movies.articles.forEach((el, i)=>{
   el.querySelector('video').pause();
   el.addEventListener('mouseenter', ()=>{ // 마우스 IN 시
-    for (let el of gallery.articles) {
+    for (let el of movies.articles) {
       el.className = 'off';
     }
     el.className = 'on'
@@ -57,7 +57,7 @@ gallery.articles.forEach((el, i)=>{
   el.addEventListener('mouseleave', ()=>{ // 마우스 OUT 시
     el.style.transform = `rotate(0)`;
     el.querySelector('video').pause();
-    for (let el of gallery.articles) {
+    for (let el of movies.articles) {
       el.className = '';
     }
   })
@@ -69,43 +69,43 @@ setInterval(()=>{ // 자동 반복
   moveSlide('next');
 }, 5000)
 
-about.btnPrev.addEventListener('click', (e)=>{  // 왼쪽 클릭
+slides.btnPrev.addEventListener('click', (e)=>{  // 왼쪽 클릭
   e.preventDefault();
   moveSlide('prev');
 })
 
-about.btnNext.addEventListener('click', (e)=>{  // 오른쪽 클릭
+slides.btnNext.addEventListener('click', (e)=>{  // 오른쪽 클릭
   e.preventDefault();
   moveSlide('next');
 })
 
 function moveSlide(motion) {  // 슬라이드 이동
-  if (!about.clickable) return;
-  about.clickable = false;
+  if (!slides.clickable) return;
+  slides.clickable = false;
 
-  new Anim(about.slider, {
+  new Anim(slides.slider, {
     prop: 'left',
     value: motion === 'prev' ? '0%' : '-200%',
     duration: 500,
     callback: ()=>{
       if (motion === 'prev') {
-        about.slider.prepend(about.slider.lastElementChild);
+        slides.slider.prepend(slides.slider.lastElementChild);
       } else {
-        about.slider.append(about.slider.firstElementChild);
+        slides.slider.append(slides.slider.firstElementChild);
       }
-      about.slider.style.left = '-100%';
-      about.clickable = true;
+      slides.slider.style.left = '-100%';
+      slides.clickable = true;
     }
   })
 }
 
 function init() { // 초기화
-  const len = about.articles.length;
+  const len = slides.articles.length;
 
-  about.slider.prepend(about.slider.lastElementChild);
-  about.slider.style.left = '-100%';
-  about.slider.style.width = `${100 * len}%`;
-  about.articles.forEach((el)=>{
+  slides.slider.prepend(slides.slider.lastElementChild);
+  slides.slider.style.left = '-100%';
+  slides.slider.style.width = `${100 * len}%`;
+  slides.articles.forEach((el)=>{
     el.style.width = `${100 / len}%`;
   })
 }
