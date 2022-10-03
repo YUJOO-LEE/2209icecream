@@ -579,9 +579,9 @@ body{
             a{
               height: 100%; padding: 20px 0;
               display: flex; justify-content: center; align-items: center;
+              border-bottom: 2px solid $colorBlack;
               font-size: $fontSizeRegular; text-align: center;
               color: $colorLightGray; font-weight: 500;
-              border-bottom: 2px solid $colorBlack;
             }
 
             &.on a{

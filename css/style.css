@@ -910,11 +910,11 @@ body section.contact .inner .tabMenu ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid #000;
   font-size: max(16px, 1.5vh);
   text-align: center;
   color: #999;
   font-weight: 500;
-  border-bottom: 2px solid #000;
 }
 body section.contact .inner .tabMenu ul li.on a {
   border: 2px solid #000;
