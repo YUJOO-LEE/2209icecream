@@ -869,7 +869,7 @@ body section.board .inner ul li span {
   padding: 10px;
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 10px;
   transform: translateY(-50%);
   font-size: max(12px, 1.2vh);
   color: #666;
@@ -1254,6 +1254,15 @@ body #footer .inner address p {
   }
   body section.board .inner h1 {
     margin-bottom: 30px;
+  }
+  body section.board .inner ul li {
+    padding: 10px;
+  }
+  body section.board .inner ul li a {
+    width: 75%;
+  }
+  body section.board .inner ul li span {
+    right: 5px;
   }
   body section.contact .inner {
     padding: 50px 20px;
