@@ -5,17 +5,116 @@
     
     table{
       width: 100%; border-collapse: collapse;
-      border-bottom: 2px solid #000;
+      border-bottom: 2px solid $colorLightGray;
+      margin-bottom: 30px;
 
       tr{
-        &:nth-of-type(even){ background-color: $colorBlue; }
-        &:nth-of-type(odd){ background-color: $colorPink; }
         th{
-          padding: 10px; background-color: $colorBlack;
+          padding: 15px; background-color: $colorLightGray;
           font-size: $fontSizeRegular; color: $colorWhite;
+          font-family: '맑은 고딕';
+
+          &:nth-of-type(1){ width: 10%; }
+          &:nth-of-type(3){ width: 15%; }
+          &:nth-of-type(4){ width: 15%; }
         }
-        td{ padding: 10px;
-          font-size: $fontSizeSmall; color: $colorBlack;
+        td{
+          padding: 15px;
+          font-size: $fontSizeRegular; color: $colorBlack;
+          text-align: center; font-family: '맑은 고딕';
+          border-bottom: 1px solid $colorLightGray;
+          transition: transform 0.3s;
+
+          &:nth-of-type(2){ text-align: left; }
+        }
+
+        &:hover td{ transform: translateX(10px); font-weight: bold; }
+      }
+    }
+
+    .pagination{
+      display: flex; justify-content: space-between;
+
+      a{
+        display: block;
+        width: 30px; height: 30px; line-height: 30px;
+        font-size: $fontSizeRegular;
+        text-align: center;
+        transition: 0.3s;
+
+        &.prev,&.next{ background-color: $colorLightGray; color: $colorWhite; }
+        &:hover{ font-weight: bold; width: 40px;}
+      }
+
+      .pageNum{
+        display: flex; justify-content: center; gap: 5px;
+        li{
+          a{
+            background-color: $colorPink;
+          }
+          &:nth-of-type(even) a{ background-color: $colorBlue; }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1179px){
+  .notice{
+    >.inner{
+      padding: 50px 20px;
+      table{
+        tr{
+          th{
+            &:nth-of-type(1){ width: 14%; }
+            &:nth-of-type(3){ width: 17%; }
+            &:nth-of-type(4){ width: 0; display: none; }
+          }
+          td{
+            &:nth-of-type(1){ width: 14%; }
+            &:nth-of-type(3){ width: 17%; }
+            &:nth-of-type(4){ width: 0; display: none; }
+          }
+        }
+      }
+      .pagination{
+        .pageNum{
+          li{
+            @for $i from 6 through 10 {
+              &:nth-of-type(#{$i}){ display: none; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 539px){
+  .notice{
+    .inner{
+      table{
+        tr{
+          th{
+            padding: 10px; 
+            &:nth-of-type(1){ width: 0; display: none; }
+            &:nth-of-type(3){ width: 29%; }
+          }
+          td{
+            padding: 10px;
+            &:nth-of-type(1){ width: 0; display: none; }
+            &:nth-of-type(3){ width: 29%; }
+          }
+        }
+      }
+      .pagination{
+        .pageNum{
+          li{
+            @for $i from 4 through 5 {
+              &:nth-of-type(#{$i}){ display: none; }
+            }
+          }
         }
       }
     }

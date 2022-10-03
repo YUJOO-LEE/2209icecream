@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lily+Script+One&family=DM+Sans:wght@400;500;700&display=swap");
 * {
   margin: 0;
@@ -490,26 +491,142 @@ body #footerSub .inner address p {
 .notice > .inner table {
   width: 100%;
   border-collapse: collapse;
-  border-bottom: 2px solid #000;
-}
-.notice > .inner table tr:nth-of-type(even) {
-  background-color: lightblue;
-}
-.notice > .inner table tr:nth-of-type(odd) {
-  background-color: lightpink;
+  border-bottom: 2px solid #999;
+  margin-bottom: 30px;
 }
 .notice > .inner table tr th {
-  padding: 10px;
-  background-color: #000;
+  padding: 15px;
+  background-color: #999;
   font-size: max(16px, 1.5vh);
   color: #fff;
+  font-family: "맑은 고딕";
+}
+.notice > .inner table tr th:nth-of-type(1) {
+  width: 10%;
+}
+.notice > .inner table tr th:nth-of-type(3) {
+  width: 15%;
+}
+.notice > .inner table tr th:nth-of-type(4) {
+  width: 15%;
 }
 .notice > .inner table tr td {
-  padding: 10px;
-  font-size: max(12px, 1.2vh);
+  padding: 15px;
+  font-size: max(16px, 1.5vh);
   color: #000;
+  text-align: center;
+  font-family: "맑은 고딕";
+  border-bottom: 1px solid #999;
+  transition: transform 0.3s;
+}
+.notice > .inner table tr td:nth-of-type(2) {
+  text-align: left;
+}
+.notice > .inner table tr:hover td {
+  transform: translateX(10px);
+  font-weight: bold;
+}
+.notice > .inner .pagination {
+  display: flex;
+  justify-content: space-between;
+}
+.notice > .inner .pagination a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  transition: 0.3s;
+}
+.notice > .inner .pagination a.prev, .notice > .inner .pagination a.next {
+  background-color: #999;
+  color: #fff;
+}
+.notice > .inner .pagination a:hover {
+  font-weight: bold;
+  width: 40px;
+}
+.notice > .inner .pagination .pageNum {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.notice > .inner .pagination .pageNum li a {
+  background-color: lightpink;
+}
+.notice > .inner .pagination .pageNum li:nth-of-type(even) a {
+  background-color: lightblue;
 }
 
+@media screen and (max-width: 1179px) {
+  .notice > .inner {
+    padding: 50px 20px;
+  }
+  .notice > .inner table tr th:nth-of-type(1) {
+    width: 14%;
+  }
+  .notice > .inner table tr th:nth-of-type(3) {
+    width: 17%;
+  }
+  .notice > .inner table tr th:nth-of-type(4) {
+    width: 0;
+    display: none;
+  }
+  .notice > .inner table tr td:nth-of-type(1) {
+    width: 14%;
+  }
+  .notice > .inner table tr td:nth-of-type(3) {
+    width: 17%;
+  }
+  .notice > .inner table tr td:nth-of-type(4) {
+    width: 0;
+    display: none;
+  }
+  .notice > .inner .pagination .pageNum li:nth-of-type(6) {
+    display: none;
+  }
+  .notice > .inner .pagination .pageNum li:nth-of-type(7) {
+    display: none;
+  }
+  .notice > .inner .pagination .pageNum li:nth-of-type(8) {
+    display: none;
+  }
+  .notice > .inner .pagination .pageNum li:nth-of-type(9) {
+    display: none;
+  }
+  .notice > .inner .pagination .pageNum li:nth-of-type(10) {
+    display: none;
+  }
+}
+@media screen and (max-width: 539px) {
+  .notice .inner table tr th {
+    padding: 10px;
+  }
+  .notice .inner table tr th:nth-of-type(1) {
+    width: 0;
+    display: none;
+  }
+  .notice .inner table tr th:nth-of-type(3) {
+    width: 29%;
+  }
+  .notice .inner table tr td {
+    padding: 10px;
+  }
+  .notice .inner table tr td:nth-of-type(1) {
+    width: 0;
+    display: none;
+  }
+  .notice .inner table tr td:nth-of-type(3) {
+    width: 29%;
+  }
+  .notice .inner .pagination .pageNum li:nth-of-type(4) {
+    display: none;
+  }
+  .notice .inner .pagination .pageNum li:nth-of-type(5) {
+    display: none;
+  }
+}
 .store .subVisual {
   background-image: url(../img/sub_visual_store.jpg);
 }
