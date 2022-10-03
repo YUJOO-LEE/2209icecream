@@ -1,0 +1,107 @@
+.about{  // 어바웃 페이지
+  .subVisual{ background-image: url(../img/sub_visual_about.jpg); }
+  >.inner{
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; padding: 100px 0;
+    
+    .ceo{
+      width: 100%; min-height: 600px;
+      grid-column-start: 1; grid-column-end: 3;
+      background: url(../img/ceo.jpg) no-repeat center/cover;
+      border-radius: 50px;
+
+      .pic{ display: none;
+        width: 100%; height: 250px;
+        border-radius: 50px;
+        background: url(../img/ceo.jpg) no-repeat center/cover;
+      }
+      .txt{
+        width: 100%; height: 100%; padding: 100px 50px 50px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0));
+        display: flex; flex-direction: column;
+        align-items: flex-start; justify-content: space-between; 
+        position: relative;
+
+        h1{ 
+          font-size: $fontSizeMedium; line-height: 1;
+          padding-bottom: 20px; margin-bottom: 20px;
+          position: relative;
+
+          &::after{ content: ''; width: 50px; height: 2px;
+            position: absolute; bottom: 0; left: 0;
+            background-color: $colorBlack; transition: 0.5s; }
+        }
+        .msg{ flex: 1; width: 50%; font-size: $fontSizeRegular; }
+        .name{ align-self:flex-end;
+          font-size: $fontSizeRegular; color: $colorWhite; }
+      }
+
+      &:hover .txt h1::after{ width: 100%; }
+    }
+
+    .member{
+      height: 250px; border-radius: 50px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 30px; filter: contrast(0.7); transition: 0.5s;
+
+      h2{ 
+        width: auto; position: relative; line-height: 1;
+        padding-bottom: 20px; margin-bottom: 20px;
+        font-size: $fontSizeMedium;
+
+        &::after{ content: ''; width: 30px; height: 2px;
+          position: absolute; bottom: 0; left: 0;
+          background-color: $colorBlack; transition: 0.5s; }
+      }
+      p{ font-size: $fontSizeRegular; }
+
+      &:hover{ filter: contrast(1);
+        h2::after{ width: 100%;}
+      }
+
+      &:nth-of-type(2){ background: url(../img/member1.jpg) no-repeat center/cover; }
+      &:nth-of-type(3){ background: url(../img/member2.jpg) no-repeat center/cover; margin-right: 0; }
+      &:nth-of-type(4){ background: url(../img/member3.jpg) no-repeat center/cover; }
+      &:nth-of-type(5){ background: url(../img/member4.jpg) no-repeat top/cover; margin-right: 0; }
+    }
+  }
+} 
+
+
+@media screen and (max-width: 1179px){
+  .about{
+    >.inner{
+      padding: 50px 20px;
+      .ceo{ 
+        .txt{
+          .msg{ width: 65%; }
+        }
+      }
+      .member{
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+
+// 모바일
+@media screen and (max-width: 539px) {
+  .about{
+    >.inner{
+      grid-template-columns: 1fr;
+      .ceo{ 
+        grid-column: 1;
+        background: none;
+        .pic{ display: block; }
+        .txt{
+          height: auto; padding: 50px;
+          background: none;
+          .msg{ width: 100%; }
+          .name{ color: $colorBlack; margin-top: 20px; }
+        }
+      }
+    }
+  }
+}

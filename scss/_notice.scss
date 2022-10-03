@@ -1,0 +1,23 @@
+.notice{  // 공지사항 페이지
+  .subVisual{ background-image: url(../img/sub_visual_notice.jpg); }
+  >.inner{
+    padding: 100px 0;
+    
+    table{
+      width: 100%; border-collapse: collapse;
+      border-bottom: 2px solid #000;
+
+      tr{
+        &:nth-of-type(even){ background-color: $colorBlue; }
+        &:nth-of-type(odd){ background-color: $colorPink; }
+        th{
+          padding: 10px; background-color: $colorBlack;
+          font-size: $fontSizeRegular; color: $colorWhite;
+        }
+        td{ padding: 10px;
+          font-size: $fontSizeSmall; color: $colorBlack;
+        }
+      }
+    }
+  }
+}
