@@ -61,24 +61,6 @@ gallery.articles.forEach((el, i)=>{
       el.className = '';
     }
   })
-
-  el.addEventListener('touchstart', ()=>{ // 터치 START 시
-    for (let el of gallery.articles) {
-      el.className = 'off';
-    }
-    el.className = 'on'
-    el.querySelector('video').play();
-    const randomNum = Math.floor(Math.random() * 10 - 5);
-    el.style.transform = `scale(1.1) rotate(${randomNum}deg)`;
-  })
-
-  el.addEventListener('touchend', ()=>{ // 터치 END 시
-    el.style.transform = `rotate(0)`;
-    el.querySelector('video').pause();
-    for (let el of gallery.articles) {
-      el.className = '';
-    }
-  })
 })
 
 // 어바웃
