@@ -316,7 +316,7 @@ body{
 
   // 슬라이드 영역
   section.slides{
-    width: 100%; height: 50vh;
+    width: 100%; height: 30vh;
     position: relative;
     background-color: $colorBlack;
     
@@ -330,7 +330,7 @@ body{
 
     .inner{
       width: 1180px; height: 100%;
-      margin: 0 auto; padding: 100px;
+      margin: 0 auto; padding: 5vh 80px;
       position: relative;
 
       div{
@@ -345,12 +345,19 @@ body{
           article{
             width: calc(100% / 3); height: 100%;
             display: flex; flex-direction: column;
-            justify-content: center; align-items: flex-start;
+            justify-content: center; align-items: center;
     
             h1{
-              font-size: $fontSizeBig;
+              font-size: $fontSizeRegular; text-align: center;
               color: $colorWhite;
               margin-bottom: 30px;
+              font-weight: normal;
+              span{
+                display: block;
+                font-size: $fontSizeBig;
+                font-family: $pointFont;
+                font-weight: normal;
+              }
             }
       
             .viewDetail{
@@ -387,35 +394,44 @@ body{
       width: 1180px; margin: 0 auto; padding: 100px 50px;
 
       h1{
-        font-size: $fontSizeBig;
-        text-align: center;
-        margin-bottom: 50px;
+        font-size: $fontSizeBig; font-family: $pointFont;
+        text-align: center; font-weight: normal;
+        text-shadow: 0 -5px 0 $colorPink; transition: 0.5s;
+        margin-bottom: 20px;
       }
 
       ul{
-        width: 100%;
+        width: 100%; position: relative;
+        display: flex; flex-wrap: wrap; align-items: center;
 
         li{
-          width: 100%; padding: 10px 20px;
+          flex: 1 1 25%; padding: 20px; // margin-bottom: 5px;
+          position: relative; z-index: 1;
           background-color: $colorWhite;
-          margin-bottom: 10px; position: relative;
+          border: 2px solid $colorBlue;
+          border-radius: 20px;
           transition: 0.5s;
 
-          a{
-            display: block; width: 80%;
-            font-size: $fontSizeRegular; line-height: 1.5;
-            overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+          a{ display: block; font-size: $fontSizeRegular; line-height: 1.5; }
+          p{
+            text-align: right;
+            font-size: $fontSizeSmall; color: $colorGray;
+            span{
+              width: 40px; height: 40px; display: inline-block;
+              border-radius: 50%; margin-bottom: -8px; margin-left: 5px;
+              background-color: $colorPink;
+            }
           }
 
-          span{
-            display: inline-block; padding: 10px;
-            position: absolute; top: 50%; right: 10px;
-            transform: translateY(-50%);
-            font-size: $fontSizeSmall; color: $colorGray;
+          @for $i from 1 through 10 {
+            &:nth-of-type(#{$i}) p span{ background: url(../img/reviewer#{$i}.jpg) no-repeat center/cover; }
           }
 
           &:hover{
-            transform: translateX(1%);
+            transform: translateY(-5%) scale(1.1);
+            border: 2px solid $colorPink;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+            z-index: 2;
           }
         }
       }
@@ -693,12 +709,16 @@ body{
       }
     }
     section.slides{
-      .inner{ width: 100%; padding: 10%;
+      .inner{ width: 100%; padding: 5vh;
         a{ margin: 0 3%; }
       }
     }
     section.board{
-      .inner{ width: 100%; }
+      .inner{ width: 100%;
+        ul{
+          li{flex: 1 1 33.333%;}
+        }
+      }
     }
     section.contact{
       .inner{ width: 100%; }
@@ -741,12 +761,9 @@ body{
     section.board{
       .inner{
         padding: 50px 20px;
-        h1{ margin-bottom: 30px; }
         ul{
           li{
-            padding: 10px;
-            a{  width: 75%; }
-            span{ right: 5px; }
+            li{flex: 1 1 50%;}
           }
         }
       }

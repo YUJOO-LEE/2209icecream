@@ -22,6 +22,12 @@ const slides = {
   clickable: true
 }
 
+// 게시판 DOM
+const $board = document.querySelector('.board');
+const board = {
+  lis: $board.querySelectorAll('.inner ul li')
+}
+
 // 컨텍트 DOM
 const $contact = document.querySelector('.contact');
 const contact = {
@@ -40,8 +46,7 @@ header.btnCall.addEventListener('click', (e)=>{ // 햄버거 버튼 클릭
   header.mobileNav.classList.toggle('on');
 })
 
-// 갤러리
-
+// 무비갤러리
 movies.articles.forEach((el, i)=>{
   el.querySelector('video').pause();
   el.addEventListener('mouseenter', ()=>{ // 마우스 IN 시
@@ -63,7 +68,7 @@ movies.articles.forEach((el, i)=>{
   })
 })
 
-// 어바웃
+// 슬라이드
 init();
 setInterval(()=>{ // 자동 반복
   moveSlide('next');
@@ -109,6 +114,15 @@ function init() { // 초기화
     el.style.width = `${100 / len}%`;
   })
 }
+
+// 게시판 영역
+board.lis.forEach((el) => {
+  const randomTop = Math.random() * 6 - 3;
+  const randomLeft = Math.random() * 6 - 3;
+  el.style.marginTop = `${randomTop}%`;
+  el.style.marginLeft = `${randomLeft}%`;
+  el.style.rotate = `${randomTop}deg`;
+})
 
 // 컨텍트 영역
 contact.menus.forEach((el, i) => {
