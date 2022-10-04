@@ -508,12 +508,14 @@ body #footerSub .inner address p {
   flex: 1 1 48%;
   position: relative;
   margin-bottom: 4%;
-  border: 1px solid #999;
+  border: 1px solid #f0f0f0;
+  transition: 0.5s;
 }
 .gallery > .inner .youtube article a {
   display: block;
   width: 100%;
   border: 20px solid #fff;
+  position: relative;
 }
 .gallery > .inner .youtube article a img {
   width: 100%;
@@ -552,6 +554,10 @@ body #footerSub .inner address p {
   transition: 0.5s;
   font-size: max(12px, 1.2vh);
 }
+.gallery > .inner .youtube article:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3%);
+}
 .gallery > .inner .youtube article:hover .con h2 {
   transform: translateX(-8px) translateY(5px) rotate(0deg);
 }
@@ -586,6 +592,16 @@ body #footerSub .inner address p {
   transform: rotate(45deg);
 }
 
+@media screen and (max-width: 1179px) {
+  .gallery > .inner {
+    padding: 50px 20px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .gallery > .inner .youtube article {
+    flex: 1 1 100%;
+  }
+}
 .membership .subVisual {
   background-image: url(../img/sub_visual_membership.jpg);
 }
@@ -1295,7 +1311,7 @@ body section.board {
 body section.board .inner {
   width: 1180px;
   margin: 0 auto;
-  padding: 100px 50px;
+  padding: 100px 0;
 }
 body section.board .inner h1 {
   font-size: max(28px, 3vw);
@@ -1307,40 +1323,72 @@ body section.board .inner h1 {
   margin-bottom: 20px;
 }
 body section.board .inner ul {
-  width: 100%;
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 body section.board .inner ul li {
-  flex: 1 1 25%;
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-  background-color: #fff;
-  border: 2px solid lightblue;
-  border-radius: 20px;
-  transition: 0.5s;
+  width: 100%;
+  display: flex;
+  margin-bottom: -50px;
 }
 body section.board .inner ul li a {
-  display: block;
+  max-width: 60%;
+  padding: 50px;
   font-size: max(16px, 1.5vh);
-  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  transition: 0.5s;
+}
+body section.board .inner ul li a::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+body section.board .inner ul li a span {
+  display: block;
+  font-size: max(12px, 1.2vh);
+  text-align: right;
+  color: #999;
+  transform: translate(15px, 25px);
 }
 body section.board .inner ul li p {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: max(12px, 1.2vh);
-  color: #666;
+  transition: 0.5s;
 }
 body section.board .inner ul li p span {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
+  display: block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
   border-radius: 50%;
-  margin-bottom: -8px;
-  margin-left: 5px;
-  background-color: lightpink;
+  transition: 0.5s;
+}
+body section.board .inner ul li:hover a {
+  z-index: 2;
+  box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
+  transform: scale(1.05);
+}
+body section.board .inner ul li:hover p {
+  transform: translateY(10px);
+  color: #fff;
+  font-weight: bold;
+}
+body section.board .inner ul li:hover p span {
+  transform: scale(2);
+  margin-bottom: -10px;
+  z-index: -1;
 }
 body section.board .inner ul li:nth-of-type(1) p span {
   background: url(../img/reviewer1.jpg) no-repeat center/cover;
@@ -1360,23 +1408,33 @@ body section.board .inner ul li:nth-of-type(5) p span {
 body section.board .inner ul li:nth-of-type(6) p span {
   background: url(../img/reviewer6.jpg) no-repeat center/cover;
 }
-body section.board .inner ul li:nth-of-type(7) p span {
-  background: url(../img/reviewer7.jpg) no-repeat center/cover;
+body section.board .inner ul li:nth-of-type(odd) {
+  justify-content: flex-start;
 }
-body section.board .inner ul li:nth-of-type(8) p span {
-  background: url(../img/reviewer8.jpg) no-repeat center/cover;
+body section.board .inner ul li:nth-of-type(odd) a {
+  order: 2;
 }
-body section.board .inner ul li:nth-of-type(9) p span {
-  background: url(../img/reviewer9.jpg) no-repeat center/cover;
+body section.board .inner ul li:nth-of-type(odd) a::before {
+  left: -5px;
 }
-body section.board .inner ul li:nth-of-type(10) p span {
-  background: url(../img/reviewer10.jpg) no-repeat center/cover;
+body section.board .inner ul li:nth-of-type(odd) p {
+  order: 1;
+  margin-right: 30px;
 }
-body section.board .inner ul li:hover {
-  transform: translateY(-5%) scale(1.1);
-  border: 2px solid lightpink;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  z-index: 2;
+body section.board .inner ul li:nth-of-type(even) {
+  justify-content: flex-end;
+}
+body section.board .inner ul li:nth-of-type(even) a {
+  order: 2;
+  background-color: #f0f0f0;
+}
+body section.board .inner ul li:nth-of-type(even) a::before {
+  right: -5px;
+  background-color: #f0f0f0;
+}
+body section.board .inner ul li:nth-of-type(even) p {
+  order: 2;
+  margin-left: 30px;
 }
 body section.contact {
   width: 100%;
@@ -1393,7 +1451,12 @@ body section.contact .inner {
 }
 body section.contact .inner h1 {
   font-size: max(28px, 3vw);
-  margin-bottom: 30px;
+  font-family: "Lily Script One";
+  text-align: center;
+  font-weight: normal;
+  text-shadow: 0 -5px 0 lightpink;
+  transition: 0.5s;
+  margin-bottom: 20px;
 }
 body section.contact .inner .tabMenu {
   width: 100%;

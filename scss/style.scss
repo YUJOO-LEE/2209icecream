@@ -391,7 +391,7 @@ body{
     background-color: $colorBlue;
 
     .inner{
-      width: 1180px; margin: 0 auto; padding: 100px 50px;
+      width: 1180px; margin: 0 auto; padding: 100px 0;
 
       h1{
         font-size: $fontSizeBig; font-family: $pointFont;
@@ -401,37 +401,73 @@ body{
       }
 
       ul{
-        width: 100%; position: relative;
-        display: flex; flex-wrap: wrap; align-items: center;
+        display: flex; flex-direction: column; gap: 20px;
 
         li{
-          flex: 1 1 25%; padding: 20px; // margin-bottom: 5px;
-          position: relative; z-index: 1;
-          background-color: $colorWhite;
-          border: 2px solid $colorBlue;
-          border-radius: 20px;
-          transition: 0.5s;
+          width: 100%; display: flex; margin-bottom: -50px; 
+          
+          a{
+            max-width: 60%; padding: 50px; font-size: $fontSizeRegular;
+            background-color: $colorWhite;
+            border-radius: 30px; position: relative;
+            transition: 0.5s;
 
-          a{ display: block; font-size: $fontSizeRegular; line-height: 1.5; }
-          p{
-            text-align: right;
-            font-size: $fontSizeSmall; color: $colorGray;
+            &::before{
+              content: ''; display: block; width: 10px; height: 10px;
+              position: absolute; top: 50%; margin-top: -5px;
+              background-color: $colorWhite;
+              transform: rotate(45deg);
+            }
+
             span{
-              width: 40px; height: 40px; display: inline-block;
-              border-radius: 50%; margin-bottom: -8px; margin-left: 5px;
-              background-color: $colorPink;
+              display: block;
+              font-size: $fontSizeSmall; text-align: right;
+              color: $colorLightGray;
+              transform: translate(15px, 25px);
+            }
+          }
+          p{
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            font-size: $fontSizeSmall;
+            transition: 0.5s;
+            
+            span{
+              display: block; width: 50px; height: 50px;
+              overflow: hidden; border-radius: 50%;
+              transition: 0.5s;
             }
           }
 
-          @for $i from 1 through 10 {
-            &:nth-of-type(#{$i}) p span{ background: url(../img/reviewer#{$i}.jpg) no-repeat center/cover; }
+          &:hover{
+            a{ 
+              z-index: 2;
+              box-shadow: 10px 10px 20px rgba(100,100,100,0.3);
+              transform: scale(1.05);
+            }
+            p{
+              transform: translateY(10px); color: $colorWhite; font-weight: bold;
+              span{ transform: scale(2); margin-bottom: -10px; z-index: -1; }
+            }
+          }
+          
+          @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) p span{ background: url(../img/reviewer#{$i}.jpg) no-repeat center/cover;}
           }
 
-          &:hover{
-            transform: translateY(-5%) scale(1.1);
-            border: 2px solid $colorPink;
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-            z-index: 2;
+          &:nth-of-type(odd){
+            justify-content: flex-start;
+            a{ order: 2;
+              &::before{ left: -5px; }
+            }
+            p{ order: 1; margin-right: 30px; }
+          }
+          &:nth-of-type(even){
+            justify-content: flex-end;
+            a{ order: 2; background-color: $colorWhiteGray;
+              &::before{ right: -5px; background-color: $colorWhiteGray; }
+            }
+            p{ order: 2; margin-left: 30px; }
           }
         }
       }
@@ -453,8 +489,10 @@ body{
       padding: 100px 50px;
 
       h1{
-        font-size: $fontSizeBig;
-        margin-bottom: 30px;
+        font-size: $fontSizeBig; font-family: $pointFont;
+        text-align: center; font-weight: normal;
+        text-shadow: 0 -5px 0 $colorPink; transition: 0.5s;
+        margin-bottom: 20px;
       }
 
       .tabMenu{

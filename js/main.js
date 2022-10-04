@@ -25,6 +25,7 @@ const slides = {
 // 게시판 DOM
 const $board = document.querySelector('.board');
 const board = {
+  ul: $board.querySelector('.inner ul'),
   lis: $board.querySelectorAll('.inner ul li')
 }
 
@@ -70,7 +71,7 @@ movies.articles.forEach((el, i)=>{
 
 // 슬라이드
 init();
-setInterval(()=>{ // 자동 반복
+setInterval(()=>{
   moveSlide('next');
 }, 5000)
 
@@ -114,15 +115,6 @@ function init() { // 초기화
     el.style.width = `${100 / len}%`;
   })
 }
-
-// 게시판 영역
-board.lis.forEach((el) => {
-  const randomTop = Math.random() * 6 - 3;
-  const randomLeft = Math.random() * 6 - 3;
-  el.style.marginTop = `${randomTop}%`;
-  el.style.marginLeft = `${randomLeft}%`;
-  el.style.rotate = `${randomTop}deg`;
-})
 
 // 컨텍트 영역
 contact.menus.forEach((el, i) => {
