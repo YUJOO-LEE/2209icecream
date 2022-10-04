@@ -5,54 +5,86 @@
     
     table{
       width: 100%; border-collapse: collapse;
-      border-bottom: 2px solid $colorLightGray;
-      margin-bottom: 30px;
+      margin-bottom: 100px;
 
-      tr{
-        th{
-          padding: 15px; background-color: $colorLightGray;
-          font-size: $fontSizeRegular; color: $colorWhite;
-          font-family: '맑은 고딕';
+      thead{
+        tr{
+          border-bottom: 1px solid $colorBlue;
 
-          &:nth-of-type(1){ width: 10%; }
-          &:nth-of-type(3){ width: 15%; }
-          &:nth-of-type(4){ width: 15%; }
+          th{
+            padding: 20px; font-size: $fontSizeRegular;
+            text-align: left; font-weight: normal;
+            &:nth-of-type(1) { width: 15%; }
+            &:nth-of-type(3) { width: 50%; }
+          }
         }
-        td{
-          padding: 15px;
-          font-size: $fontSizeRegular; color: $colorBlack;
-          text-align: center; font-family: '맑은 고딕';
-          border-bottom: 1px solid $colorLightGray;
-          transition: transform 0.3s;
+      }
+      tbody{
+        tr{
+          border-bottom: 1px solid $colorPink; transition: 0.3s;
+          position: relative;
 
-          &:nth-of-type(2){ text-align: left; }
+          &:nth-of-type(even){ border-bottom: 1px solid $colorBlue; }
+          &:hover{ 
+            box-shadow: 0px 10px 20px rgba(100,100,100,0.2);
+          }
+
+          td{
+            padding: 50px 20px; vertical-align: top;
+
+            &:nth-of-type(1) { font-size: $fontSizeRegular; line-height: 2; }
+            &:nth-of-type(2) {
+              a{
+                width: 100%; height: 100%;
+                display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+                overflow: hidden; text-overflow: ellipsis;
+                line-height: 1; font-size: $fontSizeBig;
+              }
+            }
+            &:nth-of-type(3) { 
+              a{
+                width: 100%; height: 100%;
+                font-size: $fontSizeMedium; line-height: 1;
+                display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+                overflow: hidden; text-overflow: ellipsis;
+              }
+            }
+          }
         }
-
-        &:hover td{ transform: translateX(10px); font-weight: bold; }
       }
     }
 
     .pagination{
-      display: flex; justify-content: space-between;
+      display: flex; justify-content: center;
 
       a{
-        display: block;
-        width: 30px; height: 30px; line-height: 30px;
-        font-size: $fontSizeRegular;
-        text-align: center;
-        transition: 0.3s;
+        display: block; width: 30px; height: 30px; line-height: 30px;
+        font-size: $fontSizeRegular; text-align: center; transition: 0.3s;
 
-        &.prev,&.next{ background-color: $colorLightGray; color: $colorWhite; }
-        &:hover{ font-weight: bold; width: 40px;}
+        &.prev{ color: $colorLightGray;
+          &:hover{ color: $colorGray; transform: translateX(-15%); }
+        }
+        &.next{ color: $colorLightGray;
+          &:hover{ color: $colorGray; transform: translateX(15%); }
+        }
       }
 
       .pageNum{
         display: flex; justify-content: center; gap: 5px;
         li{
           a{
-            background-color: $colorPink;
+            position: relative; 
+            &::after{
+              content: ''; display: block; width: 100%; height: 2px;
+              position: absolute; bottom: 0; left: 0; transition: 0.3s;
+              background-color: $colorPink; transform: scaleX(0);
+            }
           }
-          &:nth-of-type(even) a{ background-color: $colorBlue; }
+          &:nth-of-type(even) a::after{ background-color: $colorBlue; }
+          &:hover a{
+            font-weight: bold;
+            &::after{ transform: scaleX(1); }
+          }
         }
       }
     }
@@ -65,16 +97,20 @@
     >.inner{
       padding: 50px 20px;
       table{
-        tr{
-          th{
-            &:nth-of-type(1){ width: 14%; }
-            &:nth-of-type(3){ width: 17%; }
-            &:nth-of-type(4){ width: 0; display: none; }
+        margin-bottom: 50px;
+        thead{
+          tr{
+            th{
+              padding: 10px;
+            }
           }
-          td{
-            &:nth-of-type(1){ width: 14%; }
-            &:nth-of-type(3){ width: 17%; }
-            &:nth-of-type(4){ width: 0; display: none; }
+        }
+        tbody{
+          tr{
+            td{
+              padding: 20px 10px;
+              &:nth-of-type(1) { padding-right: 0; }
+            }
           }
         }
       }

@@ -752,9 +752,11 @@ body{
       }
     }
     section.board{
-      .inner{ width: 100%;
+      .inner{ width: 100%; padding: 50px 20px 80px;
         ul{
-          li{flex: 1 1 33.333%;}
+          li{ margin-bottom: -30px; 
+            a{ max-width: 70%; }
+          }
         }
       }
     }
@@ -798,10 +800,19 @@ body{
     // 게시판 영역
     section.board{
       .inner{
-        padding: 50px 20px;
         ul{
           li{
-            li{flex: 1 1 50%;}
+            a{ max-width: 90%; 
+              &::before{
+                display: none;
+              }
+            }
+            p{
+              position: absolute;
+              flex-direction: row;
+              span{ margin-right: 10px; }
+            }
+            &:nth-of-type(even) p span{ order: 2; margin-right: 0; margin-left: 10px; }
           }
         }
       }
