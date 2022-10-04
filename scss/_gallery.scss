@@ -1,3 +1,65 @@
 .gallery{  // 갤러리 페이지
   .subVisual{ background-image: url(../img/sub_visual_gallery.jpg); }
+
+  >.inner{
+    padding: 100px 0;
+    .youtube{
+      width: 100%; display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 4%;
+
+      article{
+        flex: 1 1 48%; position: relative; margin-bottom: 4%;
+        border: 1px solid $colorLightGray;
+
+        a{
+          display: block; width: 100%; border: 20px solid $colorWhite;
+          img{ width: 100%; height: 100%; object-fit: cover;}
+        }
+        .con{
+          position: absolute; left: 0; bottom: 15px;
+
+          h2{
+            width: fit-content; padding: 5px;
+            background-color: $colorPink;
+            transform: translateX(-5px) rotate(-3deg);
+            font-size: $fontSizeRegular;
+            transition: 0.5s;
+          }
+          p{
+            max-height: 0; overflow: hidden; margin: 0 20px;
+            background-color: $colorWhite;
+            font-size: $fontSizeSmall;
+            transition: 0.5s;
+          }
+          span{
+            display: block; padding: 5px;
+            position: absolute; right: 0; bottom: 0;
+            background-color: $colorBlue;
+            transform: translateY(-5px) translateX(5px) rotate(-3deg);
+            transition: 0.5s;
+            font-size: $fontSizeSmall;
+          }
+        }
+
+        &:hover .con{
+          h2{ transform: translateX(-8px) translateY(5px) rotate(0deg); }
+          p{ max-height: 10vh; padding: 20px; }
+          span{ transform: translateY(0px) translateX(8px) rotate(0deg); }
+        }
+      }
+
+      figure.pop{
+        width: 100%; height: 100vh; padding: 10vw; z-index: 100;
+        position: fixed; top: 0; left: 0; overflow: hidden;
+        background: rgba(0,0,0,0.8);
+        display: flex; justify-content: center; align-items: center;
+
+        .btnClose{
+          position: absolute; top: 50px; right: 50px;
+          color: #fff; cursor: pointer; font-size: $fontSizeMedium;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
 }
