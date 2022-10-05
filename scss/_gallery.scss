@@ -9,11 +9,13 @@
 
       article{
         width: 100%; margin-bottom: 100px;
-        border: 1px solid $colorWhiteGray; transition: 0.5s;
+        border: 1px solid $colorGray; transition: 0.5s;
+        border-radius: 50px; padding: 30px;
         display: flex; justify-content: space-between;
 
         a{
-          display: block; width: 50%; border: 20px solid $colorWhite;
+          display: block; width: 50%;
+          border-radius: 50px; overflow: hidden;
           position: relative;
 
           img{ width: 100%; height: 100%; object-fit: cover;}
@@ -33,19 +35,19 @@
           h2{
             width: 100%; padding: 10px; margin: 20px 0;
             transform: translateX(3%);
-            font-size: $fontSizeMedium;
+            font-size: $fontSizeMedium; font-family: $fontCute;
             transition: 0.5s;
             position: relative;
 
             &::before{
-              content: ''; display: block; width: 10%; height: 100%;
+              content: ''; display: block; width: 0; height: 100%;
               position: absolute; bottom: 0; right: 0; z-index: -1;
               background-color: $colorBlue;
               transform-origin: right;
               transition: 0.5s;
             }
             &::after{
-              content: ''; display: block; width: 10%; height: 100%;
+              content: ''; display: block; width: 0; height: 100%;
               position: absolute; bottom: 0; right: 0; z-index: -1;
               background-color: $colorPink;
               transform-origin: right;
@@ -66,7 +68,7 @@
         }
 
         &:hover{
-          box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+          box-shadow: 0 10px 0 rgba($color: $colorBlue, $alpha: 1);
           // transform: translateY(-3%);
           a{
             i{ opacity: 0.8; }
@@ -84,7 +86,30 @@
               }
             }
           }
-        } 
+        }
+
+        &:nth-of-type(even){
+          a{ order: 2; }
+          .con{ order: 1;
+            h2{
+              &::before{ right: auto; left: 0; transform-origin: left; }
+              &::after{ right: auto; left: 0; transform-origin: left; }
+            }
+          }
+
+          &:hover{
+            .con{
+              h2{
+                transform: translateX(3%) rotate(-1deg);
+                &::before{
+                  transform: translateY(-40%) translateX(3%) rotate(5deg);
+                }
+                &::after{ transform: translateX(-3%) rotate(0deg);
+                }
+              }
+            }
+          }
+        }
       }
 
       figure.pop{

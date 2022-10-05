@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lily+Script+One&family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lily+Script+One&family=DM+Sans:wght@400;500;700&family=Dangrek&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -192,9 +192,11 @@ body .content .subVisual .inner h1 {
   font-size: max(28px, 3vw);
   text-align: center;
   color: #fff;
+  font-family: "Dangrek";
+  line-height: 1.3;
 }
 body .content .subVisual .inner p {
-  font-size: max(12px, 1.2vh);
+  font-size: max(16px, 1.5vh);
   text-align: center;
   color: #fff;
 }
@@ -504,15 +506,18 @@ body #footerSub .inner address p {
 .gallery > .inner .youtube article {
   width: 100%;
   margin-bottom: 100px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #666;
   transition: 0.5s;
+  border-radius: 50px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
 }
 .gallery > .inner .youtube article a {
   display: block;
   width: 50%;
-  border: 20px solid #fff;
+  border-radius: 50px;
+  overflow: hidden;
   position: relative;
 }
 .gallery > .inner .youtube article a img {
@@ -546,13 +551,14 @@ body #footerSub .inner address p {
   margin: 20px 0;
   transform: translateX(3%);
   font-size: max(20px, 1.5vw);
+  font-family: "Dangrek";
   transition: 0.5s;
   position: relative;
 }
 .gallery > .inner .youtube article .con h2::before {
   content: "";
   display: block;
-  width: 10%;
+  width: 0;
   height: 100%;
   position: absolute;
   bottom: 0;
@@ -565,7 +571,7 @@ body #footerSub .inner address p {
 .gallery > .inner .youtube article .con h2::after {
   content: "";
   display: block;
-  width: 10%;
+  width: 0;
   height: 100%;
   position: absolute;
   bottom: 0;
@@ -592,7 +598,7 @@ body #footerSub .inner address p {
   color: #999;
 }
 .gallery > .inner .youtube article:hover {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 0 lightblue;
 }
 .gallery > .inner .youtube article:hover a i {
   opacity: 0.8;
@@ -607,6 +613,31 @@ body #footerSub .inner address p {
 .gallery > .inner .youtube article:hover .con h2::after {
   width: 105%;
   transform: rotate(0deg);
+}
+.gallery > .inner .youtube article:nth-of-type(even) a {
+  order: 2;
+}
+.gallery > .inner .youtube article:nth-of-type(even) .con {
+  order: 1;
+}
+.gallery > .inner .youtube article:nth-of-type(even) .con h2::before {
+  right: auto;
+  left: 0;
+  transform-origin: left;
+}
+.gallery > .inner .youtube article:nth-of-type(even) .con h2::after {
+  right: auto;
+  left: 0;
+  transform-origin: left;
+}
+.gallery > .inner .youtube article:nth-of-type(even):hover .con h2 {
+  transform: translateX(3%) rotate(-1deg);
+}
+.gallery > .inner .youtube article:nth-of-type(even):hover .con h2::before {
+  transform: translateY(-40%) translateX(3%) rotate(5deg);
+}
+.gallery > .inner .youtube article:nth-of-type(even):hover .con h2::after {
+  transform: translateX(-3%) rotate(0deg);
 }
 .gallery > .inner .youtube figure.pop {
   width: 100%;
@@ -867,6 +898,7 @@ body #footerSub .inner address p {
   margin-bottom: 100px;
 }
 .notice > .inner table thead tr {
+  border: 1px solid #fff;
   border-bottom: 1px solid lightblue;
 }
 .notice > .inner table thead tr th {
@@ -890,7 +922,9 @@ body #footerSub .inner address p {
   border-bottom: 1px solid lightblue;
 }
 .notice > .inner table tbody tr:hover {
-  box-shadow: 0px 10px 20px rgba(100, 100, 100, 0.2);
+  border: 1px solid lightblue;
+  border-radius: 50px;
+  box-shadow: 0 10px 0 lightblue;
 }
 .notice > .inner table tbody tr td {
   padding: 50px 20px;
@@ -910,6 +944,7 @@ body #footerSub .inner address p {
   text-overflow: ellipsis;
   line-height: 1;
   font-size: max(28px, 3vw);
+  font-family: "Dangrek";
 }
 .notice > .inner table tbody tr td:nth-of-type(3) a {
   width: 100%;
@@ -1044,7 +1079,7 @@ body #footerSub .inner address p {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "" DM Sans ", sans-serif";
   height: 100vh;
 }
 body #header {
@@ -1293,8 +1328,9 @@ body section.movies .inner {
 }
 body section.movies .inner article {
   width: 280px;
-  padding: 20px;
+  padding: 20px 20px 30px;
   background-color: #fff;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
   transition: 0.5s;
@@ -1304,6 +1340,7 @@ body section.movies .inner article .wrap {
   height: 240px;
   margin-bottom: 30px;
   overflow: hidden;
+  border-radius: 30px;
 }
 body section.movies .inner article .wrap video {
   width: 100%;
@@ -1311,10 +1348,13 @@ body section.movies .inner article .wrap video {
   object-fit: cover;
 }
 body section.movies .inner article h2 {
-  font-size: max(16px, 1.5vh);
+  font-size: max(20px, 1.5vw);
   color: #000;
   line-height: 1;
+  font-family: "Dangrek";
+  font-weight: normal;
   margin-bottom: 20px;
+  text-shadow: 0 -4px 0 lightblue;
 }
 body section.movies .inner article p {
   font-size: max(12px, 1.2vh);
@@ -1323,14 +1363,15 @@ body section.movies .inner article p {
 }
 body section.movies .inner article:hover {
   transform: translateY(-3%);
-  box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
+  z-index: 2;
+  box-shadow: 0 10px 0 lightblue;
 }
 body section.movies .inner article.off {
   filter: blur(2px);
 }
 body section.slides {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   position: relative;
   background-color: #000;
 }
@@ -1433,7 +1474,7 @@ body section.board .inner {
 }
 body section.board .inner h1 {
   font-size: max(28px, 3vw);
-  font-family: "Lily Script One";
+  font-family: "Dangrek";
   text-align: center;
   font-weight: normal;
   text-shadow: 0 -5px 0 lightpink;
@@ -1495,7 +1536,7 @@ body section.board .inner ul li p span {
 }
 body section.board .inner ul li:hover a {
   z-index: 2;
-  box-shadow: 10px 10px 20px rgba(100, 100, 100, 0.3);
+  box-shadow: 0 10px 0 lightpink;
   transform: scale(1.05);
 }
 body section.board .inner ul li:hover p {
@@ -1569,7 +1610,7 @@ body section.contact .inner {
 }
 body section.contact .inner h1 {
   font-size: max(28px, 3vw);
-  font-family: "Lily Script One";
+  font-family: "Dangrek";
   text-align: center;
   font-weight: normal;
   text-shadow: 0 -5px 0 lightpink;
