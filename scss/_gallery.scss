@@ -3,54 +3,86 @@
 
   >.inner{
     padding: 100px 0;
-    
+
     .youtube{
-      width: 100%; display: flex; justify-content: space-between;
-      flex-wrap: wrap; gap: 4%;
+      width: 100%; display: flex; flex-direction: column;
 
       article{
-        flex: 1 1 48%; position: relative; margin-bottom: 4%;
+        width: 100%; margin-bottom: 100px;
         border: 1px solid $colorWhiteGray; transition: 0.5s;
+        display: flex; justify-content: space-between;
 
         a{
-          display: block; width: 100%; border: 20px solid $colorWhite;
+          display: block; width: 50%; border: 20px solid $colorWhite;
           position: relative;
 
           img{ width: 100%; height: 100%; object-fit: cover;}
-        }
-        .con{
-          position: absolute; left: 0; bottom: 15px;
-
-          h2{
-            width: fit-content; padding: 5px;
-            background-color: $colorPink;
-            transform: translateX(-5px) rotate(-3deg);
-            font-size: $fontSizeRegular;
+          i{
+            width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0;
+            display: flex; justify-content: center; align-items: center;
+            font-size: $fontSizeBiggest; color: $colorWhite; opacity: 0;
             transition: 0.5s;
           }
+        }
+        .con{
+          width: 48%;
+          display: flex; flex-direction: column;
+          justify-content: space-between;
+
+          h2{
+            width: 100%; padding: 10px; margin: 20px 0;
+            transform: translateX(3%);
+            font-size: $fontSizeMedium;
+            transition: 0.5s;
+            position: relative;
+
+            &::before{
+              content: ''; display: block; width: 10%; height: 100%;
+              position: absolute; bottom: 0; right: 0; z-index: -1;
+              background-color: $colorBlue;
+              transform-origin: right;
+              transition: 0.5s;
+            }
+            &::after{
+              content: ''; display: block; width: 10%; height: 100%;
+              position: absolute; bottom: 0; right: 0; z-index: -1;
+              background-color: $colorPink;
+              transform-origin: right;
+              transition: 0.5s;
+            }
+          }
           p{
-            max-height: 0; overflow: hidden; margin: 0 20px;
-            background-color: $colorWhite;
-            font-size: $fontSizeSmall;
+            overflow: hidden; padding: 20px;
+            font-size: $fontSizeRegular; color: $colorGray;
             transition: 0.5s;
           }
           span{
-            display: block; padding: 5px;
-            position: absolute; right: 0; bottom: 0;
-            background-color: $colorBlue;
-            transform: translateY(-5px) translateX(5px) rotate(-3deg);
+            display: block; padding: 10px 20px 0; margin: 20px 0;
             transition: 0.5s;
-            font-size: $fontSizeSmall;
+            font-size: $fontSizeRegular; text-align: right;
+            color: $colorLightGray;
           }
         }
 
         &:hover{
-          box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-          transform: translateY(-3%);
+          box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+          // transform: translateY(-3%);
+          a{
+            i{ opacity: 0.8; }
+          }
           .con{
-            h2{ transform: translateX(-8px) translateY(5px) rotate(0deg); }
-            p{ max-height: 10vh; padding: 20px; }
-            span{ transform: translateY(0px) translateX(8px) rotate(0deg); }
+            h2{
+              transform: translateX(3%) rotate(1deg);
+              &::before{
+                width: 80%;
+                transform: translateY(-40%) translateX(-3%) rotate(-5deg);
+              }
+              &::after{
+                width: 105%;
+                transform: rotate(0deg);
+              }
+            }
           }
         } 
       }
@@ -60,6 +92,15 @@
         position: fixed; top: 0; left: 0; overflow: hidden;
         background: rgba(0,0,0,0.8);
         display: flex; justify-content: center; align-items: center;
+
+        .wrap{
+          position: relative;
+          width: 100%; height: 0; overflow: hidden;
+          padding-top: 56.25%;
+          iframe{
+            height: 100%; width: 100%; position: absolute; left: 0; top: 0;
+          }
+        }
 
         .btnClose{
           position: absolute; top: 50px; right: 50px;
@@ -75,7 +116,28 @@
 @media screen and (max-width: 1179px){
   .gallery{
     >.inner{
-      padding: 50px 20px;
+      padding: 80px 50px;
+      .youtube{
+        article{
+          flex-direction: column;
+          margin-bottom: 80px;
+          a{ width: 100%; }
+          .con{ 
+            width: 100%;
+            h2{
+              transform: translateX(3%) rotate(1deg);
+              &::before{
+                width: 80%;
+                transform: translateY(-40%) translateX(-3%) rotate(-5deg);
+              }
+              &::after{
+                width: 105%;
+                transform: rotate(0deg);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -83,8 +145,10 @@
 @media screen and (max-width: 539px){
   .gallery{
     >.inner{
+      padding: 50px 20px;
       .youtube{
         article{
+          margin-bottom: 50px;
           flex: 1 1 100%;
         }
       }

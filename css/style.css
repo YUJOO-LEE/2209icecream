@@ -499,20 +499,19 @@ body #footerSub .inner address p {
 .gallery > .inner .youtube {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 4%;
+  flex-direction: column;
 }
 .gallery > .inner .youtube article {
-  flex: 1 1 48%;
-  position: relative;
-  margin-bottom: 4%;
+  width: 100%;
+  margin-bottom: 100px;
   border: 1px solid #f0f0f0;
   transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
 }
 .gallery > .inner .youtube article a {
   display: block;
-  width: 100%;
+  width: 50%;
   border: 20px solid #fff;
   position: relative;
 }
@@ -521,51 +520,93 @@ body #footerSub .inner address p {
   height: 100%;
   object-fit: cover;
 }
-.gallery > .inner .youtube article .con {
+.gallery > .inner .youtube article a i {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: max(50px, 5vw);
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+.gallery > .inner .youtube article .con {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .gallery > .inner .youtube article .con h2 {
-  width: fit-content;
-  padding: 5px;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  transform: translateX(3%);
+  font-size: max(20px, 1.5vw);
+  transition: 0.5s;
+  position: relative;
+}
+.gallery > .inner .youtube article .con h2::before {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: lightblue;
+  transform-origin: right;
+  transition: 0.5s;
+}
+.gallery > .inner .youtube article .con h2::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
   background-color: lightpink;
-  transform: translateX(-5px) rotate(-3deg);
-  font-size: max(16px, 1.5vh);
+  transform-origin: right;
   transition: 0.5s;
 }
 .gallery > .inner .youtube article .con p {
-  max-height: 0;
   overflow: hidden;
-  margin: 0 20px;
-  background-color: #fff;
-  font-size: max(12px, 1.2vh);
+  padding: 20px;
+  font-size: max(16px, 1.5vh);
+  color: #666;
   transition: 0.5s;
 }
 .gallery > .inner .youtube article .con span {
   display: block;
-  padding: 5px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: lightblue;
-  transform: translateY(-5px) translateX(5px) rotate(-3deg);
+  padding: 10px 20px 0;
+  margin: 20px 0;
   transition: 0.5s;
-  font-size: max(12px, 1.2vh);
+  font-size: max(16px, 1.5vh);
+  text-align: right;
+  color: #999;
 }
 .gallery > .inner .youtube article:hover {
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-  transform: translateY(-3%);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.gallery > .inner .youtube article:hover a i {
+  opacity: 0.8;
 }
 .gallery > .inner .youtube article:hover .con h2 {
-  transform: translateX(-8px) translateY(5px) rotate(0deg);
+  transform: translateX(3%) rotate(1deg);
 }
-.gallery > .inner .youtube article:hover .con p {
-  max-height: 10vh;
-  padding: 20px;
+.gallery > .inner .youtube article:hover .con h2::before {
+  width: 80%;
+  transform: translateY(-40%) translateX(-3%) rotate(-5deg);
 }
-.gallery > .inner .youtube article:hover .con span {
-  transform: translateY(0px) translateX(8px) rotate(0deg);
+.gallery > .inner .youtube article:hover .con h2::after {
+  width: 105%;
+  transform: rotate(0deg);
 }
 .gallery > .inner .youtube figure.pop {
   width: 100%;
@@ -581,6 +622,20 @@ body #footerSub .inner address p {
   justify-content: center;
   align-items: center;
 }
+.gallery > .inner .youtube figure.pop .wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.gallery > .inner .youtube figure.pop .wrap iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .gallery > .inner .youtube figure.pop .btnClose {
   position: absolute;
   top: 50px;
@@ -593,11 +648,36 @@ body #footerSub .inner address p {
 
 @media screen and (max-width: 1179px) {
   .gallery > .inner {
-    padding: 50px 20px;
+    padding: 80px 50px;
+  }
+  .gallery > .inner .youtube article {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+  .gallery > .inner .youtube article a {
+    width: 100%;
+  }
+  .gallery > .inner .youtube article .con {
+    width: 100%;
+  }
+  .gallery > .inner .youtube article .con h2 {
+    transform: translateX(3%) rotate(1deg);
+  }
+  .gallery > .inner .youtube article .con h2::before {
+    width: 80%;
+    transform: translateY(-40%) translateX(-3%) rotate(-5deg);
+  }
+  .gallery > .inner .youtube article .con h2::after {
+    width: 105%;
+    transform: rotate(0deg);
   }
 }
 @media screen and (max-width: 539px) {
+  .gallery > .inner {
+    padding: 50px 20px;
+  }
   .gallery > .inner .youtube article {
+    margin-bottom: 50px;
     flex: 1 1 100%;
   }
 }

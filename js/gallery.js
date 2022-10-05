@@ -22,7 +22,7 @@ fetch(url)
       let date = item.snippet.publishedAt;
 
       title = title.length > 30 ? title.substring(0, 30) + '...' : title;
-      desc = desc.length > 100 ? desc.substring(0, 100) + '...' : desc;
+      desc = desc.length > 300 ? desc.substring(0, 300) + '...' : desc;
       date = date.split('T')[0];
 
       //console.log(item.snippet.thumbnails);
@@ -30,6 +30,7 @@ fetch(url)
         <article>
           <a href="${item.snippet.resourceId.videoId}" class="pic">
             <img src="${item.snippet.thumbnails.maxres.url}">
+            <i class="fas fa-play"></i>
           </a>
           <div class="con">
             <h2>${title}</h2>
@@ -53,7 +54,9 @@ fetch(url)
     let pop = document.createElement('figure');
     pop.classList.add('pop');
     pop.innerHTML = `
-      <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" width="100%" height="100%" allowfullscreen>이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+      <div class="wrap">
+        <iframe src="https://www.youtube.com/embed/${videoId}" width="560" height="315" frameborder="0" allowfullscreen>이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+      </div>
       <i class="btnClose fas fa-plus"></i>
       `;
     box.append(pop);
