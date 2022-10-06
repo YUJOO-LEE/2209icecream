@@ -111,35 +111,6 @@
   </section>
   <!-- movies 종료 -->
 
-  <!-- slides 시작 -->
-  <section class="slides">
-    <div class="inner">
-      <div>
-        <div class="slider">
-          <article>
-            <h1>Rich chocolate syrup<span>in sweet cream!</span></h1>
-            <a href="#" class="viewDetail">VIEW DETAIL</a>
-          </article>
-          <article>
-            <h1>Enhanced with<span>chocolate chunks!</span></h1>
-            <a href="#" class="viewDetail">VIEW DETAIL</a>
-          </article>
-          <article>
-            <h1>Enjoy flavor-filled<span>chocolate!</span></h1>
-            <a href="#" class="viewDetail">VIEW DETAIL</a>
-          </article>
-        </div>
-      </div>
-      <a href="#" class="btnPrev">
-        <i class="fas fa-chevron-left"></i>
-      </a>
-      <a href="#" class="btnNext">
-        <i class="fas fa-chevron-right"></i>
-      </a>
-    </div>
-  </section>
-  <!-- slides 종료 -->
-
   <!-- board 시작 -->
   <section class="board">
     <div class="inner">
@@ -174,16 +145,43 @@
   </section>
   <!-- board 종료 -->
 
+  <!-- slides 시작 -->
+  <section class="slides">
+    <div class="bg">
+      <div data-slide="1" class="on"></div>
+      <div data-slide="2"></div>
+      <div data-slide="3"></div>
+    </div>
+    <div class="inner">
+      <div>
+        <div class="slider">
+          <article data-slide="1">
+            <h1>Rich chocolate syrup<span>in sweet cream!</span></h1>
+            <a href="#" class="viewDetail">VIEW DETAIL</a>
+          </article>
+          <article data-slide="2">
+            <h1>Enhanced with<span>chocolate chunks!</span></h1>
+            <a href="#" class="viewDetail">VIEW DETAIL</a>
+          </article>
+          <article data-slide="3">
+            <h1>Enjoy flavor-filled<span>chocolate!</span></h1>
+            <a href="#" class="viewDetail">VIEW DETAIL</a>
+          </article>
+        </div>
+      </div>
+      <a href="#" class="btnPrev">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+      <a href="#" class="btnNext">
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+  </section>
+  <!-- slides 종료 -->
+
   <!-- contact 시작 -->
   <section class="contact">
     <div class="inner">
-      <h1>Contact US</h1>
-      <div class="tabMenu">
-        <ul>
-          <li class="on"><a href="#">Membership counseling</a></li>
-          <li><a href="#">Find a store</a></li>
-        </ul>
-      </div>
       <div class="tabBody">
         <div class="on">
           <div class="formHeader">
@@ -204,7 +202,7 @@
               </li>
               <li>
                 <label for="content">CONTENT</label>
-                <textarea name="content" id="txt" cols="30" rows="5" placeholder="내용을 입력하세요"></textarea>
+                <textarea name="content" id="content" cols="30" rows="4" placeholder="내용을 입력하세요"></textarea>
               </li>
               <li>
                 <button type="reset">CANCLE</button>
@@ -224,6 +222,19 @@
             <div id="map"></div>
           </div>
         </div>
+      </div>
+      <div class="tabMenu">
+        <h1>Contact US</h1>
+        <ul>
+          <li class="on">
+            <i class="fa-solid fa-ice-cream"></i>
+            <a href="#">Counseling</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-cheese"></i>
+            <a href="#">Find a store</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

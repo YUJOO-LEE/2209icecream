@@ -33,15 +33,18 @@ $colorPink: lightpink;
 
 @mixin viewDetail { // viewDetail 버튼
   padding: max(10px, 0.5vw) max(25px, 1vw);
-  font-size: $fontSizeSmall;
-  text-align: center;
-  color: $colorWhite;
-  background-color: $colorBlack;
+  font-size: $fontSizeSmall; text-align: center;
+  font-weight: bold; color: $colorBlack;
+  border: 1px solid $colorWhite;
+  background-color: $colorWhite;
   border-radius: 100px;
   transition: 0.3s;
+  cursor: pointer;
 
   &:hover{
-    background-color: $colorGray;
+    box-shadow: 0px 4px 0px rgba($color: $colorBlue, $alpha: 1);
+    background-color: $colorWhite;
+    font-weight: bold; color: $colorBlack;
     animation: btnRotate 0.2s linear 2;
   }
 }

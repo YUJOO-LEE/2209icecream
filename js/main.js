@@ -17,6 +17,7 @@ const $slides = document.querySelector('.slides');
 const slides = {
   slider: $slides.querySelector('.slider'),
   articles: $slides.querySelectorAll('article'),
+  bgs: $slides.querySelectorAll('.bg div'),
   btnPrev: $slides.querySelector('.btnPrev'),
   btnNext: $slides.querySelector('.btnNext'),
   clickable: true
@@ -56,7 +57,7 @@ movies.articles.forEach((el, i)=>{
     }
     el.className = 'on'
     el.querySelector('video').play();
-    const randomNum = Math.floor(Math.random() * 10 - 5);
+    const randomNum = Math.floor(Math.random() * 20 - 10);
     el.style.transform = `scale(1.1) rotate(${randomNum}deg)`;
   })
 
@@ -88,6 +89,10 @@ slides.btnNext.addEventListener('click', (e)=>{  // 오른쪽 클릭
 function moveSlide(motion) {  // 슬라이드 이동
   if (!slides.clickable) return;
   slides.clickable = false;
+
+  const nextArticle = document.querySelectorAll('.slider article')[2].dataset.slide;
+  for (let el of slides.bgs) el.classList.remove('on');
+  $slides.querySelector(`div[data-slide='${nextArticle}']`).classList.add('on');
 
   new Anim(slides.slider, {
     prop: 'left',
@@ -149,7 +154,7 @@ marker.setMap(map);
 
 const iwContent = `<div class="mapInfo">
   <ul>
-    <li>YUJOO'S<br>ICE CREAM!</li>
+    <li><i class="fa-solid fa-ice-cream"></i>Yujoo</li>
     <li>
       <a href="https://map.kakao.com/link/map/YUJOO'S ICE CREAM,33.450701,126.570667" target="_blank">view detail</a>
     </li>

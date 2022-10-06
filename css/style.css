@@ -929,15 +929,16 @@ body #footerSub .inner address p {
 .notice > .inner table tbody tr {
   border: 1px solid #fff;
   border-bottom: 1px solid lightpink;
-  transition: 0.3s;
   position: relative;
 }
 .notice > .inner table tbody tr:nth-of-type(even) {
   border-bottom: 1px solid lightblue;
 }
-.notice > .inner table tbody tr:hover {
-  border: 1px solid lightblue;
-  box-shadow: 0 10px 0 lightblue;
+.notice > .inner table tbody tr:hover:nth-of-type(odd) td:nth-of-type(2) a {
+  text-shadow: 0 5px 0 lightblue;
+}
+.notice > .inner table tbody tr:hover:nth-of-type(even) td:nth-of-type(2) a {
+  text-shadow: 0 5px 0 lightpink;
 }
 .notice > .inner table tbody tr td {
   padding: 50px 20px;
@@ -958,6 +959,7 @@ body #footerSub .inner address p {
   line-height: 1;
   font-size: max(28px, 3vw);
   font-family: "Dangrek";
+  transition: 0.3s;
 }
 .notice > .inner table tbody tr td:nth-of-type(3) a {
   width: 100%;
@@ -1382,99 +1384,6 @@ body section.movies .inner article:hover {
 body section.movies .inner article.off {
   filter: blur(2px);
 }
-body section.slides {
-  width: 100%;
-  height: 40vh;
-  position: relative;
-  background-color: #000;
-}
-body section.slides::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/section_slide_bg.jpg) no-repeat center/cover;
-  opacity: 1;
-}
-body section.slides .inner {
-  width: 1180px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 5vh 80px;
-  position: relative;
-}
-body section.slides .inner div {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-body section.slides .inner div .slider {
-  width: 300%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-}
-body section.slides .inner div .slider article {
-  width: 33.3333333333%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body section.slides .inner div .slider article h1 {
-  font-size: max(16px, 1.5vh);
-  text-align: center;
-  color: #fff;
-  margin-bottom: 30px;
-  font-weight: normal;
-}
-body section.slides .inner div .slider article h1 span {
-  display: block;
-  font-size: max(28px, 3vw);
-  font-family: "Lily Script One";
-  font-weight: normal;
-}
-body section.slides .inner div .slider article .viewDetail {
-  padding: max(10px, 0.5vw) max(25px, 1vw);
-  font-size: max(12px, 1.2vh);
-  text-align: center;
-  color: #fff;
-  background-color: #000;
-  border-radius: 100px;
-  transition: 0.3s;
-  background-color: transparent;
-  border: 1px solid #fff;
-}
-body section.slides .inner div .slider article .viewDetail:hover {
-  background-color: #666;
-  animation: btnRotate 0.2s linear 2;
-}
-body section.slides .inner div .slider article .viewDetail:hover {
-  background-color: #fff;
-  color: #000;
-}
-body section.slides .inner > a {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-body section.slides .inner > a i {
-  font-size: max(28px, 3vw);
-  color: #fff;
-}
-body section.slides .inner > a.btnPrev {
-  left: 0;
-}
-body section.slides .inner > a.btnNext {
-  right: 0;
-}
 body section.board {
   width: 100%;
   position: relative;
@@ -1483,7 +1392,7 @@ body section.board {
 body section.board .inner {
   width: 1180px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 100px 0 150px;
 }
 body section.board .inner h1 {
   font-size: max(28px, 3vw);
@@ -1608,57 +1517,185 @@ body section.board .inner ul li:nth-of-type(even) p {
   order: 2;
   margin-left: 30px;
 }
+body section.slides {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+}
+body section.slides .bg {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+body section.slides .bg div {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body section.slides .bg div:nth-of-type(1) {
+  background: url(../img/section_slide_bg1.jpg) no-repeat center/cover;
+}
+body section.slides .bg div:nth-of-type(2) {
+  background: url(../img/section_slide_bg2.jpg) no-repeat center/cover;
+}
+body section.slides .bg div:nth-of-type(3) {
+  background: url(../img/section_slide_bg3.jpg) no-repeat center/cover;
+}
+body section.slides .bg div.on {
+  opacity: 1;
+}
+body section.slides .inner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1180px;
+  height: 100%;
+  padding: 5vh 80px;
+}
+body section.slides .inner div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+body section.slides .inner div .slider {
+  width: 300%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+body section.slides .inner div .slider article {
+  width: 33.3333333333%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body section.slides .inner div .slider article h1 {
+  font-size: max(16px, 1.5vh);
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+}
+body section.slides .inner div .slider article h1 span {
+  display: block;
+  font-size: max(50px, 5vw);
+  font-family: "Lily Script One";
+  font-weight: normal;
+  text-shadow: 0 5px 0 white;
+}
+body section.slides .inner div .slider article .viewDetail {
+  padding: max(10px, 0.5vw) max(25px, 1vw);
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body section.slides .inner div .slider article .viewDetail:hover {
+  box-shadow: 0px 4px 0px lightblue;
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  animation: btnRotate 0.2s linear 2;
+}
+body section.slides .inner > a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body section.slides .inner > a i {
+  font-size: max(28px, 3vw);
+  color: #fff;
+}
+body section.slides .inner > a.btnPrev {
+  left: 0;
+}
+body section.slides .inner > a.btnNext {
+  right: 0;
+}
 body section.contact {
   width: 100%;
   position: relative;
-  background-color: #fff;
+  background-color: lightpink;
 }
 body section.contact .inner {
   width: 1180px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 50px;
+  justify-content: space-between;
+  padding: 100px 0;
 }
-body section.contact .inner h1 {
+body section.contact .inner .tabMenu h1 {
   font-size: max(28px, 3vw);
   font-family: "Dangrek";
   text-align: center;
   font-weight: normal;
-  text-shadow: 0 -5px 0 lightpink;
+  text-shadow: 0 -5px 0 #fff;
   transition: 0.5s;
-  margin-bottom: 20px;
-}
-body section.contact .inner .tabMenu {
-  width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 body section.contact .inner .tabMenu ul {
-  display: flex;
+  border-radius: 30px;
+  background-color: #fff;
+  overflow: hidden;
 }
 body section.contact .inner .tabMenu ul li {
-  flex: 1;
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+body section.contact .inner .tabMenu ul li i {
+  max-height: 0;
+  font-size: max(28px, 3vw);
+  transition: 0.5s;
+  transform: translateY(50%);
+  opacity: 0;
 }
 body section.contact .inner .tabMenu ul li a {
   height: 100%;
-  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #000;
   font-size: max(16px, 1.5vh);
   text-align: center;
-  color: #999;
-  font-weight: 500;
+  color: #000;
+  font-weight: bold;
+  transition: 1s;
 }
-body section.contact .inner .tabMenu ul li.on a {
-  border: 2px solid #000;
-  border-bottom: 0;
+body section.contact .inner .tabMenu ul li:nth-of-type(2) i {
+  transform: translateY(-100%);
+}
+body section.contact .inner .tabMenu ul li.on {
+  background-color: lightblue;
   color: #000;
 }
+body section.contact .inner .tabMenu ul li.on i {
+  max-height: unset;
+  transform: translateY(0%);
+  opacity: 1;
+}
+body section.contact .inner .tabMenu ul li.on a {
+  margin-top: 20px;
+}
 body section.contact .inner .tabBody {
-  width: 100%;
+  width: 70%;
 }
 body section.contact .inner .tabBody > div {
   width: 100%;
@@ -1670,10 +1707,11 @@ body section.contact .inner .tabBody > div div {
 }
 body section.contact .inner .tabBody > div div h2 {
   font-size: max(20px, 1.5vw);
-  margin-bottom: 30px;
+  font-family: "Dangrek";
+  margin-bottom: 10px;
 }
 body section.contact .inner .tabBody > div div p {
-  font-size: max(16px, 1.5vh);
+  font-size: max(12px, 1.2vh);
   color: #666;
 }
 body section.contact .inner .tabBody > div div p span {
@@ -1687,10 +1725,11 @@ body section.contact .inner .tabBody > div form {
 }
 body section.contact .inner .tabBody > div form h2 {
   font-size: max(20px, 1.5vw);
+  font-family: "Dangrek";
   margin-bottom: 10px;
 }
 body section.contact .inner .tabBody > div form p {
-  font-size: max(16px, 1.5vh);
+  font-size: max(12px, 1.2vh);
   margin-bottom: 30px;
   color: #666;
 }
@@ -1714,54 +1753,79 @@ body section.contact .inner .tabBody > div form ul li label {
   font-weight: bold;
   line-height: 1.5;
   color: #000;
+  font-family: "Dangrek";
 }
 body section.contact .inner .tabBody > div form ul li input, body section.contact .inner .tabBody > div form ul li textarea {
   float: right;
   width: 80%;
-  padding: 10px;
-  font-size: max(16px, 1.5vh);
+  padding: 10px 20px;
+  font-size: max(12px, 1.2vh);
   line-height: 1.5;
   color: #000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: transparent;
   resize: none;
+  box-shadow: none;
 }
-body section.contact .inner .tabBody > div form ul li button {
-  padding: max(10px, 0.5vw) max(25px, 1vw);
-  font-size: max(12px, 1.2vh);
-  text-align: center;
-  color: #fff;
-  background-color: #000;
-  border-radius: 100px;
-  transition: 0.3s;
-  border: none;
-  cursor: pointer;
-}
-body section.contact .inner .tabBody > div form ul li button:hover {
-  background-color: #666;
-  animation: btnRotate 0.2s linear 2;
-}
-body section.contact .inner .tabBody > div form ul li button[type=reset] {
-  opacity: 0.6;
+body section.contact .inner .tabBody > div form ul li input:focus, body section.contact .inner .tabBody > div form ul li textarea:focus {
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 4px 0px lightblue;
 }
 body section.contact .inner .tabBody > div form ul li:last-of-type {
   text-align: right;
+  padding-top: 20px;
+}
+body section.contact .inner .tabBody > div form ul li:last-of-type button {
+  padding: max(10px, 0.5vw) max(25px, 1vw);
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body section.contact .inner .tabBody > div form ul li:last-of-type button:hover {
+  box-shadow: 0px 4px 0px lightblue;
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  animation: btnRotate 0.2s linear 2;
 }
 body section.contact .inner .tabBody > div #map {
   width: 100%;
   height: 30vh;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #000;
 }
 body section.contact .inner .tabBody > div #map * {
   box-sizing: content-box;
   margin: 0;
 }
 body section.contact .inner .tabBody > div #map .mapInfo {
+  width: 100%;
   padding: 10px;
+  padding-left: 15px;
 }
 body section.contact .inner .tabBody > div #map .mapInfo ul li:first-of-type {
   margin-bottom: 10px;
-  font-size: max(16px, 1.5vh);
+  font-family: "Lily Script One";
+  font-size: max(20px, 1.5vw);
   font-weight: bold;
 }
+body section.contact .inner .tabBody > div #map .mapInfo ul li:first-of-type i {
+  color: lightpink;
+  text-shadow: 5px 0 0 lightblue;
+  margin-right: 10px;
+}
 body section.contact .inner .tabBody > div #map .mapInfo ul li a {
+  display: block;
+  text-align: right;
   font-size: max(12px, 1.2vh);
   color: #666;
 }
@@ -1908,6 +1972,13 @@ body #footer .inner address p {
   }
   body section.contact .inner {
     width: 100%;
+    padding: 50px 20px;
+  }
+  body section.contact .inner .tabBody {
+    width: 70%;
+  }
+  body section.contact .inner .tabMenu {
+    width: 20%;
   }
   body #footer .inner {
     width: 100%;
@@ -1946,7 +2017,11 @@ body #footer .inner address p {
     margin-left: 10px;
   }
   body section.contact .inner {
-    padding: 50px 20px;
+    flex-wrap: wrap;
+  }
+  body section.contact .inner .tabBody {
+    width: 100%;
+    order: 2;
   }
   body section.contact .inner .tabBody div form ul li label {
     float: none;
@@ -1955,6 +2030,14 @@ body #footer .inner address p {
   body section.contact .inner .tabBody div form ul li input, body section.contact .inner .tabBody div form ul li textarea {
     float: none;
     width: 100%;
+  }
+  body section.contact .inner .tabMenu {
+    width: 100%;
+    order: 1;
+    margin-bottom: 50px;
+  }
+  body section.contact .inner .tabMenu ul {
+    display: flex;
   }
   body #footer .inner {
     padding: 50px 20px;

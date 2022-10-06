@@ -318,84 +318,13 @@ body{
     }
   }
 
-  // 슬라이드 영역
-  section.slides{
-    width: 100%; height: 40vh;
-    position: relative;
-    background-color: $colorBlack;
-    
-    &::before{
-      content: '';
-      display: block; width: 100%; height: 100%;
-      position: absolute; top: 0; left: 0;
-      background: url(../img/section_slide_bg.jpg) no-repeat center/cover;
-      opacity: 1;
-    }
-
-    .inner{
-      width: 1180px; height: 100%;
-      margin: 0 auto; padding: 5vh 80px;
-      position: relative;
-
-      div{
-        width: 100%; height: 100%;
-        position: relative; overflow: hidden;
-
-        .slider{
-          width: calc(100% * 3); height: 100%;
-          position: absolute; top: 0; left: 0;
-          display: flex;
-  
-          article{
-            width: calc(100% / 3); height: 100%;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-    
-            h1{
-              font-size: $fontSizeRegular; text-align: center;
-              color: $colorWhite;
-              margin-bottom: 30px;
-              font-weight: normal;
-              span{
-                display: block;
-                font-size: $fontSizeBig;
-                font-family: $fontPoint;
-                font-weight: normal;
-              }
-            }
-      
-            .viewDetail{
-              @include viewDetail;
-              background-color: transparent;
-              border: 1px solid $colorWhite;
-      
-              &:hover{
-                background-color: $colorWhite;
-                color: $colorBlack;
-              }
-            }
-          }
-        }
-      }
-
-      >a{
-        position: absolute; top: 50%;
-        transform: translateY(-50%);
-
-        i{ font-size: $fontSizeBig; color: $colorWhite; }
-        &.btnPrev{ left: 0; }
-        &.btnNext{ right: 0; }
-      }
-    }
-  }
-
   // 게시판 영역
   section.board{
     width: 100%; position: relative;
     background-color: $colorBlue;
 
     .inner{
-      width: 1180px; margin: 0 auto; padding: 100px 0;
+      width: 1180px; margin: 0 auto; padding: 100px 0 150px;
 
       h1{
         font-size: $fontSizeBig; font-family: $fontCute;
@@ -478,55 +407,132 @@ body{
     }
   }
 
+  // 슬라이드 영역
+  section.slides{
+    width: 100%; height: 40vh;
+    position: relative;
+    
+    .bg{
+      width: 100%; height: 100%; background-color: $colorBlack;
+      div{
+        width: 100%; height: 100%; opacity: 0; transition: 1s;
+        position: absolute; top: 0; left: 0;
+        &:nth-of-type(1){ background: url(../img/section_slide_bg1.jpg) no-repeat center/cover; }
+        &:nth-of-type(2){ background: url(../img/section_slide_bg2.jpg) no-repeat center/cover; }
+        &:nth-of-type(3){ background: url(../img/section_slide_bg3.jpg) no-repeat center/cover; }
+
+        &.on{ opacity: 1; }
+      }
+    }
+
+    .inner{
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 1180px; height: 100%; padding: 5vh 80px;
+
+      div{
+        width: 100%; height: 100%;
+        position: relative; overflow: hidden;
+
+        .slider{
+          width: calc(100% * 3); height: 100%;
+          position: absolute; top: 0; left: 0;
+          display: flex;
+  
+          article{
+            width: calc(100% / 3); height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+    
+            h1{
+              font-size: $fontSizeRegular; text-align: center;
+              color: $colorBlack; 
+              margin-bottom: 30px;
+
+              span{
+                display: block; font-size: $fontSizeBiggest;
+                font-family: $fontPoint; font-weight: normal;
+                text-shadow: 0 5px 0 rgba($color: $colorWhite, $alpha: 1);
+              }
+            }
+      
+            .viewDetail{
+              @include viewDetail;
+            }
+          }
+        }
+      }
+
+      >a{
+        position: absolute; top: 50%;
+        transform: translateY(-50%);
+
+        i{ font-size: $fontSizeBig; color: $colorWhite; }
+        &.btnPrev{ left: 0; }
+        &.btnNext{ right: 0; }
+      }
+    }
+  }
+
   // 컨텍트 영역
   section.contact{
     width: 100%;
     position: relative;
-    background-color: $colorWhite;
+    background-color: $colorPink;
 
     .inner{
-      width: 1180px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 100px 50px;
-
-      h1{
-        font-size: $fontSizeBig; font-family: $fontCute;
-        text-align: center; font-weight: normal;
-        text-shadow: 0 -5px 0 $colorPink; transition: 0.5s;
-        margin-bottom: 20px;
-      }
+      width: 1180px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      padding: 100px 0;
 
       .tabMenu{
-        width: 100%;
-        margin-bottom: 50px;
+
+        h1{
+          font-size: $fontSizeBig; font-family: $fontCute;
+          text-align: center; font-weight: normal;
+          text-shadow: 0 -5px 0 $colorWhite; transition: 0.5s;
+          margin-bottom: 30px;
+        }
 
         ul{
-          display: flex;
-          li{
-            flex: 1;
+          //border: 2px solid $colorBlack;
+          border-radius: 30px;
+          background-color: $colorWhite;
+          overflow: hidden;
 
-            a{
-              height: 100%; padding: 20px 0;
-              display: flex; justify-content: center; align-items: center;
-              border-bottom: 2px solid $colorBlack;
-              font-size: $fontSizeRegular; text-align: center;
-              color: $colorLightGray; font-weight: 500;
+          li{
+            width: 100%; padding: 30px 0;
+            display: flex; flex-direction: column; align-items: center;
+            transition: 0.5s; cursor: pointer;
+
+            i{
+              max-height: 0;
+              font-size: $fontSizeBig; transition: 0.5s;
+              transform: translateY(50%); opacity: 0;
             }
 
-            &.on a{
-              border: 2px solid $colorBlack;
-              border-bottom: 0;
+            a{
+              height: 100%;  //font-family: $fontCute;
+              display: flex; justify-content: center; align-items: center;
+              font-size: $fontSizeRegular; text-align: center;
+              color: $colorBlack; font-weight: bold; transition: 1s;
+            }
+
+            &:nth-of-type(2) i{ transform: translateY(-100%); }
+            &.on{
+              background-color: $colorBlue;
               color: $colorBlack;
+              i{
+                max-height: unset; 
+                transform: translateY(0%); opacity: 1;
+              }
+              a{ margin-top: 20px; }
             }
           }
         }
       }
 
       .tabBody{
-        width: 100%;
+        width: 70%;
 
         >div{
           width: 100%; height: 0px; overflow: hidden;
@@ -535,12 +541,12 @@ body{
             margin-bottom: 30px;
 
             h2{
-              font-size: $fontSizeMedium;
-              margin-bottom: 30px;
+              font-size: $fontSizeMedium; font-family: $fontCute;
+              margin-bottom: 10px;
             }
   
             p{
-              font-size: $fontSizeRegular;
+              font-size: $fontSizeSmall;
               color: $colorGray;
   
               span{ margin-right: 10px; }
@@ -555,12 +561,12 @@ body{
             width: 100%;
 
             h2{
-              font-size: $fontSizeMedium;
+              font-size: $fontSizeMedium; font-family: $fontCute;
               margin-bottom: 10px;
             }
 
             p{
-              font-size: $fontSizeRegular;
+              font-size: $fontSizeSmall;
               margin-bottom: 30px;
               color: $colorGray;
             }
@@ -577,24 +583,32 @@ body{
                   float: left; width: 19%; padding: 10px 0;
                   font-size: $fontSizeRegular; font-weight: bold;
                   line-height: 1.5; color: $colorBlack;
+                  font-family: $fontCute;
                 }
     
                 input,textarea{
-                  float: right; width: 80%; padding: 10px;
-                  font-size: $fontSizeRegular;
+                  float: right; width: 80%; padding: 10px 20px;
+                  font-size: $fontSizeSmall;
                   line-height: 1.5; color: $colorBlack;
+                  border: 1px solid $colorBlack;
+                  border-radius: 20px;
+                  background-color: transparent;
                   resize: none;
-                }
-
-                button{
-                  @include viewDetail();
-                  border: none; cursor: pointer;
-
-                  &[type="reset"]{ opacity: 0.6; }
+                  box-shadow: none;
+                  
+                  &:focus{ 
+                    background-color: $colorWhite;
+                    border: 1px solid $colorWhite;
+                    box-shadow: 0px 4px 0px rgba($color: $colorBlue, $alpha: 1);
+                  }
                 }
 
                 &:last-of-type{
-                  text-align: right;
+                  text-align: right; padding-top: 20px;
+
+                  button{
+                    @include viewDetail();
+                  }
                 }
               }
             }
@@ -602,19 +616,24 @@ body{
 
           #map{
             width: 100%; height: 30vh;
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid $colorBlack;
             
             *{ box-sizing: content-box; margin: 0;}
 
             .mapInfo{
-              padding: 10px;
+              width: 100%; padding: 10px; padding-left: 15px;
               ul{
                 li{
                   &:first-of-type{
                     margin-bottom: 10px;
-                    font-size: $fontSizeRegular;
+                    font-family: $fontPoint;
+                    font-size: $fontSizeMedium;
                     font-weight: bold;
+                    i{ @include logoIce; }
                   }
                   a{
+                    display: block; text-align: right;
                     font-size: $fontSizeSmall;
                     color: $colorGray;
                   }
@@ -765,7 +784,10 @@ body{
       }
     }
     section.contact{
-      .inner{ width: 100%; }
+      .inner{ width: 100%; padding: 50px 20px;
+        .tabBody{ width: 70%; }
+        .tabMenu{ width: 20%; }
+      }
     }
 
     // [footer]
@@ -824,12 +846,11 @@ body{
 
     // 컨텍트 영역
     section.contact{
-      .inner{
-        padding: 50px 20px;
-        .tabBody{
+      .inner{ flex-wrap: wrap;
+        .tabBody{ width: 100%; order: 2;
           div{
             form{
-              ul{
+              ul{ 
                 li{
                   label{ float: none; display: block; }
                   input,textarea{ float: none; width: 100%;}
@@ -837,6 +858,11 @@ body{
               }
             }
           }
+        }
+        .tabMenu{
+          width: 100%; order: 1;
+          margin-bottom: 50px;
+          ul{ display: flex; }
         }
       }
     }
