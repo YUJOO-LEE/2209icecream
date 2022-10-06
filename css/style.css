@@ -927,6 +927,7 @@ body #footerSub .inner address p {
   width: 50%;
 }
 .notice > .inner table tbody tr {
+  border: 1px solid #fff;
   border-bottom: 1px solid lightpink;
   transition: 0.3s;
   position: relative;
@@ -936,7 +937,6 @@ body #footerSub .inner address p {
 }
 .notice > .inner table tbody tr:hover {
   border: 1px solid lightblue;
-  border-radius: 50px;
   box-shadow: 0 10px 0 lightblue;
 }
 .notice > .inner table tbody tr td {

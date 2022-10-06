@@ -22,12 +22,13 @@
       }
       tbody{
         tr{
+          border: 1px solid $colorWhite;
           border-bottom: 1px solid $colorPink; transition: 0.3s;
           position: relative;
 
           &:nth-of-type(even){ border-bottom: 1px solid $colorBlue; }
           &:hover{ 
-            border: 1px solid $colorBlue; border-radius: 50px;
+            border: 1px solid $colorBlue;
             box-shadow: 0 10px 0 rgba($color: $colorBlue, $alpha: 1);
           }
 
