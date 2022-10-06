@@ -519,6 +519,7 @@ body #footerSub .inner address p {
   border-radius: 50px;
   overflow: hidden;
   position: relative;
+  font-size: 0;
 }
 .gallery > .inner .youtube article a img {
   width: 100%;
@@ -547,13 +548,22 @@ body #footerSub .inner address p {
 }
 .gallery > .inner .youtube article .con h2 {
   width: 100%;
-  padding: 10px;
   margin: 20px 0;
+  transition: 0.5s;
   transform: translateX(3%);
+  position: relative;
+}
+.gallery > .inner .youtube article .con h2 span {
+  display: block;
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: max(20px, 1.5vw);
   font-family: "Dangrek";
-  transition: 0.5s;
-  position: relative;
+  color: #000;
 }
 .gallery > .inner .youtube article .con h2::before {
   content: "";
@@ -588,7 +598,7 @@ body #footerSub .inner address p {
   color: #666;
   transition: 0.5s;
 }
-.gallery > .inner .youtube article .con span {
+.gallery > .inner .youtube article .con > span {
   display: block;
   padding: 10px 20px 0;
   margin: 20px 0;
@@ -709,7 +719,7 @@ body #footerSub .inner address p {
   }
   .gallery > .inner .youtube article {
     margin-bottom: 50px;
-    flex: 1 1 100%;
+    padding: 20px;
   }
 }
 .membership .subVisual {

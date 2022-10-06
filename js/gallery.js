@@ -21,7 +21,7 @@ fetch(url)
       let desc = item.snippet.description;
       let date = item.snippet.publishedAt;
 
-      title = title.length > 30 ? title.substring(0, 30) + '...' : title;
+      // title = title.length > 25 ? title.substring(0, 25) + '...' : title;
       desc = desc.length > 300 ? desc.substring(0, 300) + '...' : desc;
       date = date.split('T')[0];
 
@@ -33,7 +33,7 @@ fetch(url)
             <i class="fas fa-play"></i>
           </a>
           <div class="con">
-            <h2>${title}</h2>
+            <h2><span>${title}</span></h2>
             <p>${desc}</p>
             <span>${date}</span>
           </div>
