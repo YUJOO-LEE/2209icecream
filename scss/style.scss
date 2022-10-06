@@ -506,8 +506,8 @@ body{
 
             i{
               max-height: 0;
-              font-size: $fontSizeBig; transition: 0.5s;
-              transform: translateY(50%); opacity: 0;
+              font-size: $fontSizeBig; transition: 0.3s;
+              transform: translateY(30%); opacity: 0;
             }
 
             a{
@@ -517,7 +517,7 @@ body{
               color: $colorBlack; font-weight: bold; transition: 1s;
             }
 
-            &:nth-of-type(2) i{ transform: translateY(-100%); }
+            &:nth-of-type(2) i{ transform: translateY(-30%); }
             &.on{
               background-color: $colorBlue;
               color: $colorBlack;

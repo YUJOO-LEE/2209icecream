@@ -1664,8 +1664,8 @@ body section.contact .inner .tabMenu ul li {
 body section.contact .inner .tabMenu ul li i {
   max-height: 0;
   font-size: max(28px, 3vw);
-  transition: 0.5s;
-  transform: translateY(50%);
+  transition: 0.3s;
+  transform: translateY(30%);
   opacity: 0;
 }
 body section.contact .inner .tabMenu ul li a {
@@ -1680,7 +1680,7 @@ body section.contact .inner .tabMenu ul li a {
   transition: 1s;
 }
 body section.contact .inner .tabMenu ul li:nth-of-type(2) i {
-  transform: translateY(-100%);
+  transform: translateY(-30%);
 }
 body section.contact .inner .tabMenu ul li.on {
   background-color: lightblue;
