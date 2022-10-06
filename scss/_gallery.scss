@@ -180,6 +180,9 @@
         article{
           margin-bottom: 50px;
           padding: 20px;
+          .con{
+            >span{ margin: 0 0 20px; }
+          }
         }
       }
     }

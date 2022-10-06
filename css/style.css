@@ -721,6 +721,9 @@ body #footerSub .inner address p {
     margin-bottom: 50px;
     padding: 20px;
   }
+  .gallery > .inner .youtube article .con > span {
+    margin: 0 0 20px;
+  }
 }
 .membership .subVisual {
   background-image: url(../img/sub_visual_membership.jpg);
