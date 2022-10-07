@@ -603,9 +603,9 @@ body #footerSub .inner address p {
   padding: 10px 20px 0;
   margin: 20px 0;
   transition: 0.5s;
-  font-size: max(16px, 1.5vh);
+  font-size: max(12px, 1.2vh);
   text-align: right;
-  color: #999;
+  color: #666;
 }
 .gallery > .inner .youtube article:hover {
   box-shadow: 0 10px 0 lightblue;
