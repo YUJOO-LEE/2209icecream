@@ -178,7 +178,7 @@ body{
       background-size: cover;
 
       .inner{
-        width: 1180px; margin: 50px auto 0;
+        width: 1180px; margin: 70px auto 0;
         text-shadow: 0 0 10px rgba(0,0,0,0.5);
 
           h1{
@@ -188,7 +188,7 @@ body{
           }
           p{
             font-size: $fontSizeRegular; text-align: center;
-            color: $colorWhite;
+            color: $colorWhite; text-indent: -9999px;
           }
       }
     }

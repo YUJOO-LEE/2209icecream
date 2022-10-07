@@ -185,7 +185,7 @@ body .content .subVisual {
 }
 body .content .subVisual .inner {
   width: 1180px;
-  margin: 50px auto 0;
+  margin: 70px auto 0;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 body .content .subVisual .inner h1 {
@@ -199,6 +199,7 @@ body .content .subVisual .inner p {
   font-size: max(16px, 1.5vh);
   text-align: center;
   color: #fff;
+  text-indent: -9999px;
 }
 body .content > .inner {
   width: 1180px;
@@ -497,6 +498,7 @@ body #footerSub .inner address p {
 }
 .gallery > .inner {
   padding: 100px 0;
+  overflow: hidden;
 }
 .gallery > .inner .youtube {
   width: 100%;
@@ -505,13 +507,17 @@ body #footerSub .inner address p {
 }
 .gallery > .inner .youtube article {
   width: 100%;
-  margin-bottom: 100px;
-  border: 1px solid #666;
+  padding: 60px 30px;
+  border-bottom: 1px solid #999;
   transition: 0.5s;
-  border-radius: 50px;
-  padding: 30px;
   display: flex;
   justify-content: space-between;
+}
+.gallery > .inner .youtube article:first-of-type {
+  border-top: 2px solid #999;
+}
+.gallery > .inner .youtube article:last-of-type {
+  border-bottom: 2px solid #999;
 }
 .gallery > .inner .youtube article a {
   display: block;
@@ -561,7 +567,7 @@ body #footerSub .inner address p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: max(20px, 1.5vw);
+  font-size: max(28px, 3vw);
   font-family: "Dangrek";
   color: #000;
 }
@@ -689,7 +695,7 @@ body #footerSub .inner address p {
 
 @media screen and (max-width: 1179px) {
   .gallery > .inner {
-    padding: 80px 50px;
+    padding: 80px 0;
   }
   .gallery > .inner .youtube article {
     flex-direction: column;
@@ -712,10 +718,19 @@ body #footerSub .inner address p {
     width: 105%;
     transform: rotate(0deg);
   }
+  .gallery > .inner .youtube article:nth-of-type(even) a {
+    order: 1;
+  }
+  .gallery > .inner .youtube article:nth-of-type(even) .con {
+    order: 2;
+  }
+  .gallery > .inner .youtube article:nth-of-type(even) .con h2::before {
+    transform: translateY(-40%) translateX(3%) rotate(5deg);
+  }
 }
 @media screen and (max-width: 539px) {
   .gallery > .inner {
-    padding: 50px 20px;
+    padding: 50px 0;
   }
   .gallery > .inner .youtube article {
     margin-bottom: 50px;
@@ -1103,19 +1118,10 @@ body #footerSub .inner address p {
 
 @media screen and (max-width: 1179px) {
   .notice > .inner {
-    padding: 50px 20px;
+    padding: 50px 0;
   }
-  .notice > .inner table {
-    margin-bottom: 50px;
-  }
-  .notice > .inner table thead tr th {
-    padding: 10px;
-  }
-  .notice > .inner table tbody tr td {
-    padding: 20px 10px;
-  }
-  .notice > .inner table tbody tr td:nth-of-type(1) {
-    padding-right: 0;
+  .notice > .inner .board li .img {
+    width: 200px;
   }
   .notice > .inner .pagination .pageNum li:nth-of-type(6) {
     display: none;
@@ -1134,25 +1140,8 @@ body #footerSub .inner address p {
   }
 }
 @media screen and (max-width: 539px) {
-  .notice .inner table tr th {
-    padding: 10px;
-  }
-  .notice .inner table tr th:nth-of-type(1) {
-    width: 0;
-    display: none;
-  }
-  .notice .inner table tr th:nth-of-type(3) {
-    width: 29%;
-  }
-  .notice .inner table tr td {
-    padding: 10px;
-  }
-  .notice .inner table tr td:nth-of-type(1) {
-    width: 0;
-    display: none;
-  }
-  .notice .inner table tr td:nth-of-type(3) {
-    width: 29%;
+  .notice .inner .board li .img {
+    width: 0px;
   }
   .notice .inner .pagination .pageNum li:nth-of-type(4) {
     display: none;

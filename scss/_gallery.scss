@@ -2,16 +2,19 @@
   .subVisual{ background-image: url(../img/sub_visual_gallery.jpg); }
 
   >.inner{
-    padding: 100px 0;
+    padding: 100px 0; overflow: hidden;
 
     .youtube{
       width: 100%; display: flex; flex-direction: column;
 
       article{
-        width: 100%; margin-bottom: 100px;
-        border: 1px solid $colorGray; transition: 0.5s;
-        border-radius: 50px; padding: 30px;
+        width: 100%; padding: 60px 30px;
+        border-bottom: 1px solid $colorLightGray;
+        transition: 0.5s;
         display: flex; justify-content: space-between;
+
+        &:first-of-type{ border-top: 2px solid $colorLightGray; }
+        &:last-of-type{ border-bottom: 2px solid $colorLightGray; }
 
         a{
           display: block; width: 50%;
@@ -40,7 +43,7 @@
             span{
               display: block; width: 95%; height: 100%; margin: 0 auto;
               overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
-              font-size: $fontSizeMedium; font-family: $fontCute;
+              font-size: $fontSizeBig; font-family: $fontCute;
               color: $colorBlack;
             }
 
@@ -74,7 +77,6 @@
 
         &:hover{
           box-shadow: 0 10px 0 rgba($color: $colorBlue, $alpha: 1);
-          // transform: translateY(-3%);
           a{
             i{ opacity: 0.8; }
           }
@@ -146,7 +148,7 @@
 @media screen and (max-width: 1179px){
   .gallery{
     >.inner{
-      padding: 80px 50px;
+      padding: 80px 0;
       .youtube{
         article{
           flex-direction: column;
@@ -166,6 +168,17 @@
               }
             }
           }
+
+          &:nth-of-type(even){
+            a{ order: 1; }
+            .con{ order: 2;
+              h2{
+                &::before{
+                  transform: translateY(-40%) translateX(3%) rotate(5deg);
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -175,7 +188,7 @@
 @media screen and (max-width: 539px){
   .gallery{
     >.inner{
-      padding: 50px 20px;
+      padding: 50px 0;
       .youtube{
         article{
           margin-bottom: 50px;

@@ -119,22 +119,11 @@
 @media screen and (max-width: 1179px){
   .notice{
     >.inner{
-      padding: 50px 20px;
-      table{
-        margin-bottom: 50px;
-        thead{
-          tr{
-            th{
-              padding: 10px;
-            }
-          }
-        }
-        tbody{
-          tr{
-            td{
-              padding: 20px 10px;
-              &:nth-of-type(1) { padding-right: 0; }
-            }
+      padding: 50px 0;
+      .board{
+        li{
+          .img{
+            width: 200px;
           }
         }
       }
@@ -154,20 +143,14 @@
 @media screen and (max-width: 539px){
   .notice{
     .inner{
-      table{
-        tr{
-          th{
-            padding: 10px; 
-            &:nth-of-type(1){ width: 0; display: none; }
-            &:nth-of-type(3){ width: 29%; }
-          }
-          td{
-            padding: 10px;
-            &:nth-of-type(1){ width: 0; display: none; }
-            &:nth-of-type(3){ width: 29%; }
+      .board{
+        li{
+          .img{
+            width: 0px;
           }
         }
       }
+      
       .pagination{
         .pageNum{
           li{
