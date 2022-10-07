@@ -731,31 +731,33 @@ body #footerSub .inner address p {
 .membership > .inner {
   width: 1180px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 100px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .membership > .inner h1 {
-  font-size: max(28px, 3vw);
   text-align: center;
-  margin-bottom: 50px;
+  font-size: max(16px, 1.5vh);
 }
 .membership > .inner h1 span {
   display: block;
-  font-size: max(16px, 1.5vh);
+  font-family: "Dangrek";
+  font-size: max(28px, 3vw);
+  margin-bottom: 50px;
 }
 .membership > .inner .wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 100px;
 }
 .membership > .inner .wrap div p i {
   display: block;
-  width: 15vw;
-  height: 15vw;
+  width: min(15vw, 220px);
+  height: min(15vw, 220px);
   margin: 0 auto;
   border-radius: 50%;
   font-size: 7vw;
@@ -763,20 +765,21 @@ body #footerSub .inner address p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: lightpink;
 }
 .membership > .inner .wrap div p span {
   display: block;
+  font-family: "Dangrek";
   text-align: center;
-  font-size: max(16px, 1.5vh);
+  font-size: max(20px, 1.5vw);
   font-weight: bold;
   padding: 2vh 0;
 }
 .membership > .inner .wrap div.owner p i {
-  background-color: #666;
+  background-color: lightpink;
 }
 .membership > .inner .wrap div.shop p i {
-  background-color: lightpink;
+  background-color: #666;
 }
 .membership > .inner .wrap div.arrowRight {
   text-align: center;
@@ -833,6 +836,46 @@ body #footerSub .inner address p {
   background-color: #666;
   transform-origin: left bottom;
   transform: rotate(-45deg);
+}
+.membership .join {
+  width: 100%;
+  background-color: lightblue;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.membership .join .btnJoin {
+  padding: max(10px, 0.5vw) max(25px, 1vw);
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 20px 30px;
+  font-size: max(20px, 1.5vw);
+  box-shadow: 0px 6px 0px lightpink;
+  margin-bottom: 30px;
+}
+.membership .join .btnJoin:hover {
+  box-shadow: 0px 4px 0px lightblue;
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  animation: btnRotate 0.2s linear 2;
+}
+.membership .join .btnJoin:hover {
+  box-shadow: 0px 6px 0px lightpink;
+}
+.membership .join p {
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  color: #666;
 }
 
 @media screen and (max-width: 1179px) {

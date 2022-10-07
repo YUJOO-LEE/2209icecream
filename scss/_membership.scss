@@ -2,30 +2,32 @@
   .subVisual{ background-image: url(../img/sub_visual_membership.jpg); }
 
   >.inner{
-    width: 1180px; margin: 0 auto; padding: 100px 0;
+    width: 1180px; margin: 0 auto; padding: 100px 0 0;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
 
     h1{
-      font-size: $fontSizeBig; text-align: center;
-      margin-bottom: 50px;
+      text-align: center;
+      font-size: $fontSizeRegular;
 
       span{
         display: block;
-        font-size: $fontSizeRegular;
+        font-family: $fontCute;
+        font-size: $fontSizeBig;
+        margin-bottom: 50px;
       }
     }
 
     .wrap{
       display: flex; justify-content: center; align-items: center;
-      position: relative;
+      position: relative; margin-bottom: 100px;
 
       div{
         p{
           i{
             display: block;
-            width: 15vw;
-            height: 15vw;
+            width: min(15vw, 220px);
+            height: min(15vw, 220px);
             margin: 0 auto;
             border-radius: 50%;
             font-size: $iSize;
@@ -33,20 +35,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: $colorBlue;
+            background-color: $colorPink;
           }
 
           span{
             display: block;
-            text-align: center;
-            font-size: $fontSizeRegular;
-            font-weight: bold;
+            font-family: $fontCute; text-align: center;
+            font-size: $fontSizeMedium; font-weight: bold;
             padding: 2vh 0;
           }
         }
 
-        &.owner p i{ background-color: $colorGray; }
-        &.shop p i{ background-color: $colorPink; }
+        &.owner p i{ background-color: $colorPink; }
+        &.shop p i{ background-color: $colorGray; }
 
         &.arrowRight{
           text-align: center;
@@ -109,6 +110,26 @@
           }
         }
       }
+    }
+  }
+
+  .join{
+    width: 100%; background-color: $colorBlue;
+    padding: 100px 0; display: flex; flex-direction: column;
+     justify-content: center; align-items: center;
+    .btnJoin{
+      @include viewDetail;
+      padding: 20px 30px;
+      font-size: $fontSizeMedium;
+      box-shadow: 0px 6px 0px rgba($color: $colorPink, $alpha: 1);
+      margin-bottom: 30px;
+      &:hover{
+        box-shadow: 0px 6px 0px rgba($color: $colorPink, $alpha: 1);
+      }
+    }
+    p{
+      font-size: $fontSizeSmall; text-align: center;
+      color: $colorGray;
     }
   }
 }
