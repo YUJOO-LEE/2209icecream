@@ -1638,6 +1638,12 @@ body section.contact .inner {
   justify-content: space-between;
   padding: 100px 0;
 }
+body section.contact .inner .tabMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 body section.contact .inner .tabMenu h1 {
   font-size: max(28px, 3vw);
   font-family: "Dangrek";
@@ -1645,6 +1651,7 @@ body section.contact .inner .tabMenu h1 {
   font-weight: normal;
   text-shadow: 0 -5px 0 #fff;
   transition: 0.5s;
+  letter-spacing: -2px;
   margin-bottom: 30px;
 }
 body section.contact .inner .tabMenu ul {
@@ -1654,7 +1661,7 @@ body section.contact .inner .tabMenu ul {
 }
 body section.contact .inner .tabMenu ul li {
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
