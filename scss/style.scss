@@ -10,7 +10,7 @@
 
 
 body{
-  font-family: ''DM Sans', sans-serif';
+  font-family: 'DM Sans, sans-serif';
   height: 100vh;
 
   // [ header ]
@@ -789,7 +789,11 @@ body{
     section.contact{
       .inner{ width: 100%; padding: 50px 20px;
         .tabBody{ width: 70%; }
-        .tabMenu{ width: 20%; }
+        .tabMenu{ width: 20%;
+          ul{
+            li{ padding: 4vw;}
+          }
+        }
       }
     }
 

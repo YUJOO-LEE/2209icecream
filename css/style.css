@@ -1094,7 +1094,7 @@ body #footerSub .inner address p {
 }
 
 body {
-  font-family: "" DM Sans ", sans-serif";
+  font-family: "DM Sans, sans-serif";
   height: 100vh;
 }
 body #header {
@@ -1986,6 +1986,9 @@ body #footer .inner address p {
   }
   body section.contact .inner .tabMenu {
     width: 20%;
+  }
+  body section.contact .inner .tabMenu ul li {
+    padding: 4vw;
   }
   body #footer .inner {
     width: 100%;
