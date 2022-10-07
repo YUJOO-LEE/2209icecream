@@ -114,9 +114,11 @@
   }
 
   .join{
-    width: 100%; background-color: $colorBlue;
-    padding: 100px 0; display: flex; flex-direction: column;
-     justify-content: center; align-items: center;
+    width: 100%; padding: 100px 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    background: url(../img/business.jpg) no-repeat fixed center/cover;
+
     .btnJoin{
       @include viewDetail;
       padding: 20px 30px;
@@ -129,7 +131,7 @@
     }
     p{
       font-size: $fontSizeSmall; text-align: center;
-      color: $colorGray;
+      color: $colorWhite;
     }
   }
 }

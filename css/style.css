@@ -839,12 +839,12 @@ body #footerSub .inner address p {
 }
 .membership .join {
   width: 100%;
-  background-color: lightblue;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(../img/business.jpg) no-repeat fixed center/cover;
 }
 .membership .join .btnJoin {
   padding: max(10px, 0.5vw) max(25px, 1vw);
@@ -875,7 +875,7 @@ body #footerSub .inner address p {
 .membership .join p {
   font-size: max(12px, 1.2vh);
   text-align: center;
-  color: #666;
+  color: #fff;
 }
 
 @media screen and (max-width: 1179px) {
