@@ -775,7 +775,7 @@ body #footerSub .inner address p {
   height: min(15vw, 220px);
   margin: 0 auto;
   border-radius: 50%;
-  font-size: 7vw;
+  font-size: min(100px, 7vw);
   color: #fff;
   display: flex;
   justify-content: center;
