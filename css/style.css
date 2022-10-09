@@ -871,6 +871,8 @@ body #footerSub .inner address p {
   background-color: #fff;
   border-radius: 100px;
   transition: 0.3s;
+  box-shadow: 0px 4px 0px lightblue;
+  transform: translateY(-10%);
   cursor: pointer;
   padding: 20px 30px;
   font-size: max(20px, 1.5vw);
@@ -878,11 +880,11 @@ body #footerSub .inner address p {
   margin-bottom: 30px;
 }
 .membership .join .btnJoin:hover {
-  box-shadow: 0px 4px 0px lightblue;
   background-color: #fff;
   font-weight: bold;
   color: #000;
-  animation: btnRotate 0.2s linear 2;
+  box-shadow: none;
+  transform: translateY(0%);
 }
 .membership .join .btnJoin:hover {
   box-shadow: 0px 6px 0px lightpink;
@@ -1663,14 +1665,16 @@ body section.slides .inner div .slider article .viewDetail {
   background-color: #fff;
   border-radius: 100px;
   transition: 0.3s;
+  box-shadow: 0px 4px 0px lightblue;
+  transform: translateY(-10%);
   cursor: pointer;
 }
 body section.slides .inner div .slider article .viewDetail:hover {
-  box-shadow: 0px 4px 0px lightblue;
   background-color: #fff;
   font-weight: bold;
   color: #000;
-  animation: btnRotate 0.2s linear 2;
+  box-shadow: none;
+  transform: translateY(0%);
 }
 body section.slides .inner > a {
   position: absolute;
@@ -1855,14 +1859,16 @@ body section.contact .inner .tabBody > div form ul li:last-of-type button {
   background-color: #fff;
   border-radius: 100px;
   transition: 0.3s;
+  box-shadow: 0px 4px 0px lightblue;
+  transform: translateY(-10%);
   cursor: pointer;
 }
 body section.contact .inner .tabBody > div form ul li:last-of-type button:hover {
-  box-shadow: 0px 4px 0px lightblue;
   background-color: #fff;
   font-weight: bold;
   color: #000;
-  animation: btnRotate 0.2s linear 2;
+  box-shadow: none;
+  transform: translateY(0%);
 }
 body section.contact .inner .tabBody > div #map {
   width: 100%;

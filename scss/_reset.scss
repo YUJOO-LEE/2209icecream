@@ -39,13 +39,16 @@ $colorPink: lightpink;
   background-color: $colorWhite;
   border-radius: 100px;
   transition: 0.3s;
+  box-shadow: 0px 4px 0px rgba($color: $colorBlue, $alpha: 1);
+  transform: translateY(-10%);
   cursor: pointer;
 
   &:hover{
-    box-shadow: 0px 4px 0px rgba($color: $colorBlue, $alpha: 1);
     background-color: $colorWhite;
     font-weight: bold; color: $colorBlack;
-    animation: btnRotate 0.2s linear 2;
+    box-shadow: none;
+    transform: translateY(0%);
+    //animation: btnRotate 0.2s linear 2;
   }
 }
 @keyframes btnRotate {
