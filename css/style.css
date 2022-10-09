@@ -1255,6 +1255,20 @@ body #header .inner .btnCall::after {
   background-color: #fff;
   transition: 0.5s;
 }
+body #header .subMenu {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: 0;
+  overflow: hidden;
+}
+body #header .subMenu ul {
+  display: flex;
+  justify-content: center;
+}
+body #header .subMenu ul li {
+  padding: 20px;
+  color: #fff;
+  font-size: max(16px, 1.5vh);
+}
 body #header .mobileNav {
   width: 100%;
   position: absolute;

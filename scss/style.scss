@@ -125,6 +125,18 @@ body{
       }
     }
 
+    .subMenu{
+      background-color: rgba(0,0,0,0.8);
+      max-height: 0; overflow: hidden;
+      ul{
+        display: flex; justify-content: center;
+        li{
+          padding: 20px; color: $colorWhite;
+          font-size: $fontSizeRegular;
+        }
+      }
+    }
+
     // Mobile 메뉴
     .mobileNav{
       width: 100%;
