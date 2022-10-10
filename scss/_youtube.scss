@@ -136,8 +136,7 @@
 
         .btnClose{
           position: absolute; top: 50px; right: 50px;
-          color: #fff; cursor: pointer; font-size: $fontSizeMedium;
-          transform: rotate(45deg);
+          color: $colorWhite; cursor: pointer; font-size: $fontSizeMedium;
         }
       }
     }

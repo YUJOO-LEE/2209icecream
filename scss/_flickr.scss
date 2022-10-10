@@ -136,10 +136,9 @@
         img{
           max-width: 80%; max-height: 80%;
         }
-        span{
-          position: absolute; top: 5vw; right: 5vw;
-          font-size: $fontSizeBig; color: $colorWhite;
-          cursor: pointer;
+        .btnClose{
+          position: absolute; top: 50px; right: 50px;
+          color: $colorWhite; cursor: pointer; font-size: $fontSizeMedium;
         }
       }
     }

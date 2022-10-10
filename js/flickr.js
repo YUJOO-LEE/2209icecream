@@ -42,7 +42,7 @@ $list.addEventListener('click', (e)=>{
   const asideCon = `
     <p>${e.target.closest('div').querySelector('p').innerText}</p>
     <img src="${e.target.closest('a').getAttribute('href')}">
-    <span><i class="fa-solid fa-xmark"></i></span>
+    <span><i class="btnClose fa-solid fa-xmark"></i></span>
   `;
   $aside.innerHTML = asideCon;
   $picList.append($aside);

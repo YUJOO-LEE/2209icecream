@@ -57,7 +57,7 @@ fetch(url)
       <div class="wrap">
         <iframe src="https://www.youtube.com/embed/${videoId}" width="560" height="315" frameborder="0" allowfullscreen>이 브라우저는 iframe을 지원하지 않습니다.</iframe>
       </div>
-      <i class="btnClose fas fa-plus"></i>
+      <i class="btnClose fa-solid fa-xmark"></i>
       `;
     box.append(pop);
 

@@ -732,7 +732,6 @@ body #footerSub .inner address p {
   color: #fff;
   cursor: pointer;
   font-size: max(20px, 1.5vw);
-  transform: rotate(45deg);
 }
 
 @media screen and (max-width: 1179px) {
@@ -951,13 +950,13 @@ body #footerSub .inner address p {
   max-width: 80%;
   max-height: 80%;
 }
-.flickr > .inner .picList aside span {
+.flickr > .inner .picList aside .btnClose {
   position: absolute;
-  top: 5vw;
-  right: 5vw;
-  font-size: max(28px, 3vw);
+  top: 50px;
+  right: 50px;
   color: #fff;
   cursor: pointer;
+  font-size: max(20px, 1.5vw);
 }
 
 @media screen and (max-width: 1179px) {
