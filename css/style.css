@@ -964,10 +964,22 @@ body #footerSub .inner address p {
   .flickr > .inner {
     padding: 80px 0;
   }
+  .flickr > .inner .picList #wrap #list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .flickr > .inner .picList #wrap #list li:nth-of-type(2n) {
+    border-right: 0;
+  }
 }
 @media screen and (max-width: 539px) {
   .flickr > .inner {
     padding: 50px 0;
+  }
+  .flickr > .inner .picList #wrap #list {
+    grid-template-columns: 1fr;
+  }
+  .flickr > .inner .picList #wrap #list li {
+    border-right: 0;
   }
 }
 .membership .subVisual {

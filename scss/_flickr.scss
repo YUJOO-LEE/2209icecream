@@ -151,6 +151,18 @@
   .flickr{
     >.inner{
       padding: 80px 0;
+      .picList{
+        #wrap{
+          #list{
+            grid-template-columns: 1fr 1fr;
+            li{
+              &:nth-of-type(2n){
+                border-right: 0;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -159,6 +171,14 @@
   .flickr{
     >.inner{
       padding: 50px 0;
+      .picList{
+        #wrap{
+          #list{
+            grid-template-columns: 1fr;
+            li{ border-right: 0; }
+          }
+        }
+      }
     }
   }
 }
