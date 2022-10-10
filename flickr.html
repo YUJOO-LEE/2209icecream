@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/08c501c945.js" crossorigin="anonymous"></script>
   <script defer src="./js/sub.js"></script>
+  <script defer src="./js/flickr.js"></script>
 </head>
 <body>
   <!-- header 시작 -->
@@ -58,41 +59,37 @@
   <!-- header 종료 -->
 
   <div class="subPage">
-
   </div>
-  <div class="content about">
+  <div class="content flickr">
     <div class="subVisual">
       <div class="inner">
-        <h1>ABOUT</h1>
-        <p>회사 소개</p>
+        <h1>GALLERY</h1>
+        <a href="youtube.html">YOUTUBE</a>
+        <a href="flickr.html" class="on">FLICKR</a>
+        <p>갤러리</p>
       </div>
     </div>
+    <div id="loading">
+      <img src="./img/loading-circle.gif">
+      <p></p>
+    </div>
+    <section id="searchBox">
+      <form action="#">
+        <label for="search">SEARCH</label>
+        <div>
+          <input type="text" name="search" id="search">
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+    </section>
     <div class="inner">
       <!-- content 시작 -->
-      <div class="ceo">
-        <div class="pic"></div>
-        <div class="txt">
-          <h1>CEO'S MESSAGE</h1>
-          <p class="msg">YUJOO's Ice Cream makes all of its mixes from wholesome ingredients. Fresh cream and condensed milk are delivered daily to the manufacturing plant. To ensure the best tasting product is produced, YUJOO's uses the highest quality of cocoa available, anywhere. The fruit flavors are made from hand-picked, fresh-frozen fruits. YUJOO's only uses high grade almonds, pecans and walnuts in their recipes. Additionally, the nuts are roasted on site to guarantee freshness and quality, every time!</p>
-          <p class="name">ceo. Julia Roberts</p>
-        </div>
-      </div>
-
-      <div class="member">
-        <h2>Niecy Nash</h2>
-        <p>Web Developer</p>
-      </div>
-      <div class="member">
-        <h2>Aaron Loup</h2>
-        <p>Brand Marketer</p>
-      </div>
-      <div class="member">
-        <h2>Britt Robertson</h2>
-        <p>Product Manager</p>
-      </div>
-      <div class="member">
-        <h2>Justin Shafer</h2>
-        <p>Franchise Manager</p>
+      <div class="picList">
+        <section id="wrap">
+          <ul id="list"></ul>
+        </section>
       </div>
       <!-- content 종료 -->
     </div>

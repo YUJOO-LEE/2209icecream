@@ -206,19 +206,35 @@ body{
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      display: flex;
+      justify-content: center; align-items: center;
 
       .inner{
-        width: 1180px; margin: 70px auto 0;
+        width: 1180px;
         text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        text-align: center;
 
           h1{
-            font-size: $fontSizeBig; text-align: center;
+            font-size: $fontSizeBig;
             color: $colorWhite; font-family: $fontCute;
-            line-height: 1.3;
+            line-height: 1;
+          }
+          a{
+            display: inline-block;
+            font-size: $fontSizeRegular;
+            color: $colorWhite; font-family: $fontCute;
+            line-height: 1;
+            padding: 15px;
+            &.on{
+              &::before,&::after{
+                content: '-';
+              }
+            }
           }
           p{
             font-size: $fontSizeRegular; text-align: center;
             color: $colorWhite; text-indent: -9999px;
+            height: 0;
           }
       }
     }
