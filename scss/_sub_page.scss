@@ -114,6 +114,22 @@ body{
       }
     }
 
+    .subMenu{
+      background-color: rgba(0,0,0,0.6);
+      max-height: 0; overflow: hidden; transition: 0.5s;
+      ul{
+        display: flex; justify-content: center;
+        li{
+          padding: 20px; color: $colorWhite;
+          font-size: $fontSizeSmall;
+        }
+      }
+
+      &.on{
+        max-height: 10vh;
+      }
+    }
+
     // Mobile 메뉴
     .mobileNav{
       width: 100%;
@@ -142,6 +158,20 @@ body{
             padding: 10px;
             font-size: $fontSizeRegular;
             font-weight: 500;
+          }
+
+          ul{
+            margin-bottom: 0;
+            li{
+              a{
+                font-size: $fontSizeSmall;
+
+                &::before{
+                  content: '-';
+                  margin-right: 5px;
+                }
+              }
+            }
           }
         }
       }

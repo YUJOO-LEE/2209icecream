@@ -130,6 +130,24 @@ body #headerSub .inner .btnCall::after {
   background-color: #fff;
   transition: 0.5s;
 }
+body #headerSub .subMenu {
+  background-color: rgba(0, 0, 0, 0.6);
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+body #headerSub .subMenu ul {
+  display: flex;
+  justify-content: center;
+}
+body #headerSub .subMenu ul li {
+  padding: 20px;
+  color: #fff;
+  font-size: max(12px, 1.2vh);
+}
+body #headerSub .subMenu.on {
+  max-height: 10vh;
+}
 body #headerSub .mobileNav {
   width: 100%;
   position: absolute;
@@ -155,6 +173,16 @@ body #headerSub .mobileNav ul:nth-of-type(1) li a {
   padding: 10px;
   font-size: max(16px, 1.5vh);
   font-weight: 500;
+}
+body #headerSub .mobileNav ul:nth-of-type(1) li ul {
+  margin-bottom: 0;
+}
+body #headerSub .mobileNav ul:nth-of-type(1) li ul li a {
+  font-size: max(12px, 1.2vh);
+}
+body #headerSub .mobileNav ul:nth-of-type(1) li ul li a::before {
+  content: "-";
+  margin-right: 5px;
 }
 body #headerSub .mobileNav ul:nth-of-type(2) {
   display: flex;
@@ -886,9 +914,6 @@ body #footerSub .inner address p {
   box-shadow: none;
   transform: translateY(0%);
 }
-.membership .join .btnJoin:hover {
-  box-shadow: 0px 6px 0px lightpink;
-}
 .membership .join p {
   font-size: max(12px, 1.2vh);
   text-align: center;
@@ -1256,9 +1281,10 @@ body #header .inner .btnCall::after {
   transition: 0.5s;
 }
 body #header .subMenu {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   max-height: 0;
   overflow: hidden;
+  transition: 0.5s;
 }
 body #header .subMenu ul {
   display: flex;
@@ -1267,7 +1293,10 @@ body #header .subMenu ul {
 body #header .subMenu ul li {
   padding: 20px;
   color: #fff;
-  font-size: max(16px, 1.5vh);
+  font-size: max(12px, 1.2vh);
+}
+body #header .subMenu.on {
+  max-height: 10vh;
 }
 body #header .mobileNav {
   width: 100%;
@@ -1294,6 +1323,16 @@ body #header .mobileNav ul:nth-of-type(1) li a {
   padding: 10px;
   font-size: max(16px, 1.5vh);
   font-weight: 500;
+}
+body #header .mobileNav ul:nth-of-type(1) li ul {
+  margin-bottom: 0;
+}
+body #header .mobileNav ul:nth-of-type(1) li ul li a {
+  font-size: max(12px, 1.2vh);
+}
+body #header .mobileNav ul:nth-of-type(1) li ul li a::before {
+  content: "-";
+  margin-right: 5px;
 }
 body #header .mobileNav ul:nth-of-type(2) {
   display: flex;

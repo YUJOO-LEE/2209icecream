@@ -125,9 +125,6 @@
       font-size: $fontSizeMedium;
       box-shadow: 0px 6px 0px rgba($color: $colorPink, $alpha: 1);
       margin-bottom: 30px;
-      &:hover{
-        box-shadow: 0px 6px 0px rgba($color: $colorPink, $alpha: 1);
-      }
     }
     p{
       font-size: $fontSizeSmall; text-align: center;
