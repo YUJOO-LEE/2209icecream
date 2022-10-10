@@ -84,7 +84,8 @@ function callData(url){
       const items = json.photos.photo;
       
       if (!items.length) {  // 데이터 없을 때 예외처리
-        $picList.innerHTML = '검색된 데이터가 없습니다.';
+        $list.style.border = '0';
+        $list.innerHTML = '검색된 데이터가 없습니다.';
         isoLayout();
         return;
       }
@@ -117,6 +118,7 @@ function createList(items){
     `;
   })
 
+  $list.style.border = '';
   $list.innerHTML = htmls;
 }
 
