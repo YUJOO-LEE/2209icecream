@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ice cream | Yujoo</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=71bc6dc9e23e2fddadaa922419145b18"></script>
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/08c501c945.js" crossorigin="anonymous"></script>
   <script defer src="./js/sub.js"></script>
+  <script defer src="./js/store.js"></script>
 </head>
 <body>
   <!-- header 시작 -->
@@ -24,7 +26,7 @@
       </ul>
       <ul class="util">
         <li><a href="store.html">STORE</a></li>
-        <li><a href="#">SNS</a></li>
+        <li><a href="join.html">JOIN</a></li>
       </ul>
 
       <a href="#" class="btnCall"><span>메뉴호출</span></a>
@@ -51,7 +53,7 @@
       </ul>
       <ul>
         <li><a href="store.html">STORE</a></li>
-        <li><a href="#">SNS</a></li>
+        <li><a href="join.html">JOIN</a></li>
       </ul>
     </div>
   </header>
@@ -69,7 +71,48 @@
     </div>
     <div class="inner">
       <!-- content 시작 -->
-
+      <div class="storeList">
+        <ul>
+          <li data-index="0" class="on">
+            <h2>Gangnam Main shop</h2>
+            <p>43, Garosu-gil Gangnam-gu, Seoul</p>
+            <span>
+              <i class="fas fa-phone-square"></i>
+              080-500-0029</span>
+          </li>
+          <li data-index="1">
+            <h2>Coex Mall</h2>
+            <p>513, Yeongdong-daero, Gangnam-gu, Seoul</p>
+            <span>
+              <i class="fas fa-phone-square"></i>
+              02-6002-1620</span>
+          </li>
+          <li data-index="2">
+            <h2>Times Square</h2>
+            <p>15, Yeongjung-ro, Yeongdeungpo-gu, Seoul</p>
+            <span>
+              <i class="fas fa-phone-square"></i>
+              0507-1304-2074</span>
+          </li>
+          <li data-index="3">
+            <h2>Hongik University</h2>
+            <p>11, Hongik-ro, Mapo-gu, Seoul</p>
+            <span>
+              <i class="fas fa-phone-square"></i>
+              02-323-1765</span>
+          </li>
+          <li data-index="4">
+            <h2>Myeongdong</h2>
+            <p>11, Myeongdong 8-gil, Jung-gu, Seoul</p>
+            <span>
+              <i class="fas fa-phone-square"></i>
+              02-318-7120</span>
+          </li>
+        </ul>
+      </div>
+      <div class="storeMap">
+        <div id="map"></div>
+      </div>
       <!-- content 종료 -->
     </div>
   </div>
