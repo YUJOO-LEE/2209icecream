@@ -3,7 +3,10 @@ const $inputs = $form.querySelectorAll('.chkThis');
 
 // 입력 시 체크
 for (let el of $inputs) {
+  // 각 input 요소 돌면서 확인
   el.addEventListener('input', (e)=>{
+    // event 'input' = input 값 변경될때
+    // keyup으로 하면 checkbox를 감지할 수 없음
     const inputName = e.target.name;
     errorReset(inputName);
     checkEveryInput(inputName);
@@ -14,15 +17,18 @@ for (let el of $inputs) {
 $form.addEventListener('submit',(e)=>{
 
   errorReset();
-  let hasError;
+  let hasError; // 에러 체크용
 
   for (let el of $inputs) {
+    // 각 input 요소 돌면서 확인
     const inputName = el.name;
     errorReset(inputName);
     hasError = checkEveryInput(inputName, e);
+    // 에러 여부 반환
   }
 
   if (!hasError) {
+    // 에러 없으면 alret 띄우기
     e.preventDefault();
     alert('가입에 성공했습니다!');
   }
@@ -138,7 +144,7 @@ function checkLen(name, len = 1) {
   return txt.length < len ? true : false;
 }
 
-// 입력 문자 영문자인지 확인
+// 입력 아이디 확인
 function checkId(name, len = 6) {
   const $input = $form.querySelector(`[name=${name}]`);
   const txt = $input.value.trim();
