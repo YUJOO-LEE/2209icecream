@@ -17,20 +17,14 @@ for (let el of $inputs) {
 $form.addEventListener('submit',(e)=>{
 
   errorReset();
-  let hasError; // 에러 체크용
+   // 에러 리셋
 
   for (let el of $inputs) {
     // 각 input 요소 돌면서 확인
     const inputName = el.name;
     errorReset(inputName);
-    hasError = checkEveryInput(inputName, e);
+    checkEveryInput(inputName, e);
     // 에러 여부 반환
-  }
-
-  if (!hasError) {
-    // 에러 없으면 alret 띄우기
-    e.preventDefault();
-    alert('가입에 성공했습니다!');
   }
 })
 
@@ -41,76 +35,70 @@ $form.addEventListener('reset',()=>{
 
 // 인풋 별 체크
 function checkEveryInput(inputName, e) {
-  let hasError = false;
   switch (inputName) {
     case 'chkTerm1':
-      if (checkCheck('chkTerm1')) {
+      if (checkCheck(inputName)) {
         if (e) e.preventDefault();
-        errorMsg('chkTerm1', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+        errorMsg(inputName, '약관에 동의하셔야 가입이 가능합니다');
       }
       break;
 
     case 'chkTerm2':
-      if (checkCheck('chkTerm2')) {
+      if (checkCheck(inputName)) {
         if (e) e.preventDefault();
-        errorMsg('chkTerm2', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+        errorMsg(inputName, '약관에 동의하셔야 가입이 가능합니다');
       }
       break;
 
     case 'chkTerm3':
-      if (checkCheck('chkTerm3')) {
+      if (checkCheck(inputName)) {
         if (e) e.preventDefault();
-        errorMsg('chkTerm3', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+        errorMsg(inputName, '약관에 동의하셔야 가입이 가능합니다');
       }
       break;
 
     case 'userId':
-      const idError = checkId('userId', 6);
+      const idError = checkId(inputName, 6);
       if (idError) {
         if (e) e.preventDefault();
-        errorMsg('userId', `${idError.join(', ')}`);
-        hasError = true;
+        errorMsg(inputName, `${idError.join(', ')}`);
       }
       break;
 
     case 'password':
-      const pwError = checkPw('password', 6);
+      const pwError = checkPw(inputName, 6);
       if (pwError) {
         if (e) e.preventDefault();
-        errorMsg('password', `${pwError.join(', ')}`);
-        hasError = true;
+        errorMsg(inputName, `${pwError.join(', ')}`);
       }
       break;
 
     case 'password2':
-      if (checkSamePw('password', 'password2')) {
+      if (checkSamePw('password', inputName)) {
         if (e) e.preventDefault();
-        errorMsg('password2', '같은 비밀번호를 입력하세요');
-        hasError = true;
+        errorMsg(inputName, '같은 비밀번호를 입력하세요');
       }
       break;
 
     case 'userName':
-      if (checkLen('userName', 3)) {
+      if (checkLen(inputName, 3)) {
         if (e) e.preventDefault();
-        errorMsg('userName', '3글자 이상 입력하세요');
-        hasError = true;
+        errorMsg(inputName, '3글자 이상 입력하세요');
       }
       break;
 
     case 'gender':
-      if (checkCheck('gender')) {
+      
+      if (checkCheck(inputName)) {
         if (e) e.preventDefault();
-        errorMsg('gender', '성별을 선택하세요');
-        hasError = true;
+        errorMsg(inputName, '성별을 선택하세요');
       }
     break;
 
     case 'emailId':
-      if (checkLen('emailId', 1)) {
+      if (checkLen(inputName, 1)) {
         if (e) e.preventDefault();
-        errorMsg('emailId', '이메일 주소를 입력하세요');
-        hasError = true;
+        errorMsg(inputName, '이메일 주소를 입력하세요');
       }
       break;
 
@@ -120,20 +108,16 @@ function checkEveryInput(inputName, e) {
       if (checkLen('tel1', 1) || checkLen('tel2', 1) || checkLen('tel3', 1)) {
         if (e) e.preventDefault();
         errorMsg('tel3', '연락처를 입력하세요');
-        hasError = true;
       }
       break;
 
     case 'comment':
-      if (checkLen('comment', 20)) {
+      if (checkLen(inputName, 20)) {
         if (e) e.preventDefault();
-        errorMsg('comment', '20글자 이상 입력하세요');
-        hasError = true;
+        errorMsg(inputName, '20글자 이상 입력하세요');
       }
       break;
   }
-
-  return hasError;
 }
 
 // 입력 길이 확인
