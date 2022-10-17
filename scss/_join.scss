@@ -190,3 +190,71 @@
     }
   }
 }
+
+@media screen and (max-width: 1179px) {
+  .join{
+    >.inner{
+      padding: 50px 20px;
+      
+      form{
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: flex-start;
+
+        .terms{
+          width: 100%;
+          border: 0;
+
+          ul{
+            li{
+              textarea{
+                height: 100px;
+              }
+            }
+          }
+        }
+        .form{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .join{
+    >.inner{
+      padding: 50px 0;
+
+      form{
+        .terms{
+          padding: 10px;
+        }
+        .form{
+          padding: 10px;
+
+          ul{
+            li{
+              .left{
+                width: 30%;
+              }
+
+              .right{
+                width:70%;
+
+                input[type=text],input[type=password]{
+                  width: 100%;
+                }
+
+                select{
+                  margin-top: 5px;
+                  width: calc(100% - 10px - $fontSizeRegular);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
