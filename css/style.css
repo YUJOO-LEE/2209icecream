@@ -1717,7 +1717,7 @@ body #footerSub .inner address p {
   background-image: url(../img/sub_visual_join.jpg);
 }
 .join > .inner {
-  padding: 100px 0;
+  padding: 100px 0 150px;
 }
 .join > .inner form {
   width: 100%;
@@ -1798,6 +1798,7 @@ body #footerSub .inner address p {
   font-size: max(12px, 1.2vh);
   text-align: justify;
   color: #000;
+  word-break: break-all;
 }
 .join > .inner form .terms ul li .hint {
   order: 2;
@@ -1813,12 +1814,22 @@ body #footerSub .inner address p {
 }
 .join > .inner form .form ul {
   width: 100%;
+  position: relative;
 }
 .join > .inner form .form ul li {
   padding-bottom: 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+.join > .inner form .form ul li:nth-last-of-type(2) {
+  padding-bottom: 0;
+}
+.join > .inner form .form ul li:last-of-type {
+  position: absolute;
+  top: calc(100% + 30px);
+  right: 0;
+  padding-bottom: 0;
 }
 .join > .inner form .form ul li .left {
   width: 150px;
