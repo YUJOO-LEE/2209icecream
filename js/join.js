@@ -1,65 +1,31 @@
 const $form = document.querySelector('form');
 const $inputs = $form.querySelectorAll('.chkThis');
-let isInputChecked = false;
 
+// 입력 시 체크
 for (let el of $inputs) {
-  el.addEventListener('keyup', (e)=>{
+  el.addEventListener('input', (e)=>{
     const inputName = e.target.name;
     errorReset(inputName);
-
-    switch (inputName) {
-      case 'userId':
-        if (checkLen('userId', 5)) {
-          errorMsg('userId', '5글자 이상 입력하세요.');
-        }
-        break;
-
-      case 'password':
-        const pwError = checkPw('password', 6);
-        if (pwError) {
-          errorMsg('password', `${pwError.join(', ')}`);
-        }
-        break;
-
-      case 'password2':
-        if (checkSamePw('password', 'password2')) {
-          errorMsg('password2', '같은 비밀번호를 입력하세요.');
-        }
-        break;
-
-      case 'userName':
-        if (checkLen('userName', 3)) {
-          errorMsg('userName', '3글자 이상 입력하세요.');
-        }
-        break;
-    }
-  
-
+    checkEveryInput(inputName);
   })
 }
 
 // SUBMIT 버튼
 $form.addEventListener('submit',(e)=>{
 
-  e.preventDefault();
   errorReset();
+  let hasError;
 
-
-  if (checkLen('emailId')) {
-    e.preventDefault();
-    errorMsg('emailId', '이메일 주소를 입력하세요.');
+  for (let el of $inputs) {
+    const inputName = el.name;
+    errorReset(inputName);
+    hasError = checkEveryInput(inputName, e);
   }
 
-  if (checkCheck('gender')) {
+  if (!hasError) {
     e.preventDefault();
-    errorMsg('gender', '성별을 선택하세요.');
+    alert('가입에 성공했습니다!');
   }
-
-  if (checkLen('comment', 20)) {
-    e.preventDefault();
-    errorMsg('comment', '20글자 이상 입력하세요.');
-  }
-
 })
 
 // 리셋 버튼
@@ -67,12 +33,122 @@ $form.addEventListener('reset',()=>{
   errorReset();
 })
 
+// 인풋 별 체크
+function checkEveryInput(inputName, e) {
+  let hasError = false;
+  switch (inputName) {
+    case 'chkTerm1':
+      if (checkCheck('chkTerm1')) {
+        if (e) e.preventDefault();
+        errorMsg('chkTerm1', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+      }
+      break;
+
+    case 'chkTerm2':
+      if (checkCheck('chkTerm2')) {
+        if (e) e.preventDefault();
+        errorMsg('chkTerm2', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+      }
+      break;
+
+    case 'chkTerm3':
+      if (checkCheck('chkTerm3')) {
+        if (e) e.preventDefault();
+        errorMsg('chkTerm3', '약관에 동의하셔야 가입이 가능합니다');hasError = true;
+      }
+      break;
+
+    case 'userId':
+      const idError = checkId('userId', 6);
+      if (idError) {
+        if (e) e.preventDefault();
+        errorMsg('userId', `${idError.join(', ')}`);
+        hasError = true;
+      }
+      break;
+
+    case 'password':
+      const pwError = checkPw('password', 6);
+      if (pwError) {
+        if (e) e.preventDefault();
+        errorMsg('password', `${pwError.join(', ')}`);
+        hasError = true;
+      }
+      break;
+
+    case 'password2':
+      if (checkSamePw('password', 'password2')) {
+        if (e) e.preventDefault();
+        errorMsg('password2', '같은 비밀번호를 입력하세요');
+        hasError = true;
+      }
+      break;
+
+    case 'userName':
+      if (checkLen('userName', 3)) {
+        if (e) e.preventDefault();
+        errorMsg('userName', '3글자 이상 입력하세요');
+        hasError = true;
+      }
+      break;
+
+    case 'gender':
+      if (checkCheck('gender')) {
+        if (e) e.preventDefault();
+        errorMsg('gender', '성별을 선택하세요');
+        hasError = true;
+      }
+    break;
+
+    case 'emailId':
+      if (checkLen('emailId', 1)) {
+        if (e) e.preventDefault();
+        errorMsg('emailId', '이메일 주소를 입력하세요');
+        hasError = true;
+      }
+      break;
+
+    case 'tel1':
+    case 'tel2':
+    case 'tel3':
+      if (checkLen('tel1', 1) || checkLen('tel2', 1) || checkLen('tel3', 1)) {
+        if (e) e.preventDefault();
+        errorMsg('tel3', '연락처를 입력하세요');
+        hasError = true;
+      }
+      break;
+
+    case 'comment':
+      if (checkLen('comment', 20)) {
+        if (e) e.preventDefault();
+        errorMsg('comment', '20글자 이상 입력하세요');
+        hasError = true;
+      }
+      break;
+  }
+
+  return hasError;
+}
+
 // 입력 길이 확인
 function checkLen(name, len = 1) {
   const $input = $form.querySelector(`[name=${name}]`);
   const txt = $input.value.trim();
 
   return txt.length < len ? true : false;
+}
+
+// 입력 문자 영문자인지 확인
+function checkId(name, len = 6) {
+  const $input = $form.querySelector(`[name=${name}]`);
+  const txt = $input.value.trim();
+
+  const errReason = [];
+  if (txt.length < len) errReason.push(`${len}글자 이상 입력하세요`)
+  const regexpEng = /^[a-z]|[0-9]|[_-]$/;
+  if (!regexpEng.test(txt)) errReason.push(`영소문자, 숫자, 특수문자(-,_) 만 입력 가능합니다`)
+
+  return errReason.length ? errReason : false;
 }
 
 // 비밀번호 양식 확인

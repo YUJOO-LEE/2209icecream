@@ -207,57 +207,59 @@
   .membership{
     >.inner{
 
-      .wrap{
-        flex-wrap: wrap;
-        div{
-          order: 2;
-
-          &.owner{ margin-right: 100px; }
-          &.shop{ order: 1; width: 100%; }
-          &.arrowRight{
-            position: absolute;
-            transform: translateX(-80%);
-            font-size: $fontSizeSmall;
-            padding-left: 0;
-
-            &::before{
-              width: 30%;
-              left: unset;
-              bottom: 80%;
-              right: 0;
-              transform-origin: right center;
-              transform: rotate(-45deg);
+      .system{
+        .wrap{
+          flex-wrap: wrap;
+          div{
+            order: 2;
+  
+            &.owner{ margin-right: 100px; }
+            &.shop{ order: 1; width: 100%; }
+            &.arrowRight{
+              position: absolute;
+              transform: translateX(-80%);
+              font-size: $fontSizeSmall;
+              padding-left: 0;
+  
+              &::before{
+                width: 30%;
+                left: unset;
+                bottom: 80%;
+                right: 0;
+                transform-origin: right center;
+                transform: rotate(-45deg);
+              }
+              &::after{
+                width: 10%;
+                left: unset;
+                bottom: 80%;
+                right: 0;
+                transform-origin: right center;
+                transform: rotate(0);
+              }
             }
-            &::after{
-              width: 10%;
-              left: unset;
-              bottom: 80%;
-              right: 0;
-              transform-origin: right center;
-              transform: rotate(0);
-            }
-          }
-          &.arrowLeft{
-            position: absolute;
-            transform: translateX(80%);
-            font-size: $fontSizeSmall;
-            padding-right: 0;
-
-            &::before{
-              width: 30%;
-              right: unset;
-              bottom: 80%;
-              left: 0;
-              transform-origin: left center;
-              transform: rotate(45deg);
-            }
-            &::after{
-              width: 10%;
-              right: unset;
-              bottom: 80%;
-              left: 0;
-              transform-origin: left center;
-              transform: rotate(0);
+            &.arrowLeft{
+              position: absolute;
+              transform: translateX(80%);
+              font-size: $fontSizeSmall;
+              padding-right: 0;
+  
+              &::before{
+                width: 30%;
+                right: unset;
+                bottom: 80%;
+                left: 0;
+                transform-origin: left center;
+                transform: rotate(45deg);
+              }
+              &::after{
+                width: 10%;
+                right: unset;
+                bottom: 80%;
+                left: 0;
+                transform-origin: left center;
+                transform: rotate(0);
+              }
             }
           }
         }
