@@ -1,0 +1,176 @@
+.join{  // 멤버쉽 페이지
+  .subVisual{ background-image: url(../img/sub_visual_join.jpg); }
+
+  >.inner{
+    padding: 100px 0;
+
+    form{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      input[type=text],input[type=password],input[type=tel],select{
+        padding: 10px;
+        border: 1px solid $colorBlack;
+        border-radius: 20px;
+      }
+
+      input[type=radio],input[type=checkbox]{
+        width: 20px;
+        height: 20px;
+        accent-color: $colorBlack;
+      }
+
+      input[type=radio]{
+        border-radius: 50%;
+      }
+
+      textarea{
+        padding: 10px;
+        border: 1px solid $colorBlack;
+        border-radius: 20px;
+        resize: none;
+        font-family: "DM Sans, sans-serif";
+        line-height: 1.3;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          background-color: $colorWhite;
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $colorBlue;
+        }
+      }
+      
+      .terms{
+        width: 30%;
+        padding: 30px;
+        border-right: 1px solid $colorLightGray;
+  
+        ul{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          gap: 30px;
+  
+          li{
+            flex: 1;
+            width: 100%;
+
+            p{
+              display: flex;
+              align-items: center;
+              margin-bottom: 10px;
+
+              input{
+                margin-right: 10px;
+              }
+
+              label{
+                font-family: $fontCute;
+                font-size: $fontSizeRegular;
+                color: $colorBlack;
+              }
+            }
+
+            textarea{
+              width: 100%;
+              height: calc(100% - 30px);
+              font-size: $fontSizeSmall;
+              text-align: justify;
+              color: $colorBlack;
+            }
+          }
+        }
+      }
+  
+      .form{
+        width: 70%;
+        padding: 30px;
+
+        ul{
+          width: 100%;
+          
+          li{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            
+            .left{
+              width: 150px;
+              font-family: $fontCute;
+              font-size: $fontSizeRegular;
+              line-height: 1;
+            }
+
+            .right{
+              width: calc(100% - 150px);
+
+              span{
+                font-family: $fontCute;
+                font-size: $fontSizeRegular;
+                line-height: 1;
+                margin: 0 5px;
+  
+                &.medium{
+                  font-size: $fontSizeMedium;
+                }
+              }
+  
+              input[type=tel]{
+                width: 55px;
+                text-align: center;
+              }
+  
+              textarea{
+                width: 100%;
+                height: 100px;
+              }
+            }
+
+            .hint{
+              margin-top: 5px;
+              margin-left: 150px;
+              padding: 5px 10px;
+              border-radius: 20px;
+              font-size: $fontSizeSmall;
+              background-color: $colorPink;
+            }
+
+            &:last-of-type{
+              display: flex;
+              justify-content: flex-end;
+
+              button{
+                @include viewDetail;
+                margin-left: 10px;
+                background-color: $colorBlack;
+                color: $colorWhite;
+
+                &:nth-of-type(1){
+                  box-shadow: 0px 4px 0px rgba($color: $colorPink, $alpha: 1);
+                }
+
+                &:hover{
+                  box-shadow: none;
+                  border-color: $colorBlack;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

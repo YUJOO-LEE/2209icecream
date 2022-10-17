@@ -1713,6 +1713,171 @@ body #footerSub .inner address p {
     transform: translate(5px, 0);
   }
 }
+.join .subVisual {
+  background-image: url(../img/sub_visual_join.jpg);
+}
+.join > .inner {
+  padding: 100px 0;
+}
+.join > .inner form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.join > .inner form input[type=text], .join > .inner form input[type=password], .join > .inner form input[type=tel], .join > .inner form select {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 20px;
+}
+.join > .inner form input[type=radio], .join > .inner form input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  accent-color: #000;
+}
+.join > .inner form input[type=radio] {
+  border-radius: 50%;
+}
+.join > .inner form textarea {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  resize: none;
+  font-family: "DM Sans, sans-serif";
+  line-height: 1.3;
+}
+.join > .inner form textarea::-webkit-scrollbar {
+  width: 5px;
+}
+.join > .inner form textarea::-webkit-scrollbar-track {
+  background-color: #fff;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.join > .inner form textarea::-webkit-scrollbar-thumb {
+  background-color: lightblue;
+}
+.join > .inner form .terms {
+  width: 30%;
+  padding: 30px;
+  border-right: 1px solid #999;
+}
+.join > .inner form .terms ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 30px;
+}
+.join > .inner form .terms ul li {
+  flex: 1;
+  width: 100%;
+}
+.join > .inner form .terms ul li p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.join > .inner form .terms ul li p input {
+  margin-right: 10px;
+}
+.join > .inner form .terms ul li p label {
+  font-family: "Dangrek";
+  font-size: max(16px, 1.5vh);
+  color: #000;
+}
+.join > .inner form .terms ul li textarea {
+  width: 100%;
+  height: calc(100% - 30px);
+  font-size: max(12px, 1.2vh);
+  text-align: justify;
+  color: #000;
+}
+.join > .inner form .form {
+  width: 70%;
+  padding: 30px;
+}
+.join > .inner form .form ul {
+  width: 100%;
+}
+.join > .inner form .form ul li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.join > .inner form .form ul li .left {
+  width: 150px;
+  font-family: "Dangrek";
+  font-size: max(16px, 1.5vh);
+  line-height: 1;
+}
+.join > .inner form .form ul li .right {
+  width: calc(100% - 150px);
+}
+.join > .inner form .form ul li .right span {
+  font-family: "Dangrek";
+  font-size: max(16px, 1.5vh);
+  line-height: 1;
+  margin: 0 5px;
+}
+.join > .inner form .form ul li .right span.medium {
+  font-size: max(20px, 1.5vw);
+}
+.join > .inner form .form ul li .right input[type=tel] {
+  width: 55px;
+  text-align: center;
+}
+.join > .inner form .form ul li .right textarea {
+  width: 100%;
+  height: 100px;
+}
+.join > .inner form .form ul li .hint {
+  margin-top: 5px;
+  margin-left: 150px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: max(12px, 1.2vh);
+  background-color: lightpink;
+}
+.join > .inner form .form ul li:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+}
+.join > .inner form .form ul li:last-of-type button {
+  padding: max(10px, 0.5vw) max(25px, 1vw);
+  font-size: max(12px, 1.2vh);
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: 0.3s;
+  box-shadow: 0px 4px 0px lightblue;
+  transform: translateY(-10%);
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: #000;
+  color: #fff;
+}
+.join > .inner form .form ul li:last-of-type button:hover {
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  box-shadow: none;
+  transform: translateY(0%);
+}
+.join > .inner form .form ul li:last-of-type button:nth-of-type(1) {
+  box-shadow: 0px 4px 0px lightpink;
+}
+.join > .inner form .form ul li:last-of-type button:hover {
+  box-shadow: none;
+  border-color: #000;
+}
+
 body {
   font-family: "DM Sans, sans-serif";
   height: 100vh;
